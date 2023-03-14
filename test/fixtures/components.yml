@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  description: MyText
+  user_id: 1
+  country: MyText
+  brand: MyText
+  market_date: 2023-03-14 22:56:38
+  size: 1
+  connectors: MyText
+  guarantee: 1
+  complete_set: MyText
+  rating: 1.5
+  weight: 1
+  price: 1.5
+  availability: false
+
+two:
+  title: MyText
+  description: MyText
+  user_id: 1
+  country: MyText
+  brand: MyText
+  market_date: 2023-03-14 22:56:38
+  size: 1
+  connectors: MyText
+  guarantee: 1
+  complete_set: MyText
+  rating: 1.5
+  weight: 1
+  price: 1.5
+  availability: false

@@ -14,9 +14,8 @@
 	<p>available to buy now? <%= @component.availability %></p>
 	<p class="mt">added by user with ID: <%= @component.user_id %></p>
 
-	<p><%= link_to "Edit component", edit_component_path(@component) %></p>
-
 	<div>
+		<%= link_to "Edit component", edit_component_path(@component) %>
 		<%= button_to 'Delete component', component_path(@component), method: :delete %>
 	</div>
 

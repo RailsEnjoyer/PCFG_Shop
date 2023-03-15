@@ -5,7 +5,7 @@
 
 	<%= form_with model: @component do |form| %>
 		<p><%= form.label :title, 'title' %></p>
-		<p><%= form.text_area :title %></p>
+		<p><%= form.text_area :title, class: 'form-text-area' %></p>
 		<p><%= form.label :description, 'description' %></p>
 		<p><%= form.text_area :description %></p>
 		<p><%= form.label :country, 'country' %></p>
@@ -31,8 +31,8 @@
 		<p><%= form.label :availability, 'availability' %></p>
 		<p><%= form.text_area :availability %></p>
 		<p class="mt"><%= form.label :user_id, 'user ID' %></p>
-		<p><%= form.text_area :user_id %></p>
-		<p class="mt"><%= form.submit 'Apply changes!' %></p>
+		<p><%= form.text_area :user_id, class: 'form-text-area'%></p>
+		<p class="mt"><%= form.submit 'Apply changes!', class: 'button button-main' %></p>
 	<% end %>
 </div>
 

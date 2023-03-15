@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_195638) do
     t.text "country"
     t.text "brand"
     t.datetime "market_date"
-    t.integer "size"
+    t.text "size"
     t.text "connectors"
     t.integer "guarantee"
     t.text "complete_set"

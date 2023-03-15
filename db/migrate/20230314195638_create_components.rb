@@ -7,7 +7,7 @@ class CreateComponents < ActiveRecord::Migration[7.0]
       t.text :country
       t.text :brand
       t.datetime :market_date
-      t.integer :size
+      t.text :size
       t.text :connectors
       t.integer :guarantee
       t.text :complete_set

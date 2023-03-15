@@ -11,7 +11,8 @@
 <p>weight: <%= @component.weight %> g.</p>
 <p>price: <%= @component.price %> USD$</p>
 <p>available to buy now? <%= @component.availability %></p>
-
 <p>added by user with ID: <%= @component.user_id %></p>
+
+<p><%= link_to "Edit component", edit_component_path(@component) %></p>
 
 <p><%= link_to "All components", components_path %></p>

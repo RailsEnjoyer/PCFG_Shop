@@ -39,6 +39,7 @@ class ComponentsController < ApplicationController
       description: params[:component][:description],
       user_id: params[:component][:user_id]
     )
+    redirect_to component_path(@component)
   end
 
   def destroy
@@ -59,5 +60,6 @@ class ComponentsController < ApplicationController
   end
 
   def edit
+    @component = Component.find(params[:id])
   end
 end

@@ -55,5 +55,9 @@ class ComponentsController < ApplicationController
   end
 
   def new
+    @component = Component.new 
+  end
+
+  def edit
   end
 end

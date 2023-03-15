@@ -1,47 +1,33 @@
 <h2>New component</h2>
 
-<form action="/components" method="POST">
-	<p><label for="component[title]">title</label></p>
-  <p><textarea name="component[title]"></textarea></p>
-
-  <p><label for="component[description]">description</label></p>
-  <p><textarea name="component[description]"></textarea></p>
-
-  <p><label for="component[county]">country</label></p>
-  <p><textarea name="component[country]"></textarea></p>
-
-  <p><label for="component[brand]">brand</label></p>
-  <p><textarea name="component[brand]"></textarea></p>
-
-  <p><label for="component[market_date]">market date</label></p>
-  <p><textarea name="component[market_date]"></textarea></p>
-
-  <p><label for="component[size]">size</label></p>
-  <p><textarea name="component[size]"></textarea></p>
-
-  <p><label for="component[connectors]">connectors</label></p>
-  <p><textarea name="component[connectors]"></textarea></p>
-
-  <p><label for="component[guarantee]">guarantee</label></p>
-  <p><textarea name="component[guarantee]"></textarea></p>
-
-  <p><label for="component[complete_set]">complete set</label></p>
-  <p><textarea name="component[complete_set]"></textarea></p>
-
-  <p><label for="component[rating]">rating</label></p>
-  <p><textarea name="component[rating]"></textarea></p>
-
-  <p><label for="component[weight]">weight</label></p>
-  <p><textarea name="component[weight]"></textarea></p>
-
-  <p><label for="component[price]">price</label></p>
-  <p><textarea name="component[price]"></textarea></p>
-
-  <p><label for="component[availability]">availability</label></p>
-  <p><textarea name="component[availability]"></textarea></p>
-
-	<p><label for="component[user_id]">user id</label></p>
-  <p><input type="number" name="component[user_id]"></p>
-
-  <p><input type="submit" value="create"></p>
-</form>
+<%= form_with model: @component do |form| %>
+  <p><%= form.label :title, 'title' %></p>
+  <p><%= form.text_area :title %></p>
+  <p><%= form.label :description, 'description' %></p>
+  <p><%= form.text_area :description %></p>
+  <p><%= form.label :country, 'country' %></p>
+  <p><%= form.text_area :country %></p>
+  <p><%= form.label :brand, 'brand' %></p>
+  <p><%= form.text_area :brand %></p>
+  <p><%= form.label :market_date, 'release date' %></p>
+  <p><%= form.text_area :market_date %></p>
+  <p><%= form.label :size, 'size' %></p>
+  <p><%= form.text_area :size %></p>
+  <p><%= form.label :connectors, 'connectors' %></p>
+  <p><%= form.text_area :connectors %></p>
+  <p><%= form.label :guarantee, 'guarantee, months' %></p>
+  <p><%= form.text_area :guarantee %></p>
+  <p><%= form.label :complete_set, 'complete set' %></p>
+  <p><%= form.text_area :complete_set %></p>
+  <p><%= form.label :rating, 'rating' %></p>
+  <p><%= form.text_area :rating %></p>
+  <p><%= form.label :weight, 'weight, g.' %></p>
+  <p><%= form.text_area :weight %></p>
+  <p><%= form.label :price, 'price, USD$' %></p>
+  <p><%= form.text_area :price %></p>
+  <p><%= form.label :availability, 'availability' %></p>
+  <p><%= form.text_area :availability %></p>
+  <p><%= form.label :user_id, 'user ID' %></p>
+  <p><%= form.text_area :user_id %></p>
+  <p><%= form.submit 'Add new component!' %></p>
+<% end %>

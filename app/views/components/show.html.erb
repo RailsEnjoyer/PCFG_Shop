@@ -15,4 +15,8 @@
 
 <p><%= link_to "Edit component", edit_component_path(@component) %></p>
 
+<div>
+  <%= button_to 'Delete component', component_path(@component), method: :delete %>
+</div>
+
 <p><%= link_to "All components", components_path %></p>

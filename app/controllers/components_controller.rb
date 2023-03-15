@@ -1,22 +1,7 @@
 class ComponentsController < ApplicationController
 
   def create 
-    component = Component.create(
-      title: params[:component][:title],
-      country: params[:component][:country],
-      brand: params[:component][:brand],
-      market_date: params[:component][:market_date],
-      size: params[:component][:size],
-      connectors: params[:component][:connectors],
-      guarantee: params[:component][:guarantee],
-      complete_set: params[:component][:complete_set],
-      rating: params[:component][:rating],
-      weight: params[:component][:weight],
-      price: params[:component][:price],
-      availability: params[:component][:availability],
-      description: params[:component][:description],
-      user_id: params[:component][:user_id]
-    )
+    component = Component.create(params[:components])
 
     redirect_to component_path(component)
   end
@@ -45,6 +30,8 @@ class ComponentsController < ApplicationController
   def destroy
     @component = Component.find(params[:id])
     @component.destroy
+
+    redirect_to components_path
   end
 
   def show

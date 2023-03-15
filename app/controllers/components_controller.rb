@@ -1,41 +1,25 @@
 class ComponentsController < ApplicationController
+  before_action :set_component, only: %i[update show destroy edit]
 
   def create 
-    component = Component.create(params[:components])
+    component = Component.create(component_params)
 
     redirect_to component_path(component)
   end
 
   def update 
-    @component = Component.find(params[:id])
-    @component.update(
-      title: params[:component][:title],
-      country: params[:component][:country],
-      brand: params[:component][:brand],
-      market_date: params[:component][:market_date],
-      size: params[:component][:size],
-      connectors: params[:component][:connectors],
-      guarantee: params[:component][:guarantee],
-      complete_set: params[:component][:complete_set],
-      rating: params[:component][:rating],
-      weight: params[:component][:weight],
-      price: params[:component][:price],
-      availability: params[:component][:availability],
-      description: params[:component][:description],
-      user_id: params[:component][:user_id]
-    )
+    @component.update(component_params)
+
     redirect_to component_path(@component)
   end
 
   def destroy
-    @component = Component.find(params[:id])
     @component.destroy
 
     redirect_to components_path
   end
 
   def show
-    @component = Component.find(params[:id])
   end
 
   def index
@@ -47,6 +31,16 @@ class ComponentsController < ApplicationController
   end
 
   def edit
+  end
+
+  private 
+
+  def component_params
+    params.require(:component).permit(:title, :country, :brand, :market_date, :size, :connectors, :guarantee, :complete_set,
+    :rating, :weight, :price, :availability, :description, :user_id)
+  end
+
+  def set_component
     @component = Component.find(params[:id])
   end
 end

@@ -1,7 +1,9 @@
-<h2>Components</h2>
+<div class="container">
+	<h2 class="title-lg mb">Components</h2>
 
-<% @components.each do |component| %>
-<p><%= link_to component.title, component_path(component) %></p>
-<% end %>
+	<% @components.each do |component| %>
+	<p class="mb-sm"><%= link_to component.title, component_path(component) %></p>
+	<% end %>
 
-<p><%= link_to "Add new component", new_component_path %></p>
+	<p class="mt"><%= link_to "Add new component", new_component_path %></p>
+</div>

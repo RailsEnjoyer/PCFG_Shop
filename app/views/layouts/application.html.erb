@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+          <p class="mt"><%= link_to "Home", root_path, class: 'button button-main' %></p>
+          <p class="mt"><%= link_to "Catalogue", components_path, class: 'button button-main' %></p>
+          <p class="mt"><%= link_to "Configurator", configurator_path, class: 'button button-main' %></p>
+          <p class="mt"><%= link_to "News", news_path, class: 'button button-main' %></p>
+          <p class="mt"><%= link_to "About us", about_path, class: 'button button-main' %></p>
+          <p class="mt"><%= link_to "FAQ / Support", support_path, class: 'button button-main' %></p>
+          <p class="mt"><%= link_to "My Cart", cart_path, class: 'button button-main'%></p>
+      </ul>
+    </nav>
+
     <div class="wrapper">
       <%= yield %>
     </div>

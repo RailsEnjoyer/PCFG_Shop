@@ -1,7 +1,6 @@
 body {
-  background: #fff;
+  background: #cfa9a9;
   display: flex;
-  justify-content: center;
 }
 
 .wrapper {
@@ -11,6 +10,7 @@ body {
 }
 
 .container {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
+  margin-top: 200px;
 }

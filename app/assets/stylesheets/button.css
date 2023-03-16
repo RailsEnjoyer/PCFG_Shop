@@ -3,11 +3,12 @@
     border-radius: 3px;
     color: #fff;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 13px 7px;
     text-decoration: none;
+    margin: 20px;
 }
 
 .button-main {
-  background-color: #9d0208;
+  background-color: #6e0508;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PCFGShop</title>
+    <title>PCFG Shop</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,18 +11,19 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-          <p class="mt"><%= link_to "Home", root_path, class: 'button button-main' %></p>
-          <p class="mt"><%= link_to "Catalogue", components_path, class: 'button button-main' %></p>
-          <p class="mt"><%= link_to "Configurator", configurator_path, class: 'button button-main' %></p>
-          <p class="mt"><%= link_to "News", news_path, class: 'button button-main' %></p>
-          <p class="mt"><%= link_to "About us", about_path, class: 'button button-main' %></p>
-          <p class="mt"><%= link_to "FAQ / Support", support_path, class: 'button button-main' %></p>
-          <p class="mt"><%= link_to "My Cart", cart_path, class: 'button button-main'%></p>
-      </ul>
-    </nav>
-
+      
+          <h1 class="header">
+          <ul>
+            <p class="mt"><%= link_to "Home", root_path, class: 'button button-main' %></p>
+            <p class="mt"><%= link_to "Catalogue", components_path, class: 'button button-main' %></p>
+            <p class="mt"><%= link_to "Configurator", configurator_path, class: 'button button-main' %></p>
+            <p class="mt"><%= link_to "News", news_path, class: 'button button-main' %></p>
+            <p class="mt"><%= link_to "About us", about_path, class: 'button button-main' %></p>
+            <p class="mt"><%= link_to "FAQ / Support", support_path, class: 'button button-main' %></p>
+            <p class="mt"><%= link_to "My Cart", cart_path, class: 'button button-main' %></p>
+            </ul>
+          </h1>
+      
     <div class="wrapper">
       <%= yield %>
     </div>

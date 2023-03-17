@@ -11,21 +11,26 @@
   </head>
 
   <body>
-      
-          <h1 class="header">
-          <ul>
-            <p class="mt"><%= link_to "Home", root_path, class: 'button button-main' %></p>
-            <p class="mt"><%= link_to "Catalogue", components_path, class: 'button button-main' %></p>
-            <p class="mt"><%= link_to "Configurator", configurator_path, class: 'button button-main' %></p>
-            <p class="mt"><%= link_to "News", news_path, class: 'button button-main' %></p>
-            <p class="mt"><%= link_to "About us", about_path, class: 'button button-main' %></p>
-            <p class="mt"><%= link_to "FAQ / Support", support_path, class: 'button button-main' %></p>
-            <p class="mt"><%= link_to "My Cart", cart_path, class: 'button button-main' %></p>
-            </ul>
-          </h1>
-      
-    <div class="wrapper">
-      <%= yield %>
+
+    <div class="header">
+      <div clas="logo">PC Configurator logo</div>
+      <p>PC Configurator</p>
+
+      <ul>
+          <span class="mt"><%= link_to "Home", root_path, class: 'button button-main' %></span>
+          <span class="mt"><%= link_to "Catalogue", components_path, class: 'button button-main' %></span>
+          <span class="mt"><%= link_to "Configurator", configurator_path, class: 'button button-main' %></span>
+          <span class="mt"><%= link_to "News", news_path, class: 'button button-main' %></span>
+          <span class="mt"><%= link_to "About us", about_path, class: 'button button-main' %></span>
+          <span class="mt"><%= link_to "FAQ / Support", support_path, class: 'button button-main' %></span>
+          <span class="mt"><%= link_to "My Cart", cart_path, class: 'button button-main' %></span>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="wrapper">
+          <%= yield %>
+      </div>
     </div>
   </body>
 </html>

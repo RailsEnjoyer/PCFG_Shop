@@ -12,25 +12,41 @@
 
   <body>
 
-    <div class="header">
-      <div clas="logo">PC Configurator logo</div>
-      <p>PC Configurator</p>
+    <div class="wrapper">
 
-      <ul>
-          <span class="mt"><%= link_to "Home", root_path, class: 'button button-main' %></span>
-          <span class="mt"><%= link_to "Catalogue", components_path, class: 'button button-main' %></span>
-          <span class="mt"><%= link_to "Configurator", configurator_path, class: 'button button-main' %></span>
-          <span class="mt"><%= link_to "News", news_path, class: 'button button-main' %></span>
-          <span class="mt"><%= link_to "About us", about_path, class: 'button button-main' %></span>
-          <span class="mt"><%= link_to "FAQ / Support", support_path, class: 'button button-main' %></span>
-          <span class="mt"><%= link_to "My Cart", cart_path, class: 'button button-main' %></span>
-      </ul>
-    </div>
+      <header>
+        <div class="logo"><%= image_tag("logos/logo.png", height:'70px', alt:'') %></div>
+        <h1>PC Configurator</h1>
 
-    <div class="main">
-      <div class="wrapper">
-          <%= yield %>
-      </div>
+        <nav>
+          <ul>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Catalogue", components_path %></li>
+            <li><%= link_to "Configurator", configurator_path %></li>
+            <li><%= link_to "News", news_path %></li>
+            <li><%= link_to "About us", about_path %></li>
+            <li><%= link_to "FAQ / Support", support_path %></li>
+
+          </ul>
+        </nav>
+
+        <div>
+          <nav>
+              <ul>
+                <li><%= link_to "My Cart", cart_path %></li>
+                <li><%= link_to "Login", login_path %></li>
+              </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <%= yield %>
+      </main>
+
+      <footer>
+        <h5>Copyright &copy<%= Time.now.year %></h5>
+      </footer>
     </div>
   </body>
 </html>

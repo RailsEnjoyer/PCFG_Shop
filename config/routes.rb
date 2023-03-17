@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/support', to: 'main#support'
   get '/about', to: 'main#about'
   get '/configurator', to: 'main#configurator'
+  get '/login', to: 'main#login'
 end

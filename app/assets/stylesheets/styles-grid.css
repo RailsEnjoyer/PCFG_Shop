@@ -1,79 +1,91 @@
-* {
-    margin: 0;
-    padding: 0;
+html{
     box-sizing: border-box;
 }
 
-.wrapper {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 80px auto 80px;
-    grid-template-areas: 
-        "header"
-        "content"
-        "footer";
+*, *::after, *::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-    grid-area: header;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
+ul  {
+    list-style-type: none;
+}
 
+a   {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.header {
+    background-color: #151515;
+}
+
+.header-main {
+    /*background-color: transparent;*/
+}
+
+.header__inner {
+    padding-top: 40px;
+    padding-bottom: 45px;
     display: flex;
-    align-content: center;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-div>header>h1 {
-    padding-top: 2.5vh;
-    padding-left: 1vh;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-}
-
-main {
-    grid-area: content;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-}
-
-footer {
-    grid-area: footer;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
-nav>ul {
-    list-style: none;
+.menu__list {
     display: flex;
-    
+    gap: 35px;
 }
 
-nav>ul>li {
-    padding-left: 50px;
-    padding-top: 30px;
+.menu__list-link {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-nav>ul>li>a {
-    color: rgb(255, 255, 255);
+.footer {
+    background-color: #151515;
+    padding: 50px 0 32px;
+    color: white;
 }
 
-div>nav {
-    color: rgb(252, 252, 252);
-    padding-left: 21vh;
+.footer__menu-list {
+    min-width: 250px;
 }
 
-main>section>article>p {
-    padding-left: 50px;
-    padding-top: 30px;
+.footer__menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.footer__menu-title {
+    font-size: 24px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.footer__menu-item + .footer__menu-item{
+    padding-top: 20px;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    gap :40px;
+    margin-bottom: 52px;
 }

@@ -1,52 +1,156 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PCFG Shop</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PCFG Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-
     <div class="wrapper">
-
-      <header>
-        <div class="logo"><%= image_tag("logos/logo.png", height:'70px', alt:'') %></div>
-        <h1>PC Configurator</h1>
-
-        <nav>
-          <ul>
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Catalogue", components_path %></li>
-            <li><%= link_to "Configurator", configurator_path %></li>
-            <li><%= link_to "News", news_path %></li>
-            <li><%= link_to "About us", about_path %></li>
-            <li><%= link_to "FAQ / Support", support_path %></li>
-
-          </ul>
-        </nav>
-
-        <div>
-          <nav>
-              <ul>
-                <li><%= link_to "My Cart", cart_path %></li>
-                <li><%= link_to "Login", login_path %></li>
-              </ul>
+<!-- header section starts -->
+    <header class="header header-main">
+      <div class="container">
+        <div class="header__inner">
+          <a class="logo">
+            <%= image_tag("logos/logo.png", :alt => "logo img", width: '100px', class:"logo__img") %>
+          </a>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">Home</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">Catalogue</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">Configurator</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">News</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">About us</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">FAQ/Support</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">My Cart</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">Login</a>
+              </li>
+            </ul>
           </nav>
         </div>
-      </header>
-
-      <main>
-        <%= yield %>
-      </main>
-
-      <footer>
-        <h5>Copyright &copy<%= Time.now.year %></h5>
-      </footer>
+      </div>
+    </header>
+<!-- header section ends -->
+    <main class="main"></main>
+    <footer class="footer">
+      <div class="container">
+        <nav class="footer__menu">
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <p class="footer__menu-title">Products</p>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Catalogue</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Configurator</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Sell your component!</a>
+            </li>
+          </ul>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <p class="footer__menu-title">Resources</p>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">News</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">FAQ</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Contact us</a>
+            </li>
+          </ul>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <p class="footer__menu-title">Work with PCFG</p>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Partners</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Support project</a>
+            </li>
+          </ul>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <p class="footer__menu-title">About</p>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">About us</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Team</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#">Careers</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="app">
+          <li class="app__item">
+            <a class="app__item-link" href="#">
+              <%= image_tag("apps/appstore.svg", :alt => "get it on appstore", width: '203px', class:"app__item-img") %>
+            </a>
+          </li>
+          <li class="app__item">
+            <a class="app__item-link" href="#">
+              <%= image_tag("apps/googleplay.svg", :alt => "get it on google play", width: '200px', class:"app__item-img") %>
+            </a>
+          </li>
+        </ul>
+        <div class="footer__copy">
+          <p class="footer__copy-text">
+            For questions about PCFG Computer parts configurator & shop please call 1-888-777-6666.
+            Certified sellers are contractually obligated by PCFG to meet certain customer
+            service requirements and complete the
+            PCFG Seller Certification Program.
+          </p>
+          <p class="footer__copy-text">
+            PCFG does not broker or sell computer components. Unless otherwise noted, all
+            components shown on this website are
+            offered for sale by licensed computer parts sellers. All components are subject to
+            prior sale. By accessing this websitee,
+            you agree to the PCFG Term of Service and Privacy Policy.
+          </p>
+        </div>
+        <nav class="copy__nav">
+          <ul class="copy__nav-list">
+            <li class="copy__nav-item">
+              <a class="copy__nav-link" href="#">Terms of Service</a>
+            </li>
+            <li class="copy__nav-item">
+              <a class="copy__nav-link" href="#">Privacy Policy</a>
+            </li>
+            <li class="copy__nav-item">
+              <a class="copy__nav-link" href="#">Site is fully pet-project @railsenjoyer  (all information is fake)</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
     </div>
   </body>
 </html>

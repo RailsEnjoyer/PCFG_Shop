@@ -1,10 +1,12 @@
 class ComponentsController < ApplicationController
   before_action :set_component, only: %i[update show destroy edit]
+  layout "new", only: %i[new]
 
   def create 
+
     component = Component.create(component_params)
 
-    redirect_to component_path(component)
+    redirect_to compoenents_path @component
   end
 
   def update 

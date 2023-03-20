@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   
   resources :components
 
-  get '/main', to: 'main#index'
   get '/cart', to: 'main#cart'
   get '/news', to: 'main#news'
   get '/support', to: 'main#support'

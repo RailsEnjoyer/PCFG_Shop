@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url(../fonts/Montserrat.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Boge', sans-serif;
+    src: url(../fonts/Boge.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url(../fonts/Roboto.ttf);
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'RubikIso', sans-serif;
+    src: url(../fonts/RubikIso.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+    color: white;
+}
+
+.header {
+    border-bottom: 1px solid #c00000;
+    background-color: #1d1d1d;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: rgb(136, 10, 10);
+    text-transform: uppercase;
+}
+
+.logo {
+    font-family: 'Boge';
+    font-weight: 400;
+    font-size: 30px;
+    padding-left: 50px;
+}
+
+.menu {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    gap: 0 40px;
+    padding-left: 150px;
+}
+
+.menu__login {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    margin-right: 50px;
+    gap: 0 25px;
+}
+
+.basket {
+   position: relative;
+}
+
+.basket--on span {
+    font-size: 11px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    right: -2px;
+}
+
+.top {
+    min-height: calc(100vh - 81px);
+    background-image: url(../stylesheets/images/pc2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 10%;
+    font-size: 80px;
+    margin-bottom: 20px;
+    margin-left: 160px;
+}
+
+.subtitle {
+    font-size: 36px;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+
+.top__text{
+    font-size: 20px;
+    margin-bottom: 50px;
+    margin-left: 420px;
+    margin-top: 10px;
+}
+
+.buy-btn{
+    cursor: pointer;
+    border: none;
+    background-color: rgb(100, 0, 0);
+    display: flex;
+    padding: 0;
+    text-transform: uppercase;
+    padding: 1px;
+    border-radius: 10px;
+    margin-left: 345px;
+    margin-top: 250px;
+    font-size: 20px;
+}
+
+.buy-btn__text {
+    color: white;
+    padding: 20px 90px;
+}
+
+.buy-btn__price{
+    background-color: rgb(90, 0, 0);
+    padding: 20px 85px;
+    border-radius: 10px;
+}

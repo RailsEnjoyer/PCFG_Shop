@@ -79,9 +79,22 @@ body {
     color: white;
 }
 
+ul>li {
+    align-items: center;
+    display: grid;
+    padding: 0 20px;
+}
+
+ul>li:hover {
+    background: rgb(130, 0, 0);
+    color: white;
+    padding: 25px 20px;
+    transition: 0.5s;
+}
+
 .header {
     border-bottom: 1px solid #c00000;
-    background-color: #1d1d1d;
+    background-color: #030303;
 }
 
 .main {
@@ -104,15 +117,22 @@ body {
     margin-left: 100px;
 }
 
+.logo:hover {
+    color: white;
+    transition: 0.5s;
+    font-size: 35px;
+}
+
 .menu {
     font-family: 'Montserrat', sans-serif;
     display: flex;
-    gap: 0 40px;
-    margin-left: 250px;
+    font-weight: 700;
+    margin-left: 100px;
 }
 
 .menu__login {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     display: flex;
     gap: 0 25px;
     margin-left: 100px;
@@ -127,9 +147,9 @@ body {
     font-size: 11px;
     width: 15px;
     height: 15px;
-    background-color: white;
+    background-color: rgb(90, 0, 0);
     border-radius: 50%;
-    color: black;
+    color: white;
     position: absolute;
     display: flex;
     align-items: center;
@@ -153,13 +173,27 @@ body {
     font-size: 80px;
     margin-bottom: 20px;
     margin-left: 200px;
-    font-weight: 400;
+    font-weight: 700;
+    animation: appear 0.5s;
+}
+
+@keyframes appear {
+    0% { filter: brightness(0%); }
+    15% { filter: brightness(15%); }
+    30% { filter: brightness(30%); }
+    45% { filter: brightness(45%); }
+    60% { filter: brightness(60%); }
+    75% { filter: brightness(75%); }
+    90% { filter: brightness(90%); }
+    100% { filter: brightness(100%); }
 }
 
 .subtitle {
     font-size: 36px;
     margin-left: 400px;
     margin-top: 50px;
+    font-weight: 700;
+    animation: appear 1s;
 }
 
 .top__text{
@@ -167,6 +201,8 @@ body {
     margin-bottom: 50px;
     margin-left: 420px;
     margin-top: 10px;
+    font-weight: 700;
+    animation: appear 2s;
 }
 
 .buy-btn{
@@ -181,6 +217,26 @@ body {
     margin-left: 345px;
     margin-top: 250px;
     font-size: 20px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
+    animation: reveal 0s;
+    animation: slidein 2s;
+
+}
+
+@keyframes slidein {
+    0% { margin-left:-345px; }
+    100% { margin-left:345px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
 }
 
 .buy-btn__text {
@@ -208,9 +264,14 @@ body {
     display: flex;
 }
 
+.choose-us__titles {
+    display: flex;
+}
+
 .choose-us__title {
     flex-basis: 400px;
     padding-right: 20px;
+    font-weight: 500;
 }
 
 .choose-us__text {
@@ -220,6 +281,7 @@ body {
     margin-bottom: 20px;
     color: white;
     margin-left: 50px;
+    font-weight: 700;
 }
 
 .tabs {
@@ -233,6 +295,14 @@ body {
     align-items: start;
 }
 
+.tabs__btn-item:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: rgb(150, 0, 0);
+    transition: 0.3s;
+}
+
 .tabs__btn-item {
     font-weight: 700;
     margin-bottom: 20px;
@@ -240,7 +310,7 @@ body {
 }
 
 .tabs__btn-item--active {
-    color:#c00000
+    color:rgb(150, 0, 0)
 }
 
 .tabs__content {
@@ -287,6 +357,7 @@ body {
     justify-content: end;
     align-items: flex-start;
     padding: 9px 10px;
+    font-weight: 700;
 }
 
 .video__btn{
@@ -295,7 +366,7 @@ body {
 
 .video span {
     font-size: 16px;
-    color: #c00000;
+    color: rgb(150, 0, 0);
 }
 
 .game {
@@ -310,6 +381,7 @@ body {
 
 .game__title {
     margin-bottom: 50px;
+    font-weight: 700;
 }
 
 .game__inner {
@@ -325,6 +397,7 @@ body {
     text-transform: uppercase;
     font-size: 32px;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .game__descr-text {
@@ -420,6 +493,7 @@ body {
 
 .equipment__title {
     margin-bottom: 50px;
+    font-weight: 700;
 }
 
 .equipment__box {
@@ -497,6 +571,7 @@ body {
 
 .accessories__title {
     margin-bottom: 30px;
+    font-weight: 700;
 }
 
 .accessories__text {
@@ -613,4 +688,20 @@ body {
     position: absolute;
     right: 0;
     bottom: 5px;
+}
+
+footer {
+    background-color: #030303;
+    border-top: 1px solid rgb(130, 0, 0);
+    padding: 60px;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+    margin-left: 100px;
+}
+
+.social__item {
+    margin-left: 20px;
 }

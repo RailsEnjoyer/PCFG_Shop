@@ -20,7 +20,7 @@
           </div>
           <ul class="menu">
             <li class="menu__list">
-              <a class="menu__link" href="#">Home</a>
+              <%= link_to 'Home', root_path, class:'menu__link' %>
             </li>
             <li class="menu__list">
               <a class="menu__link" href="#">Catalogue</a>
@@ -349,7 +349,7 @@
                 <button class="form__btn" type="submit">Send</button>
               </form>
               <p class="contacts__text">
-                By signing up you agree to receive updates and marketing messages (e.g. ebail, social, etc.) from PCFG
+                By signing up you agree to receive updates and marketing messages (e.g. email, social, etc.) from PCFG
                 about PCFG's existing and future products and services.
                 Ypu may withdray your consent and unsubscribe at any time by clicking the undersubscribe
                 link included in your messages.
@@ -361,7 +361,49 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="footer">
+      <nav class="nav">
+          <div class="logo" href="#">
+            <a class="logo" href="#">Pcfg</a>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <a class="menu__link" href="#">Home</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Catalogue</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">FAQ / Support</a>
+            </li>
+          </ul>
+          <ul class="social" href="#">
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/yt.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/tg.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/inst.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+          </ul>
+        </nav>
     </footer>
     </div>
   </body>

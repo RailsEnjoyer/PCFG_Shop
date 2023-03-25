@@ -1,1 +1,415 @@
- <p>This web application was created to simplify the task of finding components for your PC, thanks to which you can save time and money, while getting the most competent assembly in the selected price range based on your needs.</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application-main', media: 'all' %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "main", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag('styles-main') %>
+  </head>
+  <body>
+
+    <header class="header">
+        <nav class="nav">
+          <div class="logo">
+            <%= link_to 'PCFG', root_path, class:'logo' %>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <%= link_to 'Home', root_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+               <%= link_to 'Catalogue', catalogue_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">FAQ / Support</a>
+            </li>
+          </ul>
+          <div class="basket">
+            <a class="basket" href="#">
+              <%= image_tag ("logos/cart.png"), height:"40px" ,alt:"cart" %>
+              <!-- <span>1</span> -->
+            </a>
+          </div>
+          <div class="menu__login">
+            <ul class="menu__login">
+              <li class="menu__list">
+                <a class="menu__link" href="#">Sing up</a>
+              </li>
+              <li class="menu__list">
+                <a class="menu__link" href="#">Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+<!-- header section ends -->
+    <main class="main">
+      <section class="top">
+        <div class="container">
+          <div class="top__innner">
+            <h1 class="title">PC Configurator & Store</h1>
+            <p class="subtitle">Try out new possibilities now!</p>
+            <p class="top__text">or visit our catalogue and find something you like</p>
+            <button class="buy-btn">
+              <span class="buy-btn__text">Configure Now!</span>
+              <span class="buy-btn__price">Free</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="choose-us">
+        <div class="container">
+          <div class="choose-us__titles">
+            <h2 class="choose-us__title section-title">Why you should choose us?</h2>
+            <p class="choose-us__text">Easy to use - safe to purchase</p>
+          </div>
+          <div class="tabs">
+            <div class="tabs__btn">
+              <button class="tabs__btn-item tabs__btn-item--active" data-button="content-1">1. Security</button>
+              <button class="tabs__btn-item" data-button="content-2">2. Precise algorithms</button>
+              <button class="tabs__btn-item" data-button="content-3">3. Online marketplace</button>
+              <button class="tabs__btn-item" data-button="content-4">4. Live help 24/7</button>
+              <button class="tabs__btn-item" data-button="content-5">5. Free access</button>
+              <button class="tabs__btn-item" data-button="content-6">6. Latest gaming news</button>
+            </div>
+            <div class="tabs__content">
+              <div class="tabs__content-item tabs__content-item--active" id="content-1">
+                <%= image_tag("tabs/safe_main.jpg", width: '450px', class: "tabs__content-img", alt:"") %>
+                <div class="tabs__content-box">
+                  <h3>Return guarantee</h3>
+                  <p>
+                    We provide a full refund if the product fails to meet the advertised specifications, or if it is damaged.
+                  </p>
+                </div>
+                <div class="video">
+                  <button class="video__btn">
+                    <%= image_tag("tabs/play.png", width: '50px', alt:"") %>
+                  </button>
+                  <span>Watch the video</span>
+                </div>
+              </div>
+              <div class="tabs__content-item" id="content-2"><%= image_tag("tabs/calc.jpg", width: '450px', class: "tabs__content-img", alt:"") %>
+                <div class="tabs__content-box">
+                  <h3>Configurator</h3>
+                  <p>
+                    Our configurator uses precise algorithms to fully match the components to the game, including video reviews.
+                  </p>
+                </div>
+                <div class="video">
+                  <button class="video__btn">
+                    <%= image_tag("tabs/play.png", width: '50px', alt:"") %>
+                  </button>
+                  <span>Watch the video</span>
+                </div>
+              </div>
+              <div class="tabs__content-item" id="content-3"><%= image_tag("tabs/market.png", width: '450px', class: "tabs__content-img", alt:"") %>
+                <div class="tabs__content-box">
+                  <h3>Already know what you need?</h3>
+                  <p>
+                    Then visit our Catalogue, where you can order components individually!
+                  </p>
+                </div>
+                <div class="video">
+                  <button class="video__btn">
+                    <%= image_tag("tabs/play.png", width: '50px', alt:"") %>
+                  </button>
+                  <span>Watch the video</span>
+                </div></div>
+              <div class="tabs__content-item" id="content-4"><%= image_tag("tabs/help.png", width: '450px', class: "tabs__content-img", alt:"") %>
+                <div class="tabs__content-box">
+                  <h3>Stay in the spotlight</h3>
+                  <p>
+                    Our operators are happy to answer all your questions in the shortest possible time, 24/7.
+                  </p>
+                </div>
+                <div class="video">
+                  <button class="video__btn">
+                    <%= image_tag("tabs/play.png", width: '50px', alt:"") %>
+                  </button>
+                  <span>Watch the video</span>
+                </div></div>
+              <div class="tabs__content-item" id="content-5"><%= image_tag("tabs/free.jpg", width: '450px', class: "tabs__content-img", alt:"") %>
+                <div class="tabs__content-box">
+                  <h3>I'm just looking</h3>
+                  <p>
+                    All site services are absolutely free, using the configurator and catalog is free of charge.
+                  </p>
+                </div>
+                <div class="video">
+                  <button class="video__btn">
+                    <%= image_tag("tabs/play.png", width: '50px', alt:"") %>
+                  </button>
+                  <span>Watch the video</span>
+                </div></div>
+              <div class="tabs__content-item" id="content-6"><%= image_tag("tabs/gaming.png", width: '450px', class: "tabs__content-img", alt:"") %>
+                <div class="tabs__content-box">
+                  <h3>What's new?</h3>
+                  <p>
+                    In the "News" section you can find out about the latest gaming innovations, the upcoming release of new components from well-known developers and much more.
+                  </p>
+                </div>
+                <div class="video">
+                  <button class="video__btn">
+                    <%= image_tag("tabs/play.png", width: '50px', alt:"") %>
+                  </button>
+                  <span>Watch the video</span>
+                </div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="game">
+        <div class="container">
+          <h2 class="section-title game__title">Supported games</h2>
+          <div class="game__inner">
+              <div class="game__descr">
+                <p class="game__descr-title">
+                  It's all fun and games
+                </p>
+                <p class="game__descr-text">
+                  Take a look at the supported games to choose from to match your perfect computer!
+                </p>
+                <a class="game__link" href="#">see all games</a>
+              </div>
+            <div class="game__item">
+              <%= image_tag("games/fortnite.avif", width: '300px', alt:"", class:"game__item-img") %>
+              <h3 class="game__item-title">
+                Fortnite
+              </h3>
+              <p class="game__item-text">
+                Fortnite is a survival game where 100 players fight against each other in player versus player combat to be the last one standing. It is a fast-paced, action-packed game, not unlike The Hunger Games, where strategic thinking is a must in order to survive. There are an estimated 125 million players on Fortnite.
+              </p>
+              <a class="game__item-link" href="#">see more</a>
+            </div>
+            <div class="game__item">
+              <%= image_tag("games/atomic.jpg", width: '300px', alt:"", class:"game__item-img") %>
+              <h3 class="game__item-title">
+                Atomic Heart
+              </h3>
+              <p class="game__item-text">
+                Atomic Heart is a game that confidently weds progressive themes found in science fiction literature from the likes of Philip K Dick and Isaac Asimov with adrenaline-fuelled set pieces synonymous with action movies from the 80s and 90s.              </p>
+              <a class="game__item-link" href="#">see more</a>
+            </div>
+            <div class="game__item">
+              <%= image_tag("games/re4.jpeg", width: '300px', alt:"", class:"game__item-img") %>
+              <h3 class="game__item-title">
+                Resident Evil 4
+              </h3>
+              <p class="game__item-text">
+                Resident Evil 4 is a survival horror game developed by Capcom Production Studio 4 and published by Capcom for the GameCube in 2005. Players control special agent Leon S. Kennedy who is on a mission to rescue the US president's daughter, Ashley Graham, who has been kidnapped by a religious cult in rural Spain.
+              </p>
+              <a class="game__item-link" href="#">see more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="buy">
+          <div class="glitch buy__bg" data-text="Cyberpunk 2077"></div>
+        <div class="container">
+          <div class="glow"></div>
+          <div class="scanlines"></div>
+        </div>
+        <%= image_tag("products/rtx-promo.png", width: '600px', alt:"", class:"game__item-img") %>
+        <p class="Ndescr">The NVIDIA® GeForce RTX™ 4090 is the ultimate GeForce graphics card. It delivers a huge leap in performance, efficiency, and artificial intelligence-based graphics. Experience ultra-high performance games, incredibly detailed virtual worlds, unprecedented performance, and new creative possibilities. Built on NVIDIA's Ada Lovelace architecture with 24GB of G6X memory, these graphics cards deliver an unparalleled experience for gamers and content creators.</p>
+        <button class="buy-btn">
+          <span class="buy-btn__text">Buy Now!</span>
+          <span class="buy-btn__price">-10%</span>
+        </button>
+      </div>
+      <section class="equipment">
+        <div class="container">
+          <h2 class="equipment__title section-title">What else we have?</h2>
+          <div class="equipment__box">
+            <div class="equipment__box-item equipment__box-item--one">
+              <%= image_tag("products/headset.png", width: '650px', alt:"", class:"equipment__box-img") %>
+              <p class="equipment__box-text">
+                <a href="#">Headset Kotion each G2000</a>
+              </p>
+            </div>
+            <div class="equipment__box-item">
+              <%= image_tag("products/chair.png", width: '300px', alt:"", class:"equipment__box-img") %>
+              <p class="equipment__box-text">
+                <a href="#">Gaming chair Noblechairs HERO TX</a>
+              </p>
+            </div>
+            <p class="equipment__box-title">
+              Take a look at popular gadget sets.
+            </p>
+            <div class="equipment__box-item">
+              <%= image_tag("products/mouse.png", width: '350px', alt:"", class:"equipment__box-img") %>
+              <p class="equipment__box-text">
+                <a href="#">Optical mouse Micro-Star International</a>
+              </p>
+            </div>
+            <div class="equipment__box-item">
+              <%= image_tag("products/keyboard.png", height:'244px', width: '350px', alt:"", class:"equipment__box-img") %>
+              <p class="equipment__box-text">
+                <a href="#">Gaming keyboard Razer Ornata Chroma</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="promo">
+        <div class="container">
+          <div class="promo__inner">
+            <button class="promo__btn">Watch</button>
+          </div>
+        </div>
+      </div>
+      <section class="accessories">
+        <div class="container">
+          <h2 class="accesssories__title section-title">accessories</h2>
+          <p class="accessories__text">
+            personalize every expirience
+          </p>
+          <div class="accessories__items">
+            <div class="accessories__item">
+              <%= image_tag("products/cooler.png", height:'244px', width: '350px', alt:"", class:"accessories__img") %>
+              <h3 class="accessories__item-title">
+                Air cooling
+              </h3>
+              <p class="accessories__item-text">
+                Cooler Master MasterAir Maker 8
+              </p>
+              <p class="accessories__item-price">
+                $59.99 USD
+              </p>
+              <button class="accessories__item-btn">
+                Buy now!
+              </button>
+            </div>
+            <div class="accessories__item">
+              <%= image_tag("products/pad.png", height:'244px', width: '350px', alt:"", class:"accessories__img") %>
+              <h3 class="accessories__item-title">
+                Mouse mat
+              </h3>
+              <p class="accessories__item-text">
+                Razer Firefly (RZ02-01350100-R3M1)
+              </p>
+              <p class="accessories__item-price">
+                $99.99 USD
+              </p>
+              <button class="accessories__item-btn">
+                Buy now!
+              </button>
+            </div>
+            <div class="accessories__item">
+              <%= image_tag("products/holder.png", height:'244px', width: '350px', alt:"", class:"accessories__img") %>
+              <h3 class="accessories__item-title">
+                Grafic card holder
+              </h3>
+              <p class="accessories__item-text">
+                ASUS ROG Herculx
+              </p>
+              <p class="accessories__item-price">
+                $79.99 USD
+              </p>
+              <button class="accessories__item-btn">
+                Buy now!
+              </button>
+            </div>
+            <div class="accessories__item">
+              <%= image_tag("products/games.png", height:'244px', width: '350px', alt:"", class:"accessories__img") %>
+              <h3 class="accessories__item-title">
+                PCFG Gift Cards
+              </h3>
+              <p class="accessories__item-text">
+                More than 30 games are available to choose from.
+              </p>
+              <p class="accessories__item-price">
+                $5-60 USD
+              </p>
+              <button class="accessories__item-btn">
+                Buy now!
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contacts">
+        <div class="container">
+          <h2 class="contacts__title">
+            Get news and updates
+          </h2>
+          <div class="contacts__inner">
+            <div class="contacts__form">
+              <form class="form">
+                <input class="form__input" type="text" placeholder="E-mail">
+                <button class="form__btn" type="submit">Send</button>
+              </form>
+              <p class="contacts__text">
+                By signing up you agree to receive updates and marketing messages (e.g. email, social, etc.) from PCFG
+                about PCFG's existing and future products and services.
+                Ypu may withdray your consent and unsubscribe at any time by clicking the undersubscribe
+                link included in your messages.
+                Your subscription is subject to the Terms and Privacy Policy.
+              </p>
+            </div>
+            <a class="contact__email" href="#">pcfgshop@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="nav">
+          <div class="logo" href="#">
+            <a class="logo" href="#">Pcfg</a>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <a class="menu__link" href="#">Home</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Catalogue</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">FAQ / Support</a>
+            </li>
+          </ul>
+          <ul class="social" href="#">
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/yt.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/tg.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/inst.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </footer>
+    </div>
+  </body>
+</html>

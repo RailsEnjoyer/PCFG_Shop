@@ -1,30 +1,3 @@
-@font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: url(../fonts/Montserrat.ttf);
-    font-style: normal;
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Boge', sans-serif;
-    src: url(../fonts/Boge.ttf);
-    font-style: normal;
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url(../fonts/Roboto.ttf);
-    font-style: normal;
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: 'RubikIso', sans-serif;
-    src: url(../fonts/RubikIso.ttf);
-    font-style: normal;
-    font-weight: 400;
-}
 
 html {
     box-sizing: border-box;
@@ -245,10 +218,20 @@ ul>li:hover {
     text-transform: uppercase;
 }
 
+.buy-btn__text:hover {
+    color: black;
+    transition: 0.5s;
+}
+
 .buy-btn__price {
     background-color: rgb(90, 0, 0);
     padding: 20px 85px;
     border-radius: 10px;
+}
+
+.buy-btn__price:hover {
+    color: black;
+    transition: 0.5s;
 }
 
 .choose-us  {
@@ -365,7 +348,7 @@ ul>li:hover {
 }
 
 .video span {
-    font-size: 16px;
+    font-size: 20px;
     color: rgb(150, 0, 0);
 }
 
@@ -415,11 +398,22 @@ ul>li:hover {
     background-color: black;
 }
 
+.game__link:hover {
+    background-color: rgb(100, 0, 0);
+    transition: 0.5s;
+}
+
 .game__item {
     border: 1px solid;
     padding: 10px 20px 18px;
     display: flex;
     flex-direction: column;
+}
+
+.game__item:hover {
+    border: 1px solid;
+    border-color: rgb(130, 0, 0);
+    transition: 1s;
 }
 
 .game__item-img {
@@ -440,46 +434,50 @@ ul>li:hover {
     font-size: 20px;
 }
 
+.game__item-link:hover {
+    color: rgb(150, 0, 0);
+    transition: 0.3s;
+}
+
 .buy {
     padding: 300px;
     text-align: center;
     position: relative;
     overflow-x: hidden;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 1)), url(../stylesheets/bg/spark.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)), url(../stylesheets/bg/cyberpunk.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
-    box-shadow: 30px 30px 80px 80px black inset;
+    box-shadow: 30px 30px 180px 180px black inset;
 }
 
 .buy__img {
     margin-bottom: 30px;
 }
 
+.buy-btn {
+    background-color:  rgb(130, 0, 0);
+    border: 1px solid;
+    border-color: black;
+}
+
+.buy-btn__price {
+    background-color:  rgb(90, 0, 0);
+}
+
 .buy .buy-btn {
     margin: 30px auto;
 }
-
-.buy__bg {
-    font-weight: 700;
-    font-size: 40px;
-    position: absolute;
-    animation: line-text 10s linear 0s infinite;
-    text-transform: uppercase;
-    display: inline-flex;
-    color: rgb(136, 10, 10);
+.Ndescr {
+    font-size: 20px;
 }
-
-@keyframes line-text {
-    from {
-        transform: translateX(140%);
-        transform-origin: left center;
-    }
-
-    to {
-        transform: translateX(-160%);
-        transform-origin: right center;
-    }
+.buy__bg {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 300;
+    font-size: 100px;
+    margin-left: 180px;
+    margin-bottom: 300px;
+    color: rgb(223, 163, 0);
 }
 
 .equipment {
@@ -517,6 +515,11 @@ ul>li:hover {
 
 .equipment__box-item--one {
     grid-row: 1/-1;
+}
+
+.equipment__box-item:hover {
+    color: rgb(130, 0, 0);
+    transition: 0.5s;
 }
 
 .promo {
@@ -557,6 +560,11 @@ ul>li:hover {
     left: 0;
     right: 0;
     margin: 0 auto;
+}
+
+.promo__btn:hover {
+    color: #030303;
+    transition: 0.3s;
 }
 
 .accessories {
@@ -624,6 +632,11 @@ ul>li:hover {
     font-weight: 700;
     text-align: center;
 
+}
+
+.accessories__item-btn:hover {
+    border-color: white;
+    transition: 0.5s;
 }
 
 .contacts {

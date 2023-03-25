@@ -1,6 +1,6 @@
 
-<!--<div class="container">
-  <h2 class="title-lg mb">New component</h2>
+<div>
+  <h2>New component</h2>
   <%= form_with model: @component do |form| %>
     <p><%= form.label :title, 'title' %></p>
     <p><%= form.text_area :title, class: 'form-text-area' %></p>
@@ -28,9 +28,8 @@
     <p><%= form.text_area :price %></p>
     <p><%= form.label :availability, 'availability' %></p>
     <p><%= form.text_area :availability %></p>
-    <p class="mt"><%= form.label :user_id, 'user ID' %></p>
-    <p><%= form.text_area :user_id, class: 'form-text-area' %></p>
-    <p class="mt"><%= form.submit 'Add new component!', class: 'button button-main' %></p>
+    <p><%= form.label :user_id, 'user ID' %></p>
+    <p><%= form.text_area :user_id %></p>
+    <p><%= form.submit 'Add new component!' %></p>
   <% end %>
 </div>
--->

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Catalogue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application-catalogue', media: 'all' %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "main", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag('styles-catalogue') %>
+  </head>
+  <body>
+
+    <header class="header">
+        <nav class="nav">
+          <div class="logo">
+            <%= link_to 'PCFG', root_path, class:'logo' %>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <%= link_to 'Home', root_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+               <%= link_to 'Catalogue', catalogue_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">FAQ / Support</a>
+            </li>
+          </ul>
+          <div class="basket">
+            <a class="basket" href="#">
+              <%= image_tag ("logos/cart.png"), height:"40px" ,alt:"cart" %>
+              <!-- <span>1</span> -->
+            </a>
+          </div>
+          <div class="menu__login">
+            <ul class="menu__login">
+              <li class="menu__list">
+                <a class="menu__link" href="#">Sing up</a>
+              </li>
+              <li class="menu__list">
+                <a class="menu__link" href="#">Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+<!-- header section ends -->
+    <main>
+      <section class="components">
+        <div class="container">
+          <h2 class="components__title-all">Catalogue</h2>
+          <div>
+            <% @components.each do |component| %>
+              <p class="all__components"><%= link_to component.title, "/components/#{component.id}" %></p>
+            <% end %>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <nav class="nav">
+          <div class="logo" href="#">
+            <a class="logo" href="#">Pcfg</a>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <a class="menu__link" href="#">Home</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Catalogue</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">FAQ / Support</a>
+            </li>
+          </ul>
+          <ul class="social" href="#">
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/yt.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/tg.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/inst.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </footer>
+    </div>
+  </body>
+</html>

@@ -150,6 +150,11 @@ ul>li:hover {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     margin: 30px;
+    font-size: 40px;
+}
+
+.component__logo {
+    width: 10%;
 }
 
 

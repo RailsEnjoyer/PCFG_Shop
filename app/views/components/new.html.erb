@@ -1,4 +1,5 @@
 
+
 <div>
   <h2>New component</h2>
   <%= form_with model: @component do |form| %>
@@ -30,6 +31,10 @@
     <p><%= form.text_area :availability %></p>
     <p><%= form.label :user_id, 'user ID' %></p>
     <p><%= form.text_area :user_id %></p>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
     <p><%= form.submit 'Add new component!' %></p>
   <% end %>
 </div>

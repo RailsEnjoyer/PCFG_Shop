@@ -12,6 +12,7 @@
 	<p>weight: <%= @component.weight %> g.</p>
 	<p>price: <%= @component.price %> USD$</p>
 	<p>available to buy now? <%= @component.availability %></p>
+	<%= image_tag(@component.image)%>
 	<p class="mt">added by user with ID: <%= @component.user_id %></p>
 
 	<div>

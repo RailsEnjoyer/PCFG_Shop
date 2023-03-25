@@ -62,10 +62,12 @@
       <section class="components">
         <div class="container">
           <h2 class="components__title-all">Catalogue</h2>
-          <div>
-            <% @components.each do |component| %>
-              <p class="all__components"><%= link_to component.title, "/components/#{component.id}" %></p>
-            <% end %>
+          <div class="component__logo all__components">
+              <% @components.each do |component| %>
+                <%= image_tag(component.image) %>
+                <%= link_to component.title, "/components/#{component.id}" %>
+                <%= link_to component.price, "/components/#{component.id}" %>
+              <% end %>
           </div>
         </div>
       </section>

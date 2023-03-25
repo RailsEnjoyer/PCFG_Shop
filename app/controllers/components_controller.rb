@@ -36,7 +36,7 @@ class ComponentsController < ApplicationController
 
   def component_params
     params.require(:component).permit(:title, :country, :brand, :market_date, :size, :connectors, :guarantee, :complete_set,
-    :rating, :weight, :price, :availability, :description, :user_id)
+    :rating, :weight, :price, :availability, :description, :user_id, :image)
   end
 
   def set_component

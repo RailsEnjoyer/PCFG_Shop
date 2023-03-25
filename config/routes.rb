@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/main', to: 'main#index'
   get '/catalogue', to: 'main#catalogue'
   resources :components
+  resources :catalogue
 
 
   get '/main', to: 'components#show'

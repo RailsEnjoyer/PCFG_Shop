@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application-catalogue', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "main", "data-turbo-track": "reload", defer: true %>
-    <%= stylesheet_link_tag('styles-catalogue') %>
+    <%= stylesheet_link_tag('/catalogue/styles') %>
   </head>
   <body>
 
@@ -41,7 +41,7 @@
           </ul>
           <div class="basket">
             <a class="basket" href="#">
-              <%= image_tag ("logos/cart.png"), height:"40px" ,alt:"cart" %>
+              <%= image_tag ("logos/cart.png"), height:"40px", alt:"cart" %>
               <!-- <span>1</span> -->
             </a>
           </div>
@@ -59,19 +59,46 @@
     </header>
 <!-- header section ends -->
     <main>
-      <section class="components">
+      <section class="catalogue__components">
         <div class="container">
           <h2 class="components__title-all">Catalogue</h2>
           <div class="component__logo all__components">
-              <% @components.each do |component| %>
+            <% @components.each do |component| %>
+              <div class="component__item">
+                <div class="component__title-main"><%= link_to component.title, "/components/#{component.id}" %></div>
                 <%= image_tag(component.image) %>
-                <%= link_to component.title, "/components/#{component.id}" %>
-                <%= link_to component.price, "/components/#{component.id}" %>
-              <% end %>
+                <div class="component__description">
+                  <%= component.brand %><br>
+                  <span class="description__label">Rating:</span>
+                  <% rating = component.rating.round(1) %>
+                  <span class="stars">
+                    <% for i in 1..5 do %>
+                      <% if rating >= i %>
+                        <%= image_tag('bg/star.png') %>
+                      <% elsif rating >= i - 0.5 && rating < i %>
+                        <%= image_tag('bg/half-star.png') %>
+                      <% else %>
+                        <%= image_tag('bg/empty-star.png') %>
+                      <% end %>
+                    <% end %>
+                  </span>
+                  <br>
+                  <span class="description__label">Price: <%= component.price %></span> $USD<br>
+                  <%= link_to 'See more', "/components/#{component.id}" %>
+                </div>
+              </div>
+            <% end %>
+            <h3 class="note">
+              Please note that the provided accessories are not all that we have on the site, 
+              for information about any part, please contact support, we probably have the part you are interested in,
+              even if it is not on this page! The configurator section provides a wider selection of accessories,
+              feel free to try them out!
+            </h3>
           </div>
         </div>
       </section>
     </main>
+<!-- header section ends -->
     <footer class="footer">
       <nav class="nav">
           <div class="logo" href="#">

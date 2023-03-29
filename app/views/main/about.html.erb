@@ -1,1 +1,137 @@
-ABOUT US INFO
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Catalogue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "main", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag('/about/styles') %>
+  </head>
+  <body>
+<!-- header section starts -->
+    <header class="header">
+        <nav class="nav">
+          <div class="logo">
+            <%= link_to 'PCFG', root_path, class:'logo' %>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <%= link_to 'Home', root_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+               <%= link_to 'Catalogue', catalogue_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <%= link_to 'News', news_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <%= link_to 'About Us', about_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
+            </li>
+          </ul>
+          <div class="basket">
+            <a class="basket" href="#">
+              <%= image_tag ("logos/cart.png"), height:"40px", alt:"cart" %>
+              <!-- <span>1</span> -->
+            </a>
+          </div>
+          <div class="menu__login">
+            <ul class="menu__login">
+              <li class="menu__list">
+                <a class="menu__link" href="#">Sing up</a>
+              </li>
+              <li class="menu__list">
+                <a class="menu__link" href="#">Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+<!-- header section ends -->
+<!-- main section starts -->
+   <main>
+      <div class="about">
+        <div class="about-heading">
+          <h2>About Us</h2>
+          <p>Hello, my name is Railsenjoyer and I created this website - a PC configurator, a catalog of computer parts, and articles with gaming news.</p>
+        </div>
+        <div class="about-content">
+          <p>This website is my pet project and I am very glad that you have taken the time to visit it. Although it is not perfect, I have tried to make it as convenient and useful as possible for you.</p>
+          <p>On this website, you will find an extensive catalog of computer parts that will help you build your perfect PC. You will also find a lot of articles with the latest gaming news that will help you stay up to date.</p>
+          <p>I would like to note that all the information on the website is fake. I do not have any rights to any brands or components. But I tried to make the information on the website as realistic and interesting as possible.</p>
+          <p>If you have any questions, suggestions or just want to say hello, feel free to contact me on Telegram: @Hakkimarui</p>
+        </div>
+      </div>
+      <div class="about">
+        <div class="about-heading">
+          <h2>О нас</h2>
+          <p>Привет, меня зовут Railsenjoyer, и я создал этот сайт - конфигуратор компьютеров, каталог компьютерных деталей и статьи с новостями о играх.</p>
+        </div>
+        <div class="about-content">
+          <p>Этот сайт - мой пет-проект, и я очень рад, что вы нашли время посетить его. Хотя он и не идеален, я старался сделать его как можно более удобным и полезным для вас.</p>
+          <p>На этом сайте вы найдете обширный каталог компьютерных деталей, который поможет вам собрать свой идеальный ПК. Вы также найдете много статей с последними новостями о играх, которые помогут вам оставаться в курсе.</p>
+          <p>Хотелось бы отметить, что вся информация на сайте - фейк. Я не обладаю правами ни на какие бренды и компоненты. Но я старался сделать информацию на сайте как можно более правдоподобной и интересной.</p>
+          <p>Если у вас есть какие-то вопросы, предложения или просто хотите поздороваться, свяжитесь со мной в телеграме: @Hakkimarui</p>
+        </div>
+      </div>
+   </main>
+<!-- main section ends -->
+<!-- footer section starts -->
+    <footer class="footer">
+      <nav class="nav">
+          <div class="logo" href="#">
+            <a class="logo" href="#">Pcfg</a>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <a class="menu__link" href="#">Home</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Catalogue</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">FAQ / Support</a>
+            </li>
+          </ul>
+          <ul class="social" href="#">
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/yt.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/tg.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/inst.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </footer>
+<!-- footer section ends -->
+    </div>
+  </body>
+</html>

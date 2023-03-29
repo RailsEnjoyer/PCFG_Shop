@@ -33,10 +33,10 @@
               <%= link_to 'News', news_path, class:'menu__link' %>
             </li>
             <li class="menu__list">
-              <a class="menu__link" href="#">About Us</a>
+              <%= link_to 'About Us', about_path, class:'menu__link' %>
             </li>
             <li class="menu__list">
-              <a class="menu__link" href="#">FAQ / Support</a>
+              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
             </li>
           </ul>
           <div class="basket">
@@ -85,21 +85,22 @@
                     <% end %>
                   </span>
                   <br>
-                  <span>Available to buy now? <%= component.availability %></span>
+                  <span class="availability">Available to buy now? <%= component.availability %></span><br>
                   <br>
-                  <span class="description__label">Price: <%= component.price %></span> $USD<br>
-                  <%= link_to 'See more', "/components/#{component.id}" %>
+                  <span class="price__label">Price: <%= component.price %></span> $USD<br>
+                  <br>
+                  <span class="more__info"><%= link_to 'See more', "/components/#{component.id}" %></span>
                 </div>
               </div>
             <% end %>
-            <h3 class="note">
-              Please note that the provided accessories are not all that we have on the site, 
-              for information about any part, please contact support, we probably have the part you are interested in,
-              even if it is not on this page! The configurator section provides a wider selection of accessories,
-              feel free to try them out!
-            </h3>
           </div>
         </div>
+        <h3 class="note">
+          Please note that the provided accessories are not all that we have on the site, 
+          for information about any part, please contact support, we probably have the part you are interested in,
+          even if it is not on this page! The configurator section provides a wider selection of accessories,
+          feel free to try them out!
+        </h3>
       </section>
     </main>
 <!-- main section ends -->

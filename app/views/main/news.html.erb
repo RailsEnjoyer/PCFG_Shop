@@ -33,10 +33,10 @@
               <%= link_to 'News', news_path, class:'menu__link' %>
             </li>
             <li class="menu__list">
-              <a class="menu__link" href="#">About Us</a>
+              <%= link_to 'About Us', about_path, class:'menu__link' %>
             </li>
             <li class="menu__list">
-              <a class="menu__link" href="#">FAQ / Support</a>
+              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
             </li>
           </ul>
           <div class="basket">
@@ -59,106 +59,22 @@
     </header>
 <!-- header section ends -->
 <!-- main section starts -->
-   <main>
-      <section class="news__main">
-        <div class="container">
-          <h2 class="news__title">Gaming News</h2>
-          <div class="news__box news__logo">
-            <div class="news__item">
-              <%= image_tag("news/er.jpg", width: '350px', height: '300px', alt:"") %>
-              <div class="news__text">
-                <h3 class="news__box-title">Elden Ring Fan Makes a Timeline of Wars in The Lands Between.</a></h3>
-                <p class="news__box-description">One highly informed Elden Ring player makes a timeline of
-                 the wars that happened throughout The Lands Between. The world of Elden Ring is full of conflict 
-                 as it has seen numerous violent encounters and wars over several centuries. Beings from multiple 
-                 factions inhabit The Lands Between, and it’s only natural that some groups will have disagreements, leading to violent conflicts.
-                 Currently, The Golden Order sits at the top of the power structure, thanks to the contribution of 
-                 prominent figures like Queen Marika, Radagon, and Godfrey. However, the current power dynamics of 
-                 The Lands Between result from multiple wars over hundreds of years between several groups. The 
-                 war of The Shattering is one of the most famous and crucial wars in Elden Ring’s lore, as the 
-                 demigod children of Radagon and Marika fought over the control of Great Runes. Many other wars 
-                 took place before the events of Elden Ring began, and one meticulous gamer has made a 
-                 comprehensive timeline showing every major violent conflict.
-                </p>
-              </div>
-            </div>
-            <div class="news__item">
-              <%= image_tag("news/re4.jpg", width: '350px', height: '300px', alt:"") %>
-              <div class="news__text">
-                <h3 class="news__box-title">Resident Evil 4 Sells Tremendously Well in Its First Two Days.</a></h3>
-                <p class="news__box-description">Capcom's recent remake of Resident Evil 4 has been experiencing 
-                tremendous success since it launched, and it's been revealed that the game sold more than three 
-                million units in just a couple of days. Horror games seem to be selling well at the moment, 
-                proving that the genre is as strong as ever. Scary video games may not be to everyone's taste, 
-                but with a lot to look forward to from both the AAA and indie scenes, there's plenty of choice on offer for fans.
-                Since releasing on March 24, Resident Evil 4 has been met with high praise, with the game being 
-                particularly noteworthy for its ability to retain what made the original so special while giving 
-                it a much-appreciated contemporary makeover. There are some who even feel it may have surpassed 
-                its predecessor in terms of quality. Even before the game launched, people had high hopes for 
-                it, thanks in part to the demo that gave players a tiny slice of things to come.
-                </p>
-              </div>
-            </div>
-            <div class="news__item">
-              <%= image_tag("news/valheim.jpg", width: '350px', height: '300px', alt:"") %>
-              <div class="news__text">
-                <h3 class="news__box-title">Valheim Update Puts Player's House in Unfortunate Position.</a></h3>
-                <p class="news__box-description">One Valheim player has found that his base wasn't quite where he 
-                 left it when he returned to the game after a recent update. A lot of hard work goes into crafting 
-                 bases in Valheim and protecting them against unfortunate disasters is a big part of the game.
-                  Because of Valheim's procedural generation, updates can sometimes spell havoc for players' 
-                  established worlds. Terrain may change entirely, there may be rivers or hills where there was 
-                  once dry ground or plains. Despite Valheim recently being added to Xbox Game Pass, it is still 
-                  in early access, and as a result, updates are very common, meaning homes players have labored 
-                  over are occasionally at risk.
-                  Reddit user Q_Man_17 shared the unfortunate position he found his own base in when returning to 
-                  the game after an update. It was perched precariously atop a natural rock hill surrounded by 
-                  lashing waves, with no apparent way of reaching it. Understandably frustrating, this can 
-                  sometimes happen in the game as it frequently updates and the procedurally generated game world 
-                  is unpredictably changed.
-                </p>
-              </div>
-            </div>
-            <div class="news__item">
-              <%= image_tag("news/fh5.jpg", width: '350px', height: '300px', alt:"") %>
-              <div class="news__text">
-                <h3 class="news__box-title">Forza Horizon 5 Adds Tuning Options, Body Kits, and More in Free Seasonal Update.</a></h3>
-                <p class="news__box-description">Forza Horizon 5 is getting its all-new Rally Adventure DLC on 
-                 March 29, but developer Playground Games is also using the opportunity to deploy a substantial 
-                 new seasonal update that's free for all players. Ever since FH5 launched in 2021, Playground has 
-                 been putting out free post-launch content at a brisk pace, and this is seemingly bound to continue 
-                 even after the supposedly final DLC pack comes out.
-                 Notably, while there's a significant chunk of paid content being added with Forza Horizon 5's 
-                 Rally Adventure that players will need to purchase, there seems to be no shortage of free goodies 
-                 coming along too. Featured as part of the new seasonal update, Midnights at Horizon, this batch 
-                 of content also includes DLSS 3.0 and steering wheel rotation support, lending more flexibility 
-                 to the technical side of the game.
-                </p>
-              </div>
-            </div>
-            <div class="news__item">
-              <%= image_tag("news/tlou.jpg", width: '350px', height: '300px', alt:"") %>
-              <div class="news__text">
-                <h3 class="news__box-title">Some Last of Us PC Players Are Experiencing Hour-Long Loading Times.</a></h3>
-                <p class="news__box-description">Some gamers have reported experiencing hour-long load times while 
-                 playing The Last of Us Part 1 on PC. The game is a remake of the PS3 original from 2013 and 
-                 features upgraded visuals and redone character models. It came out on PS5 in September 2022 and 
-                 released for PC on March 28, 2023, with the PC port being handled by Naughty Dog and Iron Galaxy.
-                  It looks like players have been dealing with numerous issues with the PC version of The Last of 
-                  Us Part 1, resulting in it getting review bombed on Steam. The Last of Us Part 1 currently has 
-                  a rating of “Mostly Negative” on that storefront, with many users expressing their 
-                  disappointment with the game’s optimization. It seems like several gamers are experiencing 
-                  crashes while trying to play The Last of Us Part 1 on PC, despite being above the recommended 
-                  hardware specs, with some players also running into ridiculously long loading times when trying 
-                  to play the game.
-                </p>
-              </div>
-            </div>
+   <main class="news__main">
+      <div class="container">
+        <h2 class="category__news">Gaming news</h2>
+        <div class="news__item">
+          <div class="news__text">
+            <h2 class="news__title">Elden Ring Fan Makes a Timeline of Wars in The Lands Between</h2>
+          </div>
+          <div class="news__image">
+            <%= image_tag("news/er.jpg") %>
+          </div>
+          <div class="news__text">
+            <p class="news__description">One highly informed Elden Ring player makes a timeline of the wars that happened throughout The Lands Between. The world of Elden Ring is full of conflict as it has seen numerous violent encounters and wars over several centuries. Beings from multiple factions inhabit The Lands Between, and it’s only natural that some groups will have disagreements, leading to violent conflicts. Currently, The Golden Order sits at the top of the power structure, thanks to the contribution of prominent figures like Queen Marika, Radagon, and Godfrey. However, the current power dynamics of The Lands Between result from multiple wars over hundreds of years between several groups. The war of The Shattering is one of the most famous and crucial wars in Elden Ring’s lore, as the demigod children of Radagon and Marika fought over the control of Great Runes. Many other wars took place before the events of Elden Ring began, and one meticulous gamer has made a comprehensive timeline showing every major violent conflict.</p>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
-
+    </main>
 <!-- main section ends -->
 <!-- footer section starts -->
     <footer class="footer">
@@ -183,7 +99,7 @@
               <a class="menu__link" href="#">About Us</a>
             </li>
             <li class="menu__list">
-              <a class="menu__link" href="#">FAQ / Support</a>
+              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
             </li>
           </ul>
           <ul class="social" href="#">

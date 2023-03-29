@@ -129,6 +129,7 @@ ul>li:hover {
 }
 
 .container {
+    width: 1280px;
     padding: 100px 0;
 }
 
@@ -138,45 +139,6 @@ ul>li:hover {
     background-size: cover;
     background-position: bottom center;
     box-shadow: 30px 30px 80px 80px black inset;
-}
-
-.news__title {
-    padding-bottom: 50px;
-    font-size: 60px;
-    font-weight: 700;
-}
-
-.news__box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-  
-.news__item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-}
-  
-.news__item img {
-    margin-right: 20px;
-}
- 
-.news__box-title {
-    margin-bottom: 50px;
-    font-size: 30px;
-    color: rgb(136, 10, 10);
-}
-
-.news__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: calc(100% - 320px);
-    margin-bottom: 50px;
-    font-size: 20px;
 }
 
 footer {

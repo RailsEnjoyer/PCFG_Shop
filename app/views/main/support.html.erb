@@ -1,1 +1,137 @@
-SUPPORT INFO
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Catalogue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "main", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag('/support/styles') %>
+  </head>
+  <body>
+<!-- header section starts -->
+    <header class="header">
+        <nav class="nav">
+          <div class="logo">
+            <%= link_to 'PCFG', root_path, class:'logo' %>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <%= link_to 'Home', root_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+               <%= link_to 'Catalogue', catalogue_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <%= link_to 'News', news_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <%= link_to 'About Us', about_path, class:'menu__link' %>
+            </li>
+            <li class="menu__list">
+              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
+            </li>
+          </ul>
+          <div class="basket">
+            <a class="basket" href="#">
+              <%= image_tag ("logos/cart.png"), height:"40px", alt:"cart" %>
+              <!-- <span>1</span> -->
+            </a>
+          </div>
+          <div class="menu__login">
+            <ul class="menu__login">
+              <li class="menu__list">
+                <a class="menu__link" href="#">Sing up</a>
+              </li>
+              <li class="menu__list">
+                <a class="menu__link" href="#">Login</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+<!-- header section ends -->
+<!-- main section starts -->
+   <main>
+    <div class="container">
+      <section class="help">
+        <h2 class="help__help-main">Need Help?</h2>
+        <p>We understand how important our customers are and we are always here to help you in any way we can. If you have any questions or concerns about our products or services, please do not hesitate to contact us.</p>
+        <p>We offer a variety of ways to get in touch with us:</p>
+        <ul>
+          <li>Phone: 1-800-123-4567</li><br>
+          <li>Email: support@computerpartsshop.com</li><br>
+        </ul>
+        <p>We are available to assist you Monday through Friday from 9am to 5pm EST.</p>
+      </section>
+      <section class="delivery">
+        <h2 class="delivery-main">Delivery</h2>
+        <p>We offer free standard shipping on all orders over $50. For orders under $50, we offer flat rate shipping of $5.99.</p>
+        <p>Please allow 1-2 business days for us to process your order. Once your order has been shipped, you will receive a tracking number via email.</p>
+        <p>If you need your order faster, we offer expedited shipping options at an additional cost. Please contact us for more information.</p>
+      </section>
+      <section class="returns">
+        <h2 class="returns-main">Returns & Exchanges</h2>
+        <p>If you are not completely satisfied with your purchase, you may return it for a full refund within 30 days of the purchase date. The item must be in its original condition and packaging.</p>
+        <p>If you need to exchange an item, please contact us and we will be happy to assist you.</p>
+        <p>Please note that we do not cover the cost of return shipping, unless the item is defective or damaged.</p>
+      </section>
+    </div>
+   </main>
+<!-- main section ends -->
+<!-- footer section starts -->
+    <footer class="footer">
+      <nav class="nav">
+          <div class="logo" href="#">
+            <a class="logo" href="#">Pcfg</a>
+          </div>
+          <ul class="menu">
+            <li class="menu__list">
+              <a class="menu__link" href="#">Home</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Catalogue</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">Configurator</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">News</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">About Us</a>
+            </li>
+            <li class="menu__list">
+              <a class="menu__link" href="#">FAQ / Support</a>
+            </li>
+          </ul>
+          <ul class="social" href="#">
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/yt.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/tg.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link">
+                <%= image_tag ("logos/inst.png"), height:"40px" ,alt:"cart" %>
+              </a>
+            </li>
+          </ul>
+        </nav>
+    </footer>
+<!-- footer section ends -->
+    </div>
+  </body>
+</html>

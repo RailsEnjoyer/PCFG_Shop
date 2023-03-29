@@ -3,5 +3,6 @@
  *= require 'stylesc'
  *= require 'catalogue/styles'
  *= require 'news/styles'
+ *= require 'about/styles'
  *= require_tree
  */

@@ -13,7 +13,7 @@
     <%= stylesheet_link_tag('/catalogue/styles') %>
   </head>
   <body>
-
+<!-- header section starts -->
     <header class="header">
         <nav class="nav">
           <div class="logo">
@@ -30,7 +30,7 @@
               <a class="menu__link" href="#">Configurator</a>
             </li>
             <li class="menu__list">
-              <a class="menu__link" href="#">News</a>
+              <%= link_to 'News', news_path, class:'menu__link' %>
             </li>
             <li class="menu__list">
               <a class="menu__link" href="#">About Us</a>
@@ -58,10 +58,12 @@
         </nav>
     </header>
 <!-- header section ends -->
+<!-- main section starts -->
     <main>
       <section class="catalogue__components">
         <div class="container">
           <h2 class="components__title-all">Catalogue</h2>
+          <p class="subtitle__main blink">Popular choices</p>
           <div class="component__logo all__components">
             <% @components.each do |component| %>
               <div class="component__item">
@@ -83,6 +85,8 @@
                     <% end %>
                   </span>
                   <br>
+                  <span>Available to buy now? <%= component.availability %></span>
+                  <br>
                   <span class="description__label">Price: <%= component.price %></span> $USD<br>
                   <%= link_to 'See more', "/components/#{component.id}" %>
                 </div>
@@ -98,7 +102,8 @@
         </div>
       </section>
     </main>
-<!-- header section ends -->
+<!-- main section ends -->
+<!-- footer section starts -->
     <footer class="footer">
       <nav class="nav">
           <div class="logo" href="#">
@@ -143,6 +148,7 @@
           </ul>
         </nav>
     </footer>
+<!-- footer section ends -->
     </div>
   </body>
 </html>

@@ -132,106 +132,52 @@ ul>li:hover {
     padding: 100px 0;
 }
 
-.catalogue__components {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.8)), url(../../stylesheets/bg/cat-bg.jpg);
+.news__main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 1)), url(../../stylesheets/bg/bg-news.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
     box-shadow: 30px 30px 80px 80px black inset;
 }
 
-.components__title-all {
+.news__title {
+    padding-bottom: 50px;
     font-size: 60px;
-    margin-bottom: 60px;
-    animation: appear 1s;
-}
-
-.subtitle__main {
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
-.blink {
-    animation: blinker 4s linear infinite;
-  }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-}
-
-.component__title-main {
-    margin: 10px;
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
     font-weight: 700;
 }
 
-.component__title-main:hover {
-    color: rgb(130, 0, 0);
-    transition: 0.5s;
-}
-
-.component__logo {
+.news__box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
-.component__description {
-    margin-left: 15px;
-    margin-top: 20px;
+  
+.news__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
 }
   
-.component__item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: -1px;
+.news__item img {
+    margin-right: 20px;
+}
+ 
+.news__box-title {
+    margin-bottom: 50px;
+    font-size: 30px;
+    color: rgb(136, 10, 10);
 }
 
-.component__item {
-    width: calc(100% / 5 - 20px);
-    margin-bottom: 20px;
+.news__text {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    border: 1px solid white;
-    box-sizing: border-box;
-}
-
-.component__description a:last-child {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 5px;
-    padding: 10px;
-    border: 1px solid white;
-    box-sizing: border-box;
-    margin-left: 30px;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(100% - 320px);
+    margin-bottom: 50px;
     font-size: 20px;
-    font-weight: 700;
 }
-
-.component__description a:last-child:hover {
-    border-color: rgb(130, 0, 0);
-    transition: 0.5s;
-    color: rgb(130, 0, 0);
-}
-
-.stars {
-    display: flex;
-    width: 16px;
-    height: 16px;
-}
-
-.note {
-    margin-top: 80px;
-}
-
 
 footer {
     background-color: #030303;

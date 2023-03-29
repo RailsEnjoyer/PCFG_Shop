@@ -13,7 +13,7 @@
     <%= stylesheet_link_tag('styles') %>
   </head>
   <body>
-
+<!-- header section starts -->
     <header class="header">
         <nav class="nav">
           <div class="logo">
@@ -30,7 +30,7 @@
               <a class="menu__link" href="#">Configurator</a>
             </li>
             <li class="menu__list">
-              <a class="menu__link" href="#">News</a>
+              <%= link_to 'News', news_path, class:'menu__link' %>
             </li>
             <li class="menu__list">
               <a class="menu__link" href="#">About Us</a>
@@ -58,6 +58,7 @@
         </nav>
     </header>
 <!-- header section ends -->
+<!-- main section starts -->
     <main class="main">
       <section class="top">
         <div class="container">
@@ -367,6 +368,8 @@
         </div>
       </section>
     </main>
+<!-- main section ends -->
+<!-- footer section starts -->
     <footer class="footer">
       <nav class="nav">
           <div class="logo" href="#">
@@ -411,6 +414,7 @@
           </ul>
         </nav>
     </footer>
+<!-- footer section ends -->
     </div>
   </body>
 </html>

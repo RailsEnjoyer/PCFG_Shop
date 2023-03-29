@@ -2,5 +2,6 @@
  *= require 'styles'
  *= require 'stylesc'
  *= require 'catalogue/styles'
+ *= require 'news/styles'
  *= require_tree
  */

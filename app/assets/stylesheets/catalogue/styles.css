@@ -182,50 +182,53 @@ ul>li:hover {
     margin: 20px auto;
     max-width: 100%;
     padding: 20px;
-  }
+}
   
-  .component__item {
+.component__item {
     border-radius: 10px;
     border: 2px solid rgb(90, 0, 0);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
-  }
+}
   
-  .component__title-main {
+.component__title-main {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-  }
+}
   
-  .component__description {
+.component__description {
     margin-top: 10px;
     text-align: center;
-  }
+}
   
-  .price__label {
+.price__label {
     font-weight: bold;
-  }
+}
 
-  .more__info {
+.more__info {
     font-weight: 700;
     font-size: 20px;
-  }
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 6px 40px;
+}
 
-  .more__info:hover {
+.more__info:hover {
     color: rgb(130, 0, 0);
     transition: 0.5s;
-  }
+}
   
-  .stars {
+.stars {
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
-  }
+}
   
-  .stars img {
+.stars img {
     height: 15px;
     width: 15px;
-  }
+}
 
 .note {
     margin: 0 auto;

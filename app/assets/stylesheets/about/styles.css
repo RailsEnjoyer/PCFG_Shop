@@ -128,8 +128,8 @@ ul>li:hover {
     right: -2px;
 }
 
-main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 1)), url(../../stylesheets/bg/about.png);
+.about__about-main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 1)), url(../../stylesheets/bg/about.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

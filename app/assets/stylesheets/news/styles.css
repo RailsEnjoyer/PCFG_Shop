@@ -128,17 +128,85 @@ ul>li:hover {
     right: -2px;
 }
 
+.news__main {
+    background: black;
+    background-color: black;
+}
+
 .container {
     width: 1280px;
     padding: 100px 0;
 }
 
-.news__main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 1)), url(../../stylesheets/bg/bg-news.jpg);
+.first-news {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.8)), url(../../stylesheets/bg/bg-news.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
     box-shadow: 30px 30px 80px 80px black inset;
+}
+
+.second-news {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.8)), url(../../stylesheets/bg/w4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    box-shadow: 30px 30px 80px 80px black inset;
+}
+
+.third-news {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.8)), url(../../stylesheets/bg/wow.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    box-shadow: 30px 80px 80px 80px black inset;
+}
+
+.fourth-news {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.8)), url(../../stylesheets/bg/diablo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    box-shadow: 30px 30px 80px 80px black inset;
+}
+
+.fifth-news {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.8)), url(../../stylesheets/bg/apex.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    box-shadow: 30px 30px 80px 80px black inset;
+}
+
+.category__news {
+    margin-top: 100px;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.news__title {
+    margin-top: 80px;
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+    margin-bottom: 10px;
+    text-align: center;
+    animation: color 4s linear infinite;
+}   
+
+@keyframes color {
+    50% {
+        color: rgb(130, 0, 0);
+    }
+}
+
+
+.news__text:last-child {
+    margin-top: 10px;
+    border-bottom: 2px white solid;
+}
+
+.news__description:first-child {
+    border-top: 2px white solid;
 }
 
 footer {

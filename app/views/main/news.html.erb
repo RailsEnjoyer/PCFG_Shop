@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PCFG Catalogue</title>
+    <title>PCFG News</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
@@ -168,25 +168,16 @@
             <li class="menu__list">
               <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
             </li>
-            <li class="menu__list">
-              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
-            </li>
           </ul>
-          <ul class="social" href="#">
+          <ul class="social">
             <li class="social__item">
-              <a class="social__link">
-                <%= image_tag ("logos/yt.png"), height:"40px" ,alt:"cart" %>
-              </a>
+              <%= link_to(image_tag("logos/yt.png", height: "40px", alt: "cart"), "https://www.youtube.com/") %>
             </li>
             <li class="social__item">
-              <a class="social__link">
-                <%= image_tag ("logos/tg.png"), height:"40px" ,alt:"cart" %>
-              </a>
+              <%= link_to(image_tag("logos/tg.png", height: "40px", alt: "cart"), "https://telegram.org/") %>
             </li>
             <li class="social__item">
-              <a class="social__link">
-                <%= image_tag ("logos/inst.png"), height:"40px" ,alt:"cart" %>
-              </a>
+              <%= link_to(image_tag("logos/inst.png", height: "40px", alt: "cart"), "https://www.instagram.com/") %>
             </li>
           </ul>
         </nav>

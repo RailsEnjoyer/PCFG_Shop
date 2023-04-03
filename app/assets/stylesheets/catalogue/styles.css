@@ -129,9 +129,7 @@ ul>li:hover {
 }
 
 .catalogue-main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45)), url(../../stylesheets/bg/cat-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000);
 }
 
 .container {

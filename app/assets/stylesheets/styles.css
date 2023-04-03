@@ -469,15 +469,17 @@ ul>li:hover {
     margin: 30px auto;
 }
 .Ndescr {
+    font-family: "Blender Pro", sans-serif;
     font-size: 20px;
 }
 .buy__bg {
-    font-family: "Audiowide", sans-serif;
-    font-weight: 300;
-    font-size: 100px;
-    margin-left: 180px;
-    margin-bottom: 300px;
-    color: rgb(223, 163, 0);
+    font-family: "Blender Pro", sans-serif;
+    margin-left: 100px;
+    margin-bottom: 130px;
+    font-size: 120px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #ffee01;
 }
 
 .equipment {

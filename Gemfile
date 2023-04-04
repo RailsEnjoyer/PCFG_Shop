@@ -13,6 +13,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem 'erb_lint'
 gem 'sass-rails'
+gem 'bcrypt'
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false

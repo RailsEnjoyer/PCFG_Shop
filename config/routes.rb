@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/catalogue', to: 'main#catalogue'
   resources :components
   resources :catalogue
+  resources :users, only: %i[new create]
+  resource :session, only: %i[new create destroy]
 
 
   get '/main', to: 'components#show'

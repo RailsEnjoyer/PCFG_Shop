@@ -58,7 +58,6 @@ ul>li {
 ul>li:hover {
     background: rgb(130, 0, 0);
     color: white;
-    padding: 25px 20px;
     transition: 0.5s;
 }
 
@@ -90,7 +89,6 @@ ul>li:hover {
 .logo:hover {
     color: white;
     transition: 0.5s;
-    font-size: 35px;
 }
 
 .menu {

@@ -90,7 +90,6 @@ ul>li:hover {
 .logo:hover {
     color: white;
     transition: 0.5s;
-    font-size: 35px;
 }
 
 .menu {

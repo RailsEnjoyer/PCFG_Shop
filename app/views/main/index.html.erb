@@ -3,6 +3,7 @@
   <head>
     <title>PCFG Main Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= favicon_link_tag 'favicon.ico' %>
     <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/a082fd3df68a0b54e0d4d794bc38d268?family=Blender+Pro" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
@@ -48,20 +49,20 @@
           </div>
           <div class="menu__login">
             <ul class="menu__login">
-                <% if current_user.present? %>
-                  <li class="menu__list">
-                    <%= "@#{current_user.nickname}" %>
-                  </li>
-                  <li class="menu__list">
-                    <%= button_to 'Exit', session_path, method: :delete %>
-                  </li>
-                <% else %>
-                  <li class="menu__list">
-                    <%= link_to 'Sign up', new_user_path, class: 'menu__link' %>
-                  </li>
-                  <li class="menu__list">
-                    <%= link_to 'Log in', new_session_path, class: 'menu__link' %>
-                  </li>
+              <% if current_user.present? %>
+                <li class="menu__list">
+                  <%= "@#{current_user.nickname}" %>
+                </li>
+                <li class="menu__list">
+                  <%= button_to 'Exit', session_path, method: :delete, class: 'btn-exit' %>
+                </li>
+              <% else %>
+                <li class="menu__list">
+                  <%= link_to 'Sign up', new_user_path, class: 'menu__link' %>
+                </li>
+                <li class="menu__list">
+                  <%= link_to 'Log in', new_session_path, class: 'menu__link' %>
+                </li>
               <% end %>
             </ul>
           </div>
@@ -279,7 +280,9 @@
       <div class="promo">
         <div class="container">
           <div class="promo__inner">
-            <button class="promo__btn">Watch</button>
+            <%= link_to "https://www.youtube.com/", target: "_blank", class: "promo__btn" do %>
+              Watch
+            <% end %>
           </div>
         </div>
       </div>

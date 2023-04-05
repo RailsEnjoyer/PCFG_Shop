@@ -1,4 +1,9 @@
 <h2>log in</h2>
+<% if flash[:notice].present? %>
+    <%= flash[:notice] %>
+  <% elsif flash[:alert].present? %>
+    <%= flash[:alert] %>
+<% end %>
 
 <%= form_with scope: :session, url: session_path, data: {turbo: false} do |form| %>
     <p><%= form.label :email %></p>

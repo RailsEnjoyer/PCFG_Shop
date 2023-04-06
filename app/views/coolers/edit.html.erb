@@ -1,0 +1,35 @@
+<h2>Edit Cooler</h2>
+<%= form_with(model: @cooler, url: cooler_path(@cooler), method: :patch) do |form| %>
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model, class: 'form-control' %><br>
+    <%= form.label :brand %>
+    <%= form.text_field :brand, class: 'form-control' %><br>
+    <%= form.label :socket %>
+    <%= form.number_field :socket, class: 'form-control' %><br>
+    <%= form.label :fan_speed %>
+    <%= form.number_field :fan_speed, class: 'form-control' %><br>
+    <%= form.label :noise_level %>
+    <%= form.text_field :noise_level, class: 'form-control' %><br>
+    <%= form.label :max_tdp %>
+    <%= form.text_field :max_tdp, class: 'form-control' %><br>
+    <%= form.label :form_factor %>
+    <%= form.text_field :form_factor, class: 'form-control' %><br>
+    <%= form.label :price %>
+    <%= form.number_field :price, class: 'form-control' %><br>
+    <%= form.label :rating %>
+    <%= form.number_field :rating, class: 'form-control' %><br>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+      <% if @cooler.image.attached? %>
+      <div>
+        <%= image_tag(@cooler.image) %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <%= form.submit 'Update Cooler' %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<h1>Create new Cooler</h1>
+
+<%= form_with(model: @cooler, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model, class: 'form-control' %><br>
+    <%= form.label :brand %>
+    <%= form.text_field :brand, class: 'form-control' %><br>
+    <%= form.label :socket %>
+    <%= form.number_field :socket, class: 'form-control' %><br>
+    <%= form.label :fan_speed %>
+    <%= form.number_field :fan_speed, class: 'form-control' %><br>
+    <%= form.label :noise_level %>
+    <%= form.text_field :noise_level, class: 'form-control' %><br>
+    <%= form.label :max_tdp %>
+    <%= form.text_field :max_tdp, class: 'form-control' %><br>
+    <%= form.label :form_factor %>
+    <%= form.text_field :form_factor, class: 'form-control' %><br>
+    <%= form.label :price %>
+    <%= form.number_field :price, class: 'form-control' %><br>
+    <%= form.label :rating %>
+    <%= form.number_field :rating, class: 'form-control' %><br>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', coolers_path %>

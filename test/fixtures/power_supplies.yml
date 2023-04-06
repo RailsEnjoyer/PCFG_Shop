@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  wattage: 1
+  efficiency: MyString
+  price: 1.5
+  form_factor: MyString
+
+two:
+  brand: MyString
+  model: MyString
+  wattage: 1
+  efficiency: MyString
+  price: 1.5
+  form_factor: MyString

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  socket: MyString
+  fan_speed: 1
+  noise_level: 1
+  max_tdp: 1
+  price: 1.5
+  form_factor: MyString
+
+two:
+  brand: MyString
+  model: MyString
+  socket: MyString
+  fan_speed: 1
+  noise_level: 1
+  max_tdp: 1
+  price: 1.5
+  form_factor: MyString

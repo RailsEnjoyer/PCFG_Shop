@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  price: 1.5
+  chipset: MyString
+  form_factor: MyString
+  memory_slots: 1
+  max_memory: 1
+  memory_type: MyString
+  socket: MyString
+  compatible_cpu: MyString
+
+two:
+  brand: MyString
+  model: MyString
+  price: 1.5
+  chipset: MyString
+  form_factor: MyString
+  memory_slots: 1
+  max_memory: 1
+  memory_type: MyString
+  socket: MyString
+  compatible_cpu: MyString

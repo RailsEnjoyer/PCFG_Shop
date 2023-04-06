@@ -5,9 +5,19 @@ Rails.application.routes.draw do
   get '/catalogue', to: 'main#catalogue'
   resources :components
   resources :catalogue
+
   resource :session, only: %i[new create destroy]
   resources :users, only: %i[new create edit update destroy]
 
+  resources :rams
+  resources :ssds
+  resources :hdds
+  resources :motherboards
+  resources :cpus
+  resources :gpus
+  resources :power_supplies
+  resources :rigs
+  resources :coolers
 
   get '/main', to: 'components#show'
   get '/cart', to: 'cart#index'

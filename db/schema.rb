@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_03_150144) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_150144) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "components", force: :cascade do |t|
     t.text "title"
     t.text "description"
@@ -60,9 +68,136 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_150144) do
     t.index ["user_id"], name: "index_components_on_user_id"
   end
 
+  create_table "coolers", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.float "price"
+    t.string "socket"
+    t.integer "fan_speed"
+    t.integer "noise_level"
+    t.integer "max_tdp"
+    t.string "form_factor"
+    t.float "rating"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cpus", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.float "price"
+    t.string "socket"
+    t.integer "core_count"
+    t.integer "thread_count"
+    t.float "base_clock"
+    t.float "boost_clock"
+    t.integer "tdp"
+    t.string "compatible_socket"
+    t.integer "cache"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gpus", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.float "price"
+    t.integer "memory"
+    t.float "core_clock"
+    t.float "boost_clock"
+    t.integer "tdp"
+    t.string "memory_type"
+    t.string "interface"
+    t.string "compatible_interface"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hdds", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.integer "capacity"
+    t.float "price"
+    t.string "interface"
+    t.string "form_factor"
+    t.integer "rpm"
+    t.string "compatible_interface"
+    t.integer "speed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "motherboards", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.float "price"
+    t.string "chipset"
+    t.string "form_factor"
+    t.integer "memory_slots"
+    t.integer "max_memory"
+    t.string "memory_type"
+    t.string "socket"
+    t.string "compatible_cpu"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pins", force: :cascade do |t|
     t.string "title"
     t.text "caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "power_supplies", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.integer "wattage"
+    t.string "efficiency"
+    t.float "price"
+    t.string "form_factor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rams", force: :cascade do |t|
+    t.integer "memory"
+    t.integer "memory_speed"
+    t.string "brand"
+    t.float "price"
+    t.string "memory_type"
+    t.integer "timings"
+    t.float "voltage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "model"
+    t.string "image"
+    t.integer "rating"
+  end
+
+  create_table "rigs", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.float "rating"
+    t.string "image"
+    t.string "form_factor"
+    t.string "drive_bays"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ssds", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.integer "capacity"
+    t.float "price"
+    t.string "interface"
+    t.string "form_factor"
+    t.integer "read_speed"
+    t.integer "write_speed"
+    t.string "compatible_interface"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

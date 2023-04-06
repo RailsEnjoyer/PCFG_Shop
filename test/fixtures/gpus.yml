@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  price: 1.5
+  memory: 1
+  core_clock: 1.5
+  boost_clock: 1.5
+  tdp: 1
+  memory_type: MyString
+  interface: MyString
+  compatible_interface: MyString
+
+two:
+  brand: MyString
+  model: MyString
+  price: 1.5
+  memory: 1
+  core_clock: 1.5
+  boost_clock: 1.5
+  tdp: 1
+  memory_type: MyString
+  interface: MyString
+  compatible_interface: MyString

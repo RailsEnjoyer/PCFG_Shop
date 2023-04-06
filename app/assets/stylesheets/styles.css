@@ -720,3 +720,9 @@ footer {
 .social__item {
     margin-left: 20px;
 }
+
+
+.action-buttons__all {
+    font-weight: 700;
+    margin-top: 60px;
+}

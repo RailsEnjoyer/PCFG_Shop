@@ -62,16 +62,16 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h2 class="components__title-all">RAM</h2>
-      <div class="component__logo all__rams">
-        <% @rams.each do |ram| %>
+      <h2 class="components__title-all">MOTHERBOARD</h2>
+      <div class="component__logo all__motherboards">
+        <% @motherboards.each do |motherboard| %>
           <div class="component__item">
-            <div class="component__title-main"><%= link_to ram.model, "/rams/#{ram.id}" %></div>
-            <%= image_tag(ram.image) %>
+            <div class="component__title-main"><%= link_to motherboard.model, "/motherboards/#{motherboard.id}" %></div>
+            <%= image_tag(motherboard.image) %>
             <div class="component__description"><br>
-              <%= ram.brand %>
+              <%= motherboard.brand %>
               <span class="description__label"></span>
-              <% rating = ram.rating.round(1) %>
+              <% rating = motherboard.rating.round(1) %>
               <span class="stars">
                 <% for i in 1..5 do %>
                   <% if rating >= i %>
@@ -83,8 +83,8 @@
                   <% end %>
                 <% end %>
               </span>
-              <span class="price__label">Price: <%= ram.price %> $USD</span>
-              <span class="more__info"><%= link_to 'See more', "/rams/#{ram.id}" %></span>
+              <span class="price__label">Price: <%= motherboard.price %> $USD</span>
+              <span class="more__info"><%= link_to 'See more', "/motherboards/#{motherboard.id}" %></span>
             </div>
           </div>
         <% end %>

@@ -1,20 +1,16 @@
-<h2>Edit RAM</h2>
-<%= form_with(model: @ram, url: ram_path(@ram), method: :patch) do |form| %>
+<h2>Edit POWER_SUPPLY</h2>
+<%= form_with(model: @power_supply, url: power_supply_path(@power_supply), method: :patch) do |form| %>
   <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model, class: 'form-control' %><br>
     <%= form.label :brand %>
     <%= form.text_field :brand, class: 'form-control' %><br>
-    <%= form.label :memory %>
-    <%= form.number_field :memory, class: 'form-control' %><br>
-    <%= form.label :memory_speed %>
-    <%= form.number_field :memory_speed, class: 'form-control' %><br>
-    <%= form.label :memory_type %>
-    <%= form.text_field :memory_type, class: 'form-control' %><br>
-    <%= form.label :timings %>
-    <%= form.text_field :timings, class: 'form-control' %><br>
-    <%= form.label :voltage %>
-    <%= form.text_field :voltage, class: 'form-control' %><br>
+    <%= form.label :wattage %>
+    <%= form.number_field :wattage, class: 'form-control' %><br>
+    <%= form.label :efficiency %>
+    <%= form.number_field :efficiency, class: 'form-control' %><br>
+    <%= form.label :form_factor %>
+    <%= form.text_field :form_factor, class: 'form-control' %><br>
     <%= form.label :price %>
     <%= form.number_field :price, class: 'form-control' %><br>
     <%= form.label :rating %>
@@ -22,14 +18,14 @@
     <div class="field">
       <%= form.label :image %>
       <%= form.file_field :image %>
-      <% if @ram.image.attached? %>
+      <% if @power_supply.image.attached? %>
       <div>
-        <%= image_tag(@ram.image) %>
+        <%= image_tag(@power_supply.image) %>
       </div>
       <% end %>
     </div>
   </div>
   <div>
-    <%= form.submit 'Update RAM' %>
+    <%= form.submit 'Update POWER SUPPLY' %>
   </div>
 <% end %>

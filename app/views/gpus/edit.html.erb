@@ -1,5 +1,5 @@
-<h2>Edit RAM</h2>
-<%= form_with(model: @ram, url: ram_path(@ram), method: :patch) do |form| %>
+<h2>Edit GPU</h2>
+<%= form_with(model: @gpu, url: gpu_path(@gpu), method: :patch) do |form| %>
   <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model, class: 'form-control' %><br>
@@ -7,29 +7,33 @@
     <%= form.text_field :brand, class: 'form-control' %><br>
     <%= form.label :memory %>
     <%= form.number_field :memory, class: 'form-control' %><br>
-    <%= form.label :memory_speed %>
-    <%= form.number_field :memory_speed, class: 'form-control' %><br>
+    <%= form.label :core_clock %>
+    <%= form.number_field :core_clock, class: 'form-control' %><br>
+    <%= form.label :boost_clock %>
+    <%= form.text_field :boost_clock, class: 'form-control' %><br>
+    <%= form.label :tdp %>
+    <%= form.text_field :tdp, class: 'form-control' %><br>
     <%= form.label :memory_type %>
     <%= form.text_field :memory_type, class: 'form-control' %><br>
-    <%= form.label :timings %>
-    <%= form.text_field :timings, class: 'form-control' %><br>
-    <%= form.label :voltage %>
-    <%= form.text_field :voltage, class: 'form-control' %><br>
+    <%= form.label :interface %>
+    <%= form.text_field :interface, class: 'form-control' %><br>
+    <%= form.label :compatible_interface %>
+    <%= form.text_field :compatible_interface, class: 'form-control' %><br>
     <%= form.label :price %>
     <%= form.number_field :price, class: 'form-control' %><br>
     <%= form.label :rating %>
     <%= form.number_field :rating, class: 'form-control' %><br>
-    <div class="field">
+  </div>
       <%= form.label :image %>
       <%= form.file_field :image %>
-      <% if @ram.image.attached? %>
+      <% if @gpu.image.attached? %>
       <div>
-        <%= image_tag(@ram.image) %>
+        <%= image_tag(@gpu.image) %>
       </div>
       <% end %>
     </div>
   </div>
   <div>
-    <%= form.submit 'Update RAM' %>
+    <%= form.submit 'Update GPU' %>
   </div>
 <% end %>

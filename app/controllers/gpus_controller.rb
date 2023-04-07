@@ -1,6 +1,6 @@
 class GpusController < ApplicationController
   def index
-    @gpus = Gpus.all
+    @gpus = Gpu.all
   end
 
   def show
@@ -12,7 +12,7 @@ class GpusController < ApplicationController
   end
 
   def create
-    @gpu = Gpu.new(gpus_params)
+    @gpu = Gpu.new(gpu_params)
 
     if @gpu.save
       redirect_to @gpu
@@ -28,7 +28,7 @@ class GpusController < ApplicationController
   def update
     @gpu = Gpu.find(params[:id])
 
-    if @gpu.update(gpus_params)
+    if @gpu.update(gpu_params)
       redirect_to @gpu
     else
       render 'edit'
@@ -44,6 +44,6 @@ class GpusController < ApplicationController
 
   private
   def gpu_params
-    params.require(:gpu).permit(:brand, :model, :price, :memory, :core_clock, :boost_clock, :tdp, :memory_type, :interface, :compatible_interface)
+    params.require(:gpu).permit(:brand, :model, :price, :memory, :core_clock, :boost_clock, :tdp, :memory_type, :interface, :compatible_interface, :image, :rating)
   end
 end

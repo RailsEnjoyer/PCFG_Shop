@@ -42,6 +42,6 @@ class HddsController < ApplicationController
   private
 
   def hdd_params
-    params.require(:hdd).permit(:capacity, :type, :brand, :price, :compatibility, :model, :interface, :form_factor, :rpm, :compatible_interface, :speed)
+    params.require(:hdd).permit(:capacity, :type, :brand, :price, :compatibility, :model, :interface, :form_factor, :rpm, :compatible_interface, :speed, :rating, :image)
   end
 end

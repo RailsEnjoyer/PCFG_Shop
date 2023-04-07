@@ -62,16 +62,16 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h2 class="components__title-all">RAM</h2>
+      <h2 class="components__title-all">POWER_SUPPLY</h2>
       <div class="component__logo all__rams">
-        <% @rams.each do |ram| %>
+        <% @power_supplies.each do |power_supply| %>
           <div class="component__item">
-            <div class="component__title-main"><%= link_to ram.model, "/rams/#{ram.id}" %></div>
-            <%= image_tag(ram.image) %>
+            <div class="component__title-main"><%= link_to power_supply.model, "/power_supplies/#{power_supply.id}" %></div>
+            <%= image_tag(power_supply.image) %>
             <div class="component__description"><br>
-              <%= ram.brand %>
+              <%= power_supply.brand %>
               <span class="description__label"></span>
-              <% rating = ram.rating.round(1) %>
+              <% rating = power_supply.rating.round(1) %>
               <span class="stars">
                 <% for i in 1..5 do %>
                   <% if rating >= i %>
@@ -83,8 +83,8 @@
                   <% end %>
                 <% end %>
               </span>
-              <span class="price__label">Price: <%= ram.price %> $USD</span>
-              <span class="more__info"><%= link_to 'See more', "/rams/#{ram.id}" %></span>
+              <span class="price__label">Price: <%= power_supply.price %> $USD</span>
+              <span class="more__info"><%= link_to 'See more', "/power_supplies/#{power_supply.id}" %></span>
             </div>
           </div>
         <% end %>

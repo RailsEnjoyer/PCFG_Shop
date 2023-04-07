@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_07_103343) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -97,6 +97,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
     t.integer "cache"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rating"
+    t.string "image"
   end
 
   create_table "gpus", force: :cascade do |t|
@@ -112,6 +114,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
     t.string "compatible_interface"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.float "rating"
   end
 
   create_table "hdds", force: :cascade do |t|
@@ -126,6 +130,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
     t.integer "speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rating"
+    t.string "image"
   end
 
   create_table "motherboards", force: :cascade do |t|
@@ -141,6 +147,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
     t.string "compatible_cpu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rating"
+    t.string "image"
   end
 
   create_table "pins", force: :cascade do |t|
@@ -159,6 +167,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
     t.string "form_factor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.float "rating"
   end
 
   create_table "rams", force: :cascade do |t|
@@ -200,6 +210,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_185304) do
     t.string "compatible_interface"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rating"
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|

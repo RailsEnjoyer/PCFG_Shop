@@ -1,20 +1,23 @@
-<h2>Edit RAM</h2>
-<%= form_with(model: @ram, url: ram_path(@ram), method: :patch) do |form| %>
+<h2>Edit SSD</h2>
+<%= form_with(model: @ssd, url: ssd_path(@ssd), method: :patch) do |form| %>
   <div class="field">
+    <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model, class: 'form-control' %><br>
     <%= form.label :brand %>
     <%= form.text_field :brand, class: 'form-control' %><br>
-    <%= form.label :memory %>
-    <%= form.number_field :memory, class: 'form-control' %><br>
-    <%= form.label :memory_speed %>
-    <%= form.number_field :memory_speed, class: 'form-control' %><br>
-    <%= form.label :memory_type %>
-    <%= form.text_field :memory_type, class: 'form-control' %><br>
-    <%= form.label :timings %>
-    <%= form.text_field :timings, class: 'form-control' %><br>
-    <%= form.label :voltage %>
-    <%= form.text_field :voltage, class: 'form-control' %><br>
+    <%= form.label :capacity %>
+    <%= form.number_field :capacity, class: 'form-control' %><br>
+    <%= form.label :interface %>
+    <%= form.number_field :interface, class: 'form-control' %><br>
+    <%= form.label :form_factor %>
+    <%= form.text_field :form_factor, class: 'form-control' %><br>
+    <%= form.label :read_speed %>
+    <%= form.text_field :read_speed, class: 'form-control' %><br>
+    <%= form.label :write_speed %>
+    <%= form.text_field :write_speed, class: 'form-control' %><br>
+    <%= form.label :compatible_interface %>
+    <%= form.text_field :compatible_interface, class: 'form-control' %><br>
     <%= form.label :price %>
     <%= form.number_field :price, class: 'form-control' %><br>
     <%= form.label :rating %>
@@ -22,14 +25,14 @@
     <div class="field">
       <%= form.label :image %>
       <%= form.file_field :image %>
-      <% if @ram.image.attached? %>
+      <% if @ssd.image.attached? %>
       <div>
-        <%= image_tag(@ram.image) %>
+        <%= image_tag(@ssd.image) %>
       </div>
       <% end %>
     </div>
   </div>
   <div>
-    <%= form.submit 'Update RAM' %>
+    <%= form.submit 'Update SSD' %>
   </div>
 <% end %>

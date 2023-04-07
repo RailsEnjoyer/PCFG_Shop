@@ -62,16 +62,16 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h2 class="components__title-all">RAM</h2>
-      <div class="component__logo all__rams">
-        <% @rams.each do |ram| %>
+      <h2 class="components__title-all">SSD</h2>
+      <div class="component__logo all__ssds">
+        <% @ssds.each do |ssd| %>
           <div class="component__item">
-            <div class="component__title-main"><%= link_to ram.model, "/rams/#{ram.id}" %></div>
-            <%= image_tag(ram.image) %>
+            <div class="component__title-main"><%= link_to ssd.model, "/ssds/#{ssd.id}" %></div>
+            <%= image_tag(ssd.image) %>
             <div class="component__description"><br>
-              <%= ram.brand %>
+              <%= ssd.brand %>
               <span class="description__label"></span>
-              <% rating = ram.rating.round(1) %>
+              <% rating = ssd.rating.round(1) %>
               <span class="stars">
                 <% for i in 1..5 do %>
                   <% if rating >= i %>
@@ -83,8 +83,8 @@
                   <% end %>
                 <% end %>
               </span>
-              <span class="price__label">Price: <%= ram.price %> $USD</span>
-              <span class="more__info"><%= link_to 'See more', "/rams/#{ram.id}" %></span>
+              <span class="price__label">Price: <%= ssd.price %> $USD</span>
+              <span class="more__info"><%= link_to 'See more', "/ssds/#{ssd.id}" %></span>
             </div>
           </div>
         <% end %>

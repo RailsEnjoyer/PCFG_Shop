@@ -1,20 +1,26 @@
-<h2>Edit RAM</h2>
-<%= form_with(model: @ram, url: ram_path(@ram), method: :patch) do |form| %>
+<h2>Edit CPU</h2>
+<%= form_with(model: @cpu, url: cpu_path(@cpu), method: :patch) do |form| %>
   <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model, class: 'form-control' %><br>
     <%= form.label :brand %>
     <%= form.text_field :brand, class: 'form-control' %><br>
-    <%= form.label :memory %>
-    <%= form.number_field :memory, class: 'form-control' %><br>
-    <%= form.label :memory_speed %>
-    <%= form.number_field :memory_speed, class: 'form-control' %><br>
-    <%= form.label :memory_type %>
-    <%= form.text_field :memory_type, class: 'form-control' %><br>
-    <%= form.label :timings %>
-    <%= form.text_field :timings, class: 'form-control' %><br>
-    <%= form.label :voltage %>
-    <%= form.text_field :voltage, class: 'form-control' %><br>
+    <%= form.label :socket %>
+    <%= form.number_field :socket, class: 'form-control' %><br>
+    <%= form.label :core_count %>
+    <%= form.number_field :core_count, class: 'form-control' %><br>
+    <%= form.label :thread_count %>
+    <%= form.text_field :thread_count, class: 'form-control' %><br>
+    <%= form.label :base_clock %>
+    <%= form.text_field :base_clock, class: 'form-control' %><br>
+    <%= form.label :boost_clock %>
+    <%= form.text_field :boost_clock, class: 'form-control' %><br>
+    <%= form.label :tdp %>
+    <%= form.text_field :tdp, class: 'form-control' %><br>
+    <%= form.label :compatible_socket %>
+    <%= form.text_field :compatible_socket, class: 'form-control' %><br>
+    <%= form.label :cache %>
+    <%= form.text_field :compacachetible_socket, class: 'form-control' %><br>
     <%= form.label :price %>
     <%= form.number_field :price, class: 'form-control' %><br>
     <%= form.label :rating %>
@@ -22,14 +28,9 @@
     <div class="field">
       <%= form.label :image %>
       <%= form.file_field :image %>
-      <% if @ram.image.attached? %>
-      <div>
-        <%= image_tag(@ram.image) %>
-      </div>
-      <% end %>
     </div>
   </div>
   <div>
-    <%= form.submit 'Update RAM' %>
+    <%= form.submit 'Update CPU' %>
   </div>
 <% end %>

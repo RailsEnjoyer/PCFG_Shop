@@ -63,19 +63,18 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h1><%= @ram.brand %></h1>
-      <% if @ram.image.attached? %>
+      <h1><%= @power_supply.brand %></h1>
+      <% if @power_supply.image.attached? %>
         <div>
-          <%= image_tag(@ram.image) %>
+          <%= image_tag(@power_supply.image) %>
         </div>
       <% end %>
-      <p>Бренд: <%= @ram.brand %></p>
-      <p>Тип памяти: <%= @ram.memory_type %></p>
-      <p>Цена: <%= number_to_currency(@ram.price) %></p>
+      <p>Бренд: <%= @power_supply.brand %></p>
+      <p>Цена: <%= number_to_currency(@power_supply.price) %></p>
       <div class="action-buttons__all">
-        <%= link_to "Edit component", edit_ram_path(@ram) %>
-        <%= button_to 'Delete component', ram_path(@ram), method: :delete %><br>
-        <%= link_to "All RAMs", rams_path %>
+        <%= link_to "Edit component", edit_power_supply_path(@power_supply) %>
+        <%= button_to 'Delete component', power_supply_path(@power_supply), method: :delete %><br>
+        <%= link_to "All power supplies", power_supplies_path %>
       </div>
     </div>
    </main>

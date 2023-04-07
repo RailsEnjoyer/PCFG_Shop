@@ -42,6 +42,6 @@ class SsdsController < ApplicationController
   private
 
   def ssd_params
-    params.require(:ssd).permit(:capacity, :type, :brand, :price, :compatibility, :model, :interface, :form_factor, :read_speed, :write_speed, :compatible_interface)
+    params.require(:ssd).permit(:capacity, :type, :brand, :price, :compatibility, :model, :interface, :form_factor, :read_speed, :write_speed, :compatible_interface, :rating, :image)
   end
 end

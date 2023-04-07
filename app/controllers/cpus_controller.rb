@@ -14,9 +14,9 @@ class CpusController < ApplicationController
   def create
     @cpu = Cpu.new(cpu_params)
     if @cpu.save
-      redirect_to @cpu
+      redirect_to cpu_path(@cpu), notice: 'CPU was successfully created.'
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -42,6 +42,6 @@ class CpusController < ApplicationController
   private
 
   def cpu_params
-    params.require(:cpu).permit(:brand, :model, :price, :socket, :core_count, :thread_count, :base_clock, :boost_clock, :tdp, :compatible_socket, :cache)
+    params.require(:cpu).permit(:brand, :model, :price, :socket, :core_count, :thread_count, :base_clock, :boost_clock, :tdp, :compatible_socket, :cache, :image, :rating)
   end
 end

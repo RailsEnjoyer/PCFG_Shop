@@ -42,6 +42,6 @@ class PowerSuppliesController < ApplicationController
   private
 
   def power_supply_params
-    params.require(:power_supply).permit(:brand, :model, :wattage, :price, :efficiency, :form_factor)
+    params.require(:power_supply).permit(:brand, :model, :wattage, :price, :efficiency, :form_factor, :rating, :image)
   end
 end

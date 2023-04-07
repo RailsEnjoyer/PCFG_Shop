@@ -1,21 +1,17 @@
-<h1>Create new RAM</h1>
+<h1>Create new POWER_SUPPLY</h1>
 
-<%= form_with(model: @ram, local: true) do |form| %>
+<%= form_with(model: @power_supply, local: true) do |form| %>
   <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model, class: 'form-control' %><br>
     <%= form.label :brand %>
     <%= form.text_field :brand, class: 'form-control' %><br>
-    <%= form.label :memory %>
-    <%= form.number_field :memory, class: 'form-control' %><br>
-    <%= form.label :memory_speed %>
-    <%= form.number_field :memory_speed, class: 'form-control' %><br>
-    <%= form.label :memory_type %>
-    <%= form.text_field :memory_type, class: 'form-control' %><br>
-    <%= form.label :timings %>
-    <%= form.text_field :timings, class: 'form-control' %><br>
-    <%= form.label :voltage %>
-    <%= form.text_field :voltage, class: 'form-control' %><br>
+    <%= form.label :wattage %>
+    <%= form.number_field :wattage, class: 'form-control' %><br>
+    <%= form.label :efficiency %>
+    <%= form.number_field :efficiency, class: 'form-control' %><br>
+    <%= form.label :form_factor %>
+    <%= form.text_field :form_factor, class: 'form-control' %><br>
     <%= form.label :price %>
     <%= form.number_field :price, class: 'form-control' %><br>
     <%= form.label :rating %>
@@ -30,4 +26,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', rams_path %>
+<%= link_to 'Back', power_supplies_path %>

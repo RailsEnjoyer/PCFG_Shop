@@ -66,10 +66,10 @@
       <div class="component__logo all__components">
         <% @coolers.each do |cooler| %>
           <div class="component__item">
-            <div class="component__title-main"><%= link_to cooler.model, "/coolers/#{cooler.id}" %></div>
+            <div class="component__title-main"><%= link_to cooler.brand, "/coolers/#{cooler.id}" %></div>
             <%= image_tag(cooler.image) %>
             <div class="component__description"><br>
-              <%= cooler.brand %>
+              <%= cooler.model %>
               <span class="description__label"></span>
               <% rating = cooler.rating.round(1) %>
               <span class="stars">

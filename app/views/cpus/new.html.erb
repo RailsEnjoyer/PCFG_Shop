@@ -7,7 +7,7 @@
     <%= form.label :brand %>
     <%= form.text_field :brand, class: 'form-control' %><br>
     <%= form.label :socket %>
-    <%= form.number_field :socket, class: 'form-control' %><br>
+    <%= form.text_field :socket, class: 'form-control' %><br>
     <%= form.label :core_count %>
     <%= form.number_field :core_count, class: 'form-control' %><br>
     <%= form.label :thread_count %>
@@ -21,11 +21,13 @@
     <%= form.label :compatible_socket %>
     <%= form.text_field :compatible_socket, class: 'form-control' %><br>
     <%= form.label :cache %>
-    <%= form.text_field :compacachetible_socket, class: 'form-control' %><br>
+    <%= form.text_field :cache, class: 'form-control' %><br>
+    <%= form.label :memory_frequency %>
+    <%= form.number_field :memory_frequency, class: 'form-control' %><br>
     <%= form.label :price %>
-    <%= form.number_field :price, class: 'form-control' %><br>
+    <%= form.number_field :price, step: 0.01, class: 'form-control' %><br>
     <%= form.label :rating %>
-    <%= form.number_field :rating, class: 'form-control' %><br>
+    <%= form.number_field :rating, step: 0.01, class: 'form-control' %><br>
     <div class="field">
       <%= form.label :image %>
       <%= form.file_field :image %>

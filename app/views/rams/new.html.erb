@@ -17,9 +17,9 @@
     <%= form.label :voltage %>
     <%= form.text_field :voltage, class: 'form-control' %><br>
     <%= form.label :price %>
-    <%= form.number_field :price, class: 'form-control' %><br>
+    <%= form.number_field :price, step: "0.01", class: 'form-control' %><br>
     <%= form.label :rating %>
-    <%= form.number_field :rating, class: 'form-control' %><br>
+    <%= form.number_field :rating, step: "0.01", class: 'form-control' %><br>
     <div class="field">
       <%= form.label :image %>
       <%= form.file_field :image %>

@@ -42,6 +42,6 @@ class CpusController < ApplicationController
   private
 
   def cpu_params
-    params.require(:cpu).permit(:brand, :model, :price, :socket, :core_count, :thread_count, :base_clock, :boost_clock, :tdp, :compatible_socket, :cache, :image, :rating)
+    params.require(:cpu).permit(:brand, :model, :price, :socket, :core_count, :thread_count, :base_clock, :boost_clock, :tdp, :compatible_socket, :cache, :image, :rating, :memory_frequency)
   end
 end

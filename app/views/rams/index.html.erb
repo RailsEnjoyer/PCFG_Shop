@@ -66,10 +66,10 @@
       <div class="component__logo all__components">
         <% @rams.each do |ram| %>
           <div class="component__item">
-            <div class="component__title-main"><%= link_to ram.model, "/rams/#{ram.id}" %></div>
+            <div class="component__title-main"><%= link_to ram.brand, "/rams/#{ram.id}" %></div>
             <%= image_tag(ram.image) %>
             <div class="component__description"><br>
-              <%= ram.brand %>
+              <%= ram.model %>
               <span class="description__label"></span>
               <% rating = ram.rating.round(1) %>
               <span class="stars">

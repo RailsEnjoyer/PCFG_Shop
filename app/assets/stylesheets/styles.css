@@ -534,6 +534,11 @@ ul>li:hover {
     box-shadow: 10px 10px 50px 80px black inset;
 }
 
+.promo__inner-head {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 .promo__inner {
     background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 1)), url(../stylesheets/bg/promo.png);
     min-height: 500px;

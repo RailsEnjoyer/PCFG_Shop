@@ -63,7 +63,7 @@
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
       <h2 class="components__title-all">CPU</h2>
-      <div class="component__logo all__cpus">
+      <div class="component__logo all__components">
         <% @cpus.each do |cpu| %>
           <div class="component__item">
             <div class="component__title-main"><%= link_to cpu.model, "/cpus/#{cpu.id}" %></div>

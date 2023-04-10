@@ -69,9 +69,11 @@
           <%= image_tag(@gpu.image) %>
         </div>
       <% end %>
-      <p>Бренд: <%= @gpu.brand %></p>
-      <p>Тип памяти: <%= @gpu.memory_type %></p>
-      <p>Цена: <%= number_to_currency(@gpu.price) %></p>
+      <div class="main__component-info">
+        <p>Бренд: <%= @gpu.brand %></p>
+        <p>Тип памяти: <%= @gpu.memory_type %></p>
+        <p>Цена: <%= number_to_currency(@gpu.price) %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_gpu_path(@gpu) %>
         <%= button_to 'Delete component', gpu_path(@gpu), method: :delete %><br>

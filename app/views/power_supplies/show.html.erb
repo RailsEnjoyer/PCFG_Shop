@@ -69,8 +69,10 @@
           <%= image_tag(@power_supply.image) %>
         </div>
       <% end %>
-      <p>Бренд: <%= @power_supply.brand %></p>
-      <p>Цена: <%= number_to_currency(@power_supply.price) %></p>
+      <div class="main__component-info">
+        <p>Бренд: <%= @power_supply.brand %></p>
+        <p>Цена: <%= number_to_currency(@power_supply.price) %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_power_supply_path(@power_supply) %>
         <%= button_to 'Delete component', power_supply_path(@power_supply), method: :delete %><br>

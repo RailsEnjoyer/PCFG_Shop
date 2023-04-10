@@ -69,9 +69,11 @@
           <%= image_tag(@rig.image) %>
         </div>
       <% end %>
-      <p>Model: <%= @rig.model %></p>
-      <p>Form factor: <%= @rig.form_factor %></p>
-      <p>Price: <%= number_to_currency(@rig.price) %></p>
+      <div class="main__component-info">
+        <p>Model: <%= @rig.model %></p>
+        <p>Form factor: <%= @rig.form_factor %></p>
+        <p>Price: <%= number_to_currency(@rig.price) %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_rig_path(@rig) %>
         <%= button_to 'Delete component', rig_path(@rig), method: :delete %><br>

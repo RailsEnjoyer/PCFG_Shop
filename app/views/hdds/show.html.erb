@@ -69,8 +69,10 @@
           <%= image_tag(@hdd.image) %>
         </div>
       <% end %>
-      <p>Бренд: <%= @hdd.brand %></p>
-      <p>Цена: <%= number_to_currency(@hdd.price) %></p>
+      <div class="main__component-info">
+        <p>Бренд: <%= @hdd.brand %></p>
+        <p>Цена: <%= number_to_currency(@hdd.price) %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_hdd_path(@hdd) %>
         <%= button_to 'Delete component', hdd_path(@hdd), method: :delete %><br>

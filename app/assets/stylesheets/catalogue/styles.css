@@ -285,6 +285,54 @@ ul>li:hover {
     text-align: center;
 }
 
+.main__component-info {
+    padding-top: 20px;
+    border-top: 1px solid rgb(136, 10, 10);
+    border-bottom: 1px solid rgb(136, 10, 10);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.added__component-info p::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgb(59, 59, 59);
+    margin-top: 5px;
+}
+
+.model__title-main {
+    text-align: center;
+}
+  
+.main__component-info p {
+    font-size: 1.2rem;
+}
+
+.container .action-buttons__all {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+ }
+   
+.action-buttons__all a, .action-buttons__all button {
+    background: linear-gradient(to bottom right, rgb(20, 20, 20), red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+}
+  
+.container .action-buttons__all button {
+    color: #fff;
+    background-color: rgb(130, 0, 0);
+    border-color: rgb(130, 0, 0);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
 
 footer {
     background-color: #030303;

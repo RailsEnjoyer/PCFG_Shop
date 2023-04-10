@@ -69,9 +69,11 @@
           <%= image_tag(@motherboard.image) %>
         </div>
       <% end %>
-      <p>Бренд: <%= @motherboard.brand %></p>
-      <p>Тип памяти: <%= @motherboard.memory_type %></p>
-      <p>Цена: <%= number_to_currency(@motherboard.price) %></p>
+      <div class="main__component-info">
+        <p>Бренд: <%= @motherboard.brand %></p>
+        <p>Тип памяти: <%= @motherboard.memory_type %></p>
+        <p>Цена: <%= number_to_currency(@motherboard.price) %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_motherboard_path(@motherboard) %>
         <%= button_to 'Delete component', motherboard_path(@motherboard), method: :delete %><br>

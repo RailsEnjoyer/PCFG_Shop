@@ -69,12 +69,14 @@
           <%= image_tag(@cooler.image) %>
         </div>
       <% end %>
-      <p>Brand: <%= @cooler.brand %></p>
-      <p>Socket: <%= @cooler.socket %></p>
-      <p>Max fan speed: <%= @cooler.fan_speed %></p>
-      <p>Noice level: <%= @cooler.noise_level %></p>
-      <p>Maximum TDP: <%= @cooler.max_tdp %></p>
-      <p>Цена: <%= number_to_currency(@cooler.price) %></p>
+      <div class="main__component-info">
+        <p>Brand: <%= @cooler.brand %></p>
+        <p>Socket: <%= @cooler.socket %></p>
+        <p>Max fan speed: <%= @cooler.fan_speed %></p>
+        <p>Noice level: <%= @cooler.noise_level %></p>
+        <p>Maximum TDP: <%= @cooler.max_tdp %></p>
+        <p>Цена: <%= number_to_currency(@cooler.price) %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_cooler_path(@cooler) %>
         <%= button_to 'Delete component', cooler_path(@cooler), method: :delete %><br>

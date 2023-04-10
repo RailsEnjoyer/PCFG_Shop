@@ -68,26 +68,27 @@
       <% end %>
       <h1><%= @component.title %></h1>
       <%= image_tag(@component.image) %>
-      <p>short info: <%= @component.description %></p>
-      <p>producer: <%= @component.brand %></p>
-      <p>market launch date: <%= @component.market_date %></p>
-      <p>producer-country: <%= @component.country %></p>
-      <p>size: <%= @component.size %></p>
-      <p>connectors: <%= @component.connectors %></p>
-      <p>guarantee: <%= @component.guarantee %> months</p>
-      <p>compltete set: <%= @component.complete_set %></p>
-      <p>rating: <%= @component.rating %></p>
-      <p>weight: <%= @component.weight %> g.</p>
-      <p>price: <%= @component.price %> USD$</p>
-      <p>available to buy now? <%= @component.availability %></p>
-      <p class="mt">added by user with ID: <%= @component.user_id %></p>
+      <div class="main__component-info">
+        <p>short info: <%= @component.description %></p>
+        <p>producer: <%= @component.brand %></p>
+        <p>market launch date: <%= @component.market_date %></p>
+        <p>producer-country: <%= @component.country %></p>
+        <p>size: <%= @component.size %></p>
+        <p>connectors: <%= @component.connectors %></p>
+        <p>guarantee: <%= @component.guarantee %> months</p>
+        <p>compltete set: <%= @component.complete_set %></p>
+        <p>rating: <%= @component.rating %></p>
+        <p>weight: <%= @component.weight %> g.</p>
+        <p>price: <%= @component.price %> USD$</p>
+        <p>available to buy now? <%= @component.availability %></p>
+        <p class="mt">added by user with ID: <%= @component.user_id %></p>
+      </div>
 
       <div class="action-buttons__all">
           <%= link_to "Edit component", edit_component_path(@component) %>
           <%= button_to 'Delete component', component_path(@component), method: :delete %>
+          <%= link_to "All components", catalogue_path %>
       </div>
-
-      <p><%= link_to "All components", catalogue_path %></p>
     </div>
    </main>
 <!-- main section ends -->

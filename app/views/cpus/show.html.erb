@@ -61,21 +61,25 @@
     </header>
 <!-- header section ends -->
 <!-- main section starts -->
-   <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
+   <main style="background: black">
     <div class="container">
-      <h1><%= @cpu.model %></h1>
+      <h1 class="model__title-main"><%= @cpu.model %></h1>
       <% if @cpu.image.attached? %>
-        <div>
+        <div style="max-width:300px;">
           <%= image_tag(@cpu.image) %>
         </div>
       <% end %>
-      <p>Brand: <%= @cpu.brand %></p>
-      <p>Socket: <%= @cpu.socket %></p>
-      <p>Cores: <%= @cpu.core_count %></p>
-      <p>Base Clock: <%= @cpu.base_clock %></p>
-      <p>Boost Clock: <%= @cpu.boost_clock %></p>
-      <p>Compatible Socket: <%= @cpu.compatible_socket %></p>
-      <p>Price: <%= number_to_currency(@cpu.price) %></p>
+      <div class="main__component-info">
+        <p>Brand: <%= @cpu.brand %></p>
+        <p>Price: <%= number_to_currency(@cpu.price) %></p>
+      </div>
+      <div class="added__component-info">
+        <p>Socket: <%= @cpu.socket %></p>
+        <p>Cores: <%= @cpu.core_count %></p>
+        <p>Base Clock: <%= @cpu.base_clock %></p>
+        <p>Boost Clock: <%= @cpu.boost_clock %></p>
+        <p>Compatible Socket: <%= @cpu.compatible_socket %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_cpu_path(@cpu) %>
         <%= button_to 'Delete component', cpu_path(@cpu), method: :delete %><br>

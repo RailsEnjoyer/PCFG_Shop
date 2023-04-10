@@ -69,8 +69,10 @@
           <%= image_tag(@ssd.image) %>
         </div>
       <% end %>
-      <p>Бренд: <%= @ssd.brand %></p>
-      <p>Цена: <%= number_to_currency(@ssd.price) %></p>
+      <div class="main__component-info">
+        <p>Бренд: <%= @ssd.brand %></p>
+        <p>Цена: <%= number_to_currency(@ssd.price) %></p>
+      </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_ssd_path(@ssd) %>
         <%= button_to 'Delete component', ssd_path(@ssd), method: :delete %><br>

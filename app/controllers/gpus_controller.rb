@@ -44,6 +44,6 @@ class GpusController < ApplicationController
 
   private
   def gpu_params
-    params.require(:gpu).permit(:brand, :model, :price, :memory, :core_clock, :boost_clock, :tdp, :memory_type, :interface, :compatible_interface, :image, :rating)
+    params.require(:gpu).permit(:brand, :model, :price, :memory, :core_clock, :boost_clock, :tdp, :memory_type, :interface, :compatible_interface, :image, :rating, :bus_width)
   end
 end

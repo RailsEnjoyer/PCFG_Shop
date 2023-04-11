@@ -63,16 +63,20 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h1><%= @gpu.brand %></h1>
+      <h1><%= @gpu.model %></h1>
       <% if @gpu.image.attached? %>
         <div>
           <%= image_tag(@gpu.image) %>
         </div>
       <% end %>
       <div class="main__component-info">
-        <p>Бренд: <%= @gpu.brand %></p>
-        <p>Тип памяти: <%= @gpu.memory_type %></p>
-        <p>Цена: <%= number_to_currency(@gpu.price) %></p>
+        <p>Brand: <%= @gpu.brand %></p>
+        <p>Memory size: <%= @gpu.memory %></p>
+        <p>Core clock: <%= @gpu.core_clock %></p>
+        <p>Boost clock: <%= @gpu.boost_clock %></p>
+        <p>Memory type: <%= @gpu.memory_type %></p>
+        <p>Interface: <%= @gpu.interface %></p>
+        <p>Price: <%= number_to_currency(@gpu.price) %></p>
       </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_gpu_path(@gpu) %>

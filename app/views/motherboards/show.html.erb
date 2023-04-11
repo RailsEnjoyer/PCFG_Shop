@@ -63,16 +63,19 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h1><%= @motherboard.brand %></h1>
+      <h1><%= @motherboard.model %></h1>
       <% if @motherboard.image.attached? %>
         <div>
           <%= image_tag(@motherboard.image) %>
         </div>
       <% end %>
       <div class="main__component-info">
-        <p>Бренд: <%= @motherboard.brand %></p>
-        <p>Тип памяти: <%= @motherboard.memory_type %></p>
-        <p>Цена: <%= number_to_currency(@motherboard.price) %></p>
+        <p>Brand: <%= @motherboard.brand %></p>
+        <p>Chipset: <%= @motherboard.chipset %></p>
+        <p>Maximum memory: <%= @motherboard.max_memory %></p>
+        <p>Socket: <%= @motherboard.socket %></p>
+        <p>PCI: <%= @motherboard.pci %></p>
+        <p>Price: <%= number_to_currency(@motherboard.price) %></p>
       </div>
       <div class="action-buttons__all">
         <%= link_to "Edit component", edit_motherboard_path(@motherboard) %>

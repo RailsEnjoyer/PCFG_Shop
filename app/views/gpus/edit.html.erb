@@ -11,6 +11,8 @@
     <%= form.number_field :core_clock, class: 'form-control' %><br>
     <%= form.label :boost_clock %>
     <%= form.text_field :boost_clock, class: 'form-control' %><br>
+    <%= form.label :bus_width %>
+    <%= form.number_field :bus_width, class: 'form-control' %><br>
     <%= form.label :tdp %>
     <%= form.text_field :tdp, class: 'form-control' %><br>
     <%= form.label :memory_type %>
@@ -20,9 +22,9 @@
     <%= form.label :compatible_interface %>
     <%= form.text_field :compatible_interface, class: 'form-control' %><br>
     <%= form.label :price %>
-    <%= form.number_field :price, class: 'form-control' %><br>
+    <%= form.number_field :price, step: 0.01, class: 'form-control' %><br>
     <%= form.label :rating %>
-    <%= form.number_field :rating, class: 'form-control' %><br>
+    <%= form.number_field :rating, step: 0.01, class: 'form-control' %><br>
   </div>
       <%= form.label :image %>
       <%= form.file_field :image %>

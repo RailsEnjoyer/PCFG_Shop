@@ -63,7 +63,7 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h1><%= @power_supply.brand %></h1>
+      <h1><%= @power_supply.model %></h1>
       <% if @power_supply.image.attached? %>
         <div>
           <%= image_tag(@power_supply.image) %>

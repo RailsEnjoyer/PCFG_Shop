@@ -9,7 +9,7 @@
     <%= form.label :capacity %>
     <%= form.number_field :capacity, class: 'form-control' %><br>
     <%= form.label :interface %>
-    <%= form.number_field :interface, class: 'form-control' %><br>
+    <%= form.text_field :interface, class: 'form-control' %><br>
     <%= form.label :form_factor %>
     <%= form.text_field :form_factor, class: 'form-control' %><br>
     <%= form.label :read_speed %>
@@ -18,10 +18,14 @@
     <%= form.text_field :write_speed, class: 'form-control' %><br>
     <%= form.label :compatible_interface %>
     <%= form.text_field :compatible_interface, class: 'form-control' %><br>
+    <%= form.label :write_resource %>
+    <%= form.number_field :write_resource, class: 'form-control' %><br>
+    <%= form.label :operating_time %>
+    <%= form.number_field :operating_time, class: 'form-control' %><br>
     <%= form.label :price %>
-    <%= form.number_field :price, class: 'form-control' %><br>
+    <%= form.number_field :price, step: 0.01, class: 'form-control' %><br>
     <%= form.label :rating %>
-    <%= form.number_field :rating, class: 'form-control' %><br>
+    <%= form.number_field :rating, step: 0.01, class: 'form-control' %><br>
     <div class="field">
       <%= form.label :image %>
       <%= form.file_field :image %>

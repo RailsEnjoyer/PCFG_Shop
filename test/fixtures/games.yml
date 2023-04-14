@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  release_date: 2023-04-13
+  req_cpu_core_count: 1
+  req_cpu_thread_count: 1
+  req_cpu_clock: 1.5
+  req_cpu_cache: 1
+  req_gpu_memory: 1
+  req_gpu_core_clock: 1.5
+  req_gpu_bus_width: 1
+  req_hdd_capacity: 1
+  req_ram_memory: 1
+  req_ssd_capacity: 1
+
+two:
+  title: MyString
+  description: MyText
+  release_date: 2023-04-13
+  req_cpu_core_count: 1
+  req_cpu_thread_count: 1
+  req_cpu_clock: 1.5
+  req_cpu_cache: 1
+  req_gpu_memory: 1
+  req_gpu_core_clock: 1.5
+  req_gpu_bus_width: 1
+  req_hdd_capacity: 1
+  req_ram_memory: 1
+  req_ssd_capacity: 1

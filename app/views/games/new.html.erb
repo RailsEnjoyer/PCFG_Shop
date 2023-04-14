@@ -61,30 +61,45 @@
 <!-- header section ends -->
 <!-- main section starts -->
    <main>
-    <div class="container">
-      <section class="help">
-        <h2 class="help__help-main">Need Help?</h2>
-        <p>We understand how important our customers are and we are always here to help you in any way we can. If you have any questions or concerns about our products or services, please do not hesitate to contact us.</p>
-        <p>We offer a variety of ways to get in touch with us:</p>
-        <ul>
-          <p class="phone">Phone: 1-800-123-4567</p><br>
-          <p class="email">Email: support@computerpartsshop.com</p><br>
-        </ul>
-        <p>We are available to assist you Monday through Friday from 9am to 5pm EST.</p>
-      </section>
-      <section class="delivery">
-        <h2 class="delivery-main">Delivery</h2>
-        <p>We offer free standard shipping on all orders over $50. For orders under $50, we offer flat rate shipping of $5.99.</p>
-        <p>Please allow 1-2 business days for us to process your order. Once your order has been shipped, you will receive a tracking number via email.</p>
-        <p>If you need your order faster, we offer expedited shipping options at an additional cost. Please contact us for more information.</p>
-      </section>
-      <section class="returns">
-        <h2 class="returns-main">Returns & Exchanges</h2>
-        <p>If you are not completely satisfied with your purchase, you may return it for a full refund within 30 days of the purchase date. The item must be in its original condition and packaging.</p>
-        <p>If you need to exchange an item, please contact us and we will be happy to assist you.</p>
-        <p>Please note that we do not cover the cost of return shipping, unless the item is defective or damaged.</p>
-      </section>
-    </div>
+    <h1>Create new Game</h1>
+    <%= form_with(model: @game, local: true) do |form| %>
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control' %><br>
+        <%= form.label :description %>
+        <%= form.text_field :description, class: 'form-control' %><br>
+        <%= form.label :release_date %>
+        <%= form.date_field :release_date, class: 'form-control' %><br>
+        <%= form.label :req_cpu_core_count %>
+        <%= form.number_field :req_cpu_core_count, class: 'form-control' %><br>
+        <%= form.label :req_cpu_thread_count %>
+        <%= form.number_field :req_cpu_thread_count, class: 'form-control' %><br>
+        <%= form.label :req_cpu_clock %>
+        <%= form.number_field :req_cpu_clock, step: 0.01, class: 'form-control' %><br>
+        <%= form.label :req_cpu_cache %>
+        <%= form.number_field :req_cpu_cache, class: 'form-control' %><br>
+        <%= form.label :req_gpu_memory %>
+        <%= form.number_field :req_gpu_memory, class: 'form-control' %><br>
+        <%= form.label :req_gpu_core_clock %>
+        <%= form.number_field :req_gpu_core_clock, step: 0.01, class: 'form-control' %><br>
+        <%= form.label :req_gpu_bus_width %>
+        <%= form.number_field :req_gpu_bus_width, class: 'form-control' %><br>
+        <%= form.label :req_hdd_capacity %>
+        <%= form.number_field :req_hdd_capacity, class: 'form-control' %><br>
+        <%= form.label :req_ram_memory %>
+        <%= form.number_field :req_ram_memory, class: 'form-control' %><br>
+        <%= form.label :req_ssd_capacity %>
+        <%= form.number_field :req_ssd_capacity, class: 'form-control' %><br>
+        <div class="field">
+          <%= form.label :image %>
+          <%= form.file_field :image %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+    <%= link_to 'Back', games_path %>
    </main>
 <!-- main section ends -->
 <!-- footer section starts -->

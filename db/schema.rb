@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_11_123947) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_13_141217) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -100,6 +100,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_123947) do
     t.float "rating"
     t.string "image"
     t.integer "memory_frequency"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "release_date"
+    t.integer "req_cpu_core_count"
+    t.integer "req_cpu_thread_count"
+    t.float "req_cpu_clock"
+    t.integer "req_cpu_cache"
+    t.integer "req_gpu_memory"
+    t.float "req_gpu_core_clock"
+    t.integer "req_gpu_bus_width"
+    t.integer "req_hdd_capacity"
+    t.integer "req_ram_memory"
+    t.integer "req_ssd_capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "gpus", force: :cascade do |t|

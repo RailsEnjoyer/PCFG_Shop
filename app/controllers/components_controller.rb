@@ -33,6 +33,9 @@ class ComponentsController < ApplicationController
   def edit
   end
 
+
+
+
   private 
 
   def component_params

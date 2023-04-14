@@ -78,8 +78,8 @@
             <p class="subtitle">Try out new possibilities now!</p>
             <p class="top__text">or visit our catalogue and find something you like</p>
             <button class="buy-btn">
-              <span class="buy-btn__text">Configure Now!</span>
-              <span class="buy-btn__price">Free</span>
+              <span class="buy-btn__text"><%= link_to 'Configure Now!', configurator_path %></span>
+              <span class="buy-btn__price"><%= link_to 'Free', configurator_path %></span>
             </button>
           </div>
         </div>
@@ -196,7 +196,7 @@
                 <p class="game__descr-text">
                   Take a look at the supported games to choose from to match your perfect computer!
                 </p>
-                <a class="game__link" href="#">see all games</a>
+                <a><%= link_to 'See all games', games_path, class: 'game__link' %></a>
               </div>
             <div class="game__item">
               <%= image_tag("games/fortnite.avif", width: '300px', alt:"", class:"game__item-img") %>

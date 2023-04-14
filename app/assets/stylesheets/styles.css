@@ -710,6 +710,37 @@ ul>li:hover {
     bottom: 5px;
 }
 
+.configurator-main {
+    background: black;
+}
+
+.section {
+    margin-top: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-title {
+    margin-top: 0;
+}
+
+.section-form {
+    margin-top: 10px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section-select, .section-button {
+    margin-top: 5px;
+}
+
+.game__show-style {
+    background-color: black;
+}
+
 footer {
     background-color: #030303;
     border-top: 1px solid rgb(130, 0, 0);

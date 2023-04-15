@@ -1,0 +1,6 @@
+ <h1>Шаг 2: Укажите бюджет</h1>
+    <%= form_tag step2_path do %>
+      <%= text_field_tag 'budget', @budget, { class: 'form-control' } %>
+      <br>
+      <%= submit_tag "Next step", class: "start-button" %>
+    <% end %>

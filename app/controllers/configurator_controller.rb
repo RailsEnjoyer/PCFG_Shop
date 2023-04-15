@@ -1,5 +1,23 @@
 class ConfiguratorController < ApplicationController
-  def index
+  def step1
+    @games = Game.all
+    selected_game_ids = params[:game_ids]
+    session[:selected_game_ids] = selected_game_ids
+  end
+  
+  def step2
+    selected_game_ids = params[:game_ids]
+    session[:selected_game_ids] = selected_game_ids
+  end
+  
+
+  def step3
+    selected_game_ids = params[:game_ids]
+    session[:selected_game_ids] = selected_game_ids
+  end
+  
+  def results
+    @selected_game_ids = session[:selected_game_ids]
     @gpus = Gpu.all
     @cpus = Cpu.all
     @coolers = Cooler.all
@@ -9,8 +27,5 @@ class ConfiguratorController < ApplicationController
     @rams = Ram.all
     @rigs = Rig.all
     @ssds = Ssd.all
-  end
-
-  def show
-  end
+  end 
 end

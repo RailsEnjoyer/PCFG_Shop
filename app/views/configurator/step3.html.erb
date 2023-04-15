@@ -1,0 +1,23 @@
+<h1>Шаг 3: Выберите предпочтения</h1>
+    <%= form_tag step3_path do %>
+      <%= radio_button_tag 'manufacturer', 'intel', @manufacturer == 'intel', { class: 'manufacturer-radio' } %>
+      <%= label_tag 'manufacturer', 'Intel' %>
+      <br>
+      <%= radio_button_tag 'manufacturer', 'amd', @manufacturer == 'amd', { class: 'manufacturer-radio' } %>
+      <%= label_tag 'manufacturer', 'AMD' %>
+      <br>
+      <%= radio_button_tag 'manufacturer', 'nvidia', @manufacturer == 'nvidia', { class: 'manufacturer-radio' } %>
+      <%= label_tag 'manufacturer', 'Nvidia' %>
+      <br>
+      <%= check_box_tag 'case', 'yes', @case, { class: 'case-checkbox' } %>
+      <%= label_tag 'case', 'Добавить корпус' %>
+      <br>
+      <%= check_box_tag 'storage[]', 'ssd', @storage.present? && @storage.include?('ssd'), { class: 'storage-checkbox' } %>
+      <%= label_tag 'storage_ssd', 'SSD' %>
+      <br>
+      <%= check_box_tag 'storage[]', 'hdd', @storage.present? && @storage.include?('hdd'), { class: 'storage-checkbox' } %>
+      <%= label_tag 'storage_hdd', 'HDD' %>
+      <br>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= submit_tag 'Next step', class: 'btn btn-primary', formaction: '/results' %>
+    <% end %>

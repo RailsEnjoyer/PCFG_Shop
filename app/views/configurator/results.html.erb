@@ -1,0 +1,6 @@
+<h1>Выбранные игры</h1>
+<ul>
+  <% @selected_game_ids.each do |game_id| %>
+    <li><%= Game.find(game_id).title %></li>
+  <% end %>
+</ul>

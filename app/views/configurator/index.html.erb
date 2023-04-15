@@ -60,8 +60,27 @@
     </header>
 <!-- header section ends -->
 <!-- main section starts -->
-   <main>
-      <%= link_to 'More about supported games', games_path %>
+   <main class="cfg-main">
+    <div class="container-configurator">
+      <h1 class="heading">Welcome to the PC Configurator!</h1>
+      <p class="subheading">Ready to create your perfect gaming computer in just a few simple steps? We've made the process as easy and quick as possible, so you can dive into the world of gaming without any hassle.</p>
+      <div class="steps">
+        <div class="step">
+          <h2 class="step-heading">Step 1: Choose a Game</h2>
+          <p class="step-description">On the first step, you need to select one game that you want to play on your new computer. Whether it's a modern shooter, an exciting role-playing game, or a thrilling racing arcade - you have a choice!</p>
+        </div>
+        <div class="step">
+          <h2 class="step-heading">Step 2: Specify Your Budget</h2>
+          <p class="step-description">On the second step, you need to specify your budget that you want to stay within while building your computer. We'll offer you optimal options based on your preferences and requirements.</p>
+        </div>
+        <div class="step">
+          <h2 class="step-heading">Step 3: Choose Preferences</h2>
+          <p class="step-description">On the third step, you can optionally choose preferences for component manufacturers and customize your PC to your liking. Choose from top brands and enjoy the customization of your future computer.</p>
+        </div>
+      </div>
+      <p class="final-text">And that's it! In just a few seconds, you'll get a perfectly tailored computer ready for your gaming adventures. Creating your own gaming PC has never been easier and faster.</p>
+      <%= link_to "Start Building Now", step1_path, class: "start-button" %>
+    </div>
    </main>
 <!-- main section ends -->
 <!-- footer section starts -->

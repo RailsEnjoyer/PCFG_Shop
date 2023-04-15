@@ -762,3 +762,78 @@ footer {
     font-weight: 700;
     margin-top: 60px;
 }
+
+/* configurator styles starts */
+
+.cfg-main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.3)), url(../stylesheets/bg/cfgbg.jpg);
+}
+
+.container-configurator {
+    max-width: 800px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: rgb(8, 8, 8);
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+	text-align: center;
+	color: rgb(130, 0, 0);
+	margin-top: 0;
+}
+
+.subheading {
+	text-align: center;
+	color: #e0e0e0;
+}
+
+.steps {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+
+.step {
+	flex-basis: calc(33.33% - 20px);
+	padding: 20px;
+	background-color: #1b1b1b;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.step-heading {
+	color: rgb(136, 10, 10);
+	margin-top: 0;
+}
+
+.step-description {
+	color: #e0e0e0;
+}
+
+.final-text {
+	text-align: center;
+	color: #e0e0e0;
+	margin-top: 30px;
+}
+
+.start-button {
+	display: block;
+	margin: 30px auto;
+	background-color: rgb(136, 10, 10);
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.start-button:hover {
+	background-color: rgb(90, 0, 0);
+}
+
+/* configurator styles ends */

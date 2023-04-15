@@ -1,12 +1,8 @@
-<%= form_tag step1_path do %>
+<h1>Шаг 1: Выберите игру</h1>
+<%= form_tag(step1_submit_path) do %>
   <% @games.each do |game| %>
-    <label>
-      <%= radio_button_tag 'game_ids[]', game.id, false, { class: 'game-checkbox' } %>
-      <%= game.title %>
-    </label>
-    <br>
+    <%= radio_button_tag :selected_game_id, game.id %>
+    <%= game.title %><br>
   <% end %>
-  <br>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= submit_tag 'Next step', class: 'btn btn-primary', formaction: '/step2' %>
+  <%= submit_tag "Далее" %>
 <% end %>

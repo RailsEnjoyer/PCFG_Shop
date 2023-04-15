@@ -23,14 +23,14 @@ Rails.application.routes.draw do
   resources :rigs
   resources :coolers
 
-  post '/step1', to: 'configurator#step1'
-  get '/step1', to: 'configurator#step1'
-  post '/step2', to: 'configurator#step2'
-  get '/step2', to: 'configurator#step2'
-  post '/step3', to: 'configurator#step3'
-  get '/step3', to: 'configurator#step3'
-  post '/results', to: 'configurator#results'
-  get '/results', to: 'configurator#results'
+  get 'step1', to: 'configurator#step1'
+  post 'step1_submit', to: 'configurator#step1_submit'
+  get 'step2', to: 'configurator#step2'
+  post 'step2_submit', to: 'configurator#step2_submit'
+  get 'step3', to: 'configurator#step3'
+  post 'step3_submit', to: 'configurator#step3_submit'
+  get 'results', to: 'configurator#results'
+  post 'results', to: 'configurator#results'
 
   get '/step2', to: 'configurator#step2'
   get '/step3', to: 'configurator#step3'

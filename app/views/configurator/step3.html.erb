@@ -1,23 +1,24 @@
-<h1>Шаг 3: Выберите предпочтения</h1>
-    <%= form_tag step3_path do %>
-      <%= radio_button_tag 'manufacturer', 'intel', @manufacturer == 'intel', { class: 'manufacturer-radio' } %>
-      <%= label_tag 'manufacturer', 'Intel' %>
-      <br>
-      <%= radio_button_tag 'manufacturer', 'amd', @manufacturer == 'amd', { class: 'manufacturer-radio' } %>
-      <%= label_tag 'manufacturer', 'AMD' %>
-      <br>
-      <%= radio_button_tag 'manufacturer', 'nvidia', @manufacturer == 'nvidia', { class: 'manufacturer-radio' } %>
-      <%= label_tag 'manufacturer', 'Nvidia' %>
-      <br>
-      <%= check_box_tag 'case', 'yes', @case, { class: 'case-checkbox' } %>
-      <%= label_tag 'case', 'Добавить корпус' %>
-      <br>
-      <%= check_box_tag 'storage[]', 'ssd', @storage.present? && @storage.include?('ssd'), { class: 'storage-checkbox' } %>
-      <%= label_tag 'storage_ssd', 'SSD' %>
-      <br>
-      <%= check_box_tag 'storage[]', 'hdd', @storage.present? && @storage.include?('hdd'), { class: 'storage-checkbox' } %>
-      <%= label_tag 'storage_hdd', 'HDD' %>
-      <br>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <%= submit_tag 'Next step', class: 'btn btn-primary', formaction: '/results' %>
-    <% end %>
+<h1>Шаг 3: Выберите производителя, корпус и тип накопителя</h1>
+<%= form_tag(step3_submit_path) do %>
+  <%= label_tag 'manufacturer', 'Производитель:' %>
+  <%= radio_button_tag 'manufacturer', 'AMD' %>
+  <%= label_tag 'manufacturer_amd', 'AMD' %>
+  <%= radio_button_tag 'manufacturer', 'Intel' %>
+  <%= label_tag 'manufacturer_intel', 'Intel' %>
+  <%= radio_button_tag 'manufacturer', 'NVIDIA' %>
+  <%= label_tag 'manufacturer_nvidia', 'NVIDIA' %>
+  <br>
+  <%= label_tag 'has_rig', 'Добавить корпус:' %>
+  <%= check_box_tag 'has_rig', '1', session[:selected_has_rig], id: 'has_rig' %>
+  <%= label_tag 'has_rig_label', 'Да', for: 'has_rig' %>
+  <br>
+  <%= label_tag 'storage_type', 'Тип накопителя:' %>
+  <%= radio_button_tag 'storage_type', 'HDD' %>
+  <%= label_tag 'storage_type_hdd', 'HDD' %>
+  <%= radio_button_tag 'storage_type', 'SSD' %>
+  <%= label_tag 'storage_type_ssd', 'SSD' %>
+  <%= radio_button_tag 'storage_type', 'Both' %>
+  <%= label_tag 'storage_type_both', 'HDD и SSD' %>
+  <br>
+  <%= submit_tag 'Далее' %>
+<% end %>

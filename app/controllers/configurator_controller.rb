@@ -57,7 +57,7 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_cpu = @ready_cpu.order(
-      "core_count DESC, thread_count DESC, boost_clock DESC"
+      "price DESC, core_count DESC, thread_count DESC, boost_clock DESC"
     )
 
 
@@ -73,7 +73,7 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_gpu = @ready_gpu.order(
-      "memory DESC, boost_clock DESC, bus_width DESC"
+      "price ASC, memory DESC, boost_clock DESC, bus_width DESC"
     )
     
 
@@ -85,7 +85,7 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_hdd = @ready_hdd.order(
-      "speed DESC, rpm DESC, capacity DESC"
+      "price ASC, speed DESC, rpm DESC, capacity DESC"
     )
     
 
@@ -97,7 +97,7 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_ssd = @ready_ssd.order(
-      "write_speed DESC, read_speed DESC, operating_time DESC"
+      "price ASC, write_speed DESC, read_speed DESC, operating_time DESC"
     )
     
 
@@ -109,7 +109,7 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_ram = @ready_ram.order(
-      "memory_speed DESC, timings DESC"
+      "price ASC, memory_speed DESC, timings DESC"
     )
     
 
@@ -139,7 +139,7 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_power_supply = @ready_power_supply.order(
-      "efficiency DESC, wattage DESC"
+      "price ASC, efficiency DESC, wattage DESC"
     )
 
   
@@ -151,7 +151,7 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_coolers = @ready_cooler_by_socket.order(
-      "max_tdp DESC"
+      "price ASC, max_tdp DESC"
     )
     
 
@@ -161,18 +161,18 @@ class ConfiguratorController < ApplicationController
     )
 
     @ready_rig = @ready_rig.order(
-      "drive_bays DESC, rating DESC"
+      "price ASC, drive_bays DESC, rating DESC"
     )
 
-    @top_3_graphic_cards = @ready_gpu.take(1)
-    @top_3_hdds = @ready_hdd.take(1)
-    @top_3_ssds = @ready_ssd.take(1)
-    @top_3_rams = @ready_ram.take(1)
-    @top_3_motherboards = @ready_motherboard.take(1)
-    @top_3_power_supplies = @ready_power_supply.take(1)
-    @top_3_coolers = @ready_coolers.take(1)
-    @top_3_rigs = @ready_rig.take(1)
-    @top_3_processors = @ready_cpu.take(1)
+    @top_3_graphic_cards = @ready_gpu.take(3)
+    @top_3_hdds = @ready_hdd.take(3)
+    @top_3_ssds = @ready_ssd.take(3)
+    @top_3_rams = @ready_ram.take(3)
+    @top_3_motherboards = @ready_motherboard.take(3)
+    @top_3_power_supplies = @ready_power_supply.take(3)
+    @top_3_coolers = @ready_coolers.take(3)
+    @top_3_rigs = @ready_rig.take(3)
+    @top_3_processors = @ready_cpu.take(3)
     
     @total_price = (@top_3_power_supplies.first.price + @top_3_motherboards.first.price + @top_3_rams.first.price + @top_3_ssds.first.price + @top_3_hdds.first.price + @top_3_graphic_cards.first.price + @top_3_processors.first.price)*1.15 + 30
     @rounded_price = @total_price.round(2)

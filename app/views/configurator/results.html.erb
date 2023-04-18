@@ -11,42 +11,83 @@
 
 <h2>PC</h2>
 
-<% @top_3_processors.each do |cpu| %>
+<% @top_1_processor.each do |cpu| %>
   cpu <%= cpu.model %><br>
 <% end %>
 <br>
-<% @top_3_graphic_cards.each do |gpu| %>
+<% @top_3_processor.each do |cpu| %>
+  cpu <%= cpu.model %><br>
+<% end %>
+<br>
+<% @top_1_graphic_card.each do |gpu| %>
   gpu <%= gpu.model %><br>
 <% end %>
 <br>
-<% @top_3_hdds.each do |hdd| %>
+<% @top_3_graphic_card.each do |gpu| %>
+  gpu <%= gpu.model %><br>
+<% end %>
+<br>
+<% @top_1_hdd.each do |hdd| %>
   hdd <%= hdd.model %><br>
 <% end %>
 <br>
-<% @top_3_ssds.each do |ssd| %>
+<% @top_3_hdd.each do |hdd| %>
+  hdd <%= hdd.model %><br>
+<% end %>
+<br>
+<% @top_1_ssd.each do |ssd| %>
   ssd <%= ssd.model %><br>
 <% end %>
 <br>
-<% @top_3_rams.each do |ram| %>
+<% @top_3_ssd.each do |ssd| %>
+  ssd <%= ssd.model %><br>
+<% end %>
+<br>
+<% @top_1_ram.each do |ram| %>
   ram <%= ram.model %><br>
 <% end %>
 <br>
-<% @top_3_motherboards.each do |motherboard| %>
+<% @top_3_ram.each do |ram| %>
+  ram <%= ram.model %><br>
+<% end %>
+<br>
+<% @top_1_motherboard.each do |motherboard| %>
   motherboard <%= motherboard.model %><br>
 <% end %>
 <br>
-<% @top_3_power_supplies.each do |power_supplies| %>
+<% @top_3_motherboard.each do |motherboard| %>
+  motherboard <%= motherboard.model %><br>
+<% end %>
+<br>
+<% @top_1_power_supply.each do |power_supplies| %>
   power supply <%= power_supplies.model %><br>
 <% end %>
 <br>
-<% @top_3_coolers.each do |coolers| %>
+<% @top_3_power_supply.each do |power_supplies| %>
+  power supply <%= power_supplies.model %><br>
+<% end %>
+<br>
+<% @top_1_cooler.each do |coolers| %>
   cooler <%= coolers.model %><br>
 <% end %>
 <br>
-<% @top_3_rigs.each do |rigs| %>
-  rig <%= rigs.model %><br>
+<% @top_3_cooler.each do |coolers| %>
+  cooler <%= coolers.model %><br>
 <% end %>
 <br>
-  total price: <%= @rounded_price %><br>
-  added price: <%= @rounded_added_price %>
+<% if session[:selected_has_rig] %>
+<% @top_1_rig.each do |rigs| %>
+rig <%= rigs.model %><br>
+<% end %>
+<br>
+<% @top_3_rig.each do |rigs| %>
+rig <%= rigs.model %><br>
+<% end %>
+<% end %>
+<br>
+  total price top: <%= @rounded_price_top %><br>
+  added price top: <%= @rounded_added_price_top %><br>
+  total price low: <%= @rounded_price_low %><br>
+  added price low: <%= @rounded_added_price_low %><br>
+  missing components: <%= @missing %>
 <br>

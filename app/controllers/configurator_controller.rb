@@ -35,6 +35,7 @@ class ConfiguratorController < ApplicationController
   def results
     @selected_game = Game.find(session[:selected_game_id])
     @selected_budget = session[:budget].to_f
+    @custom_budget = 'Non-selected (10000 USD$ budget setted as your budget)'
     @selected_storage = session[:selected_storage_type]
     @selected_manufacturer = session[:selected_manufacturer]
     @selected_rig = session[:selected_has_rig]

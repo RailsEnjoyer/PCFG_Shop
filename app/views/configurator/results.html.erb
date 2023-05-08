@@ -1,12 +1,12 @@
-<h1>Результаты</h1>
-<p>Выбранная игра: <%= @selected_game.title %></p>
-<p>manufacturer: <%= @selected_manufacturer %></p>
-<p>storage: <%= @selected_storage %></p>
-<p>budget: <%= @selected_budget %></p>
+<h1>Results</h1>
+<p>Game: <%= @selected_game.title %></p>
+<p>Manufacturer: <%= @selected_manufacturer %></p>
+<p>Storage: <%= @selected_storage %></p>
+<p>Budget: <%= @selected_budget == 10000 ? @custom_budget : "#{@selected_budget} USD$" %></p>
 <% if @selected_rig %>
-  <p>Корпус: Да</p>
+  <p>Add Rig?: Yes</p>
 <% else %>
-  <p>Корпус: Нет</p>
+  <p>Add Rig?: No</p>
 <% end %>
 
 <h2>PC</h2>

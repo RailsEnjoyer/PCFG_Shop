@@ -2,62 +2,12 @@
 <html>
   <head>
     <title>PCFG About us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= favicon_link_tag 'favicon.ico' %>
-    <link href="https://fonts.cdnfonts.com/css/boge" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_importmap_tags %>
-    <%= javascript_include_tag "main", "data-turbo-track": "reload", defer: true %>
+    <%= render 'layouts/head' %>
     <%= stylesheet_link_tag('/about/styles') %>
   </head>
   <body>
 <!-- header section starts -->
-    <header class="header">
-        <nav class="nav">
-          <div class="logo">
-            <%= link_to 'PCFG', root_path, class:'logo' %>
-          </div>
-          <ul class="menu">
-            <li class="menu__list">
-              <%= link_to 'Home', root_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-               <%= link_to 'Catalogue', catalogue_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'Configurator', configurator_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'News', news_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'About Us', about_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
-            </li>
-          </ul>
-          <div class="basket">
-            <a class="basket" href="#">
-              <%= image_tag ("logos/cart.png"), height:"40px", alt:"cart" %>
-              <!-- <span>1</span> -->
-            </a>
-          </div>
-          <div class="menu__login">
-            <ul class="menu__login">
-              <li class="menu__list">
-                <a class="menu__link" href="#">Sing up</a>
-              </li>
-              <li class="menu__list">
-                <a class="menu__link" href="#">Login</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-    </header>
+        <%= render 'layouts/header' %>
 <!-- header section ends -->
 <!-- main section starts -->
    <main class="about__about-main">
@@ -88,44 +38,7 @@
    </main>
 <!-- main section ends -->
 <!-- footer section starts -->
-    <footer class="footer">
-      <nav class="nav">
-          <div class="logo">
-            <%= link_to 'PCFG', root_path, class:'logo' %>
-          </div>
-          <ul class="menu">
-            <li class="menu__list">
-              <%= link_to 'Home', root_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-               <%= link_to 'Catalogue', catalogue_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'Configurator', configurator_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'News', news_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'About Us', about_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
-            </li>
-          </ul>
-          <ul class="social">
-            <li class="social__item">
-              <%= link_to(image_tag("logos/yt.png", height: "40px", alt: "cart"), "https://www.youtube.com/") %>
-            </li>
-            <li class="social__item">
-              <%= link_to(image_tag("logos/tg.png", height: "40px", alt: "cart"), "https://telegram.org/") %>
-            </li>
-            <li class="social__item">
-              <%= link_to(image_tag("logos/inst.png", height: "40px", alt: "cart"), "https://www.instagram.com/") %>
-            </li>
-          </ul>
-        </nav>
-    </footer>
+      <%= render 'layouts/footer' %>
 <!-- footer section ends -->
     </div>
   </body>

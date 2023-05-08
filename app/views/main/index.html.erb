@@ -146,7 +146,7 @@
               <p class="game__item-text">
                 Fortnite is a survival game where 100 players fight against each other in player versus player combat to be the last one standing. It is a fast-paced, action-packed game, not unlike The Hunger Games, where strategic thinking is a must in order to survive. There are an estimated 125 million players on Fortnite.
               </p>
-              <a class="game__item-link" href="#">see more</a>
+              <%= link_to 'See more', game_path(1), class: 'game__item-link' %>
             </div>
             <div class="game__item">
               <%= image_tag("games/atomic.jpg", width: '300px', alt:"", class:"game__item-img") %>
@@ -155,7 +155,7 @@
               </h3>
               <p class="game__item-text">
                 Atomic Heart is a game that confidently weds progressive themes found in science fiction literature from the likes of Philip K Dick and Isaac Asimov with adrenaline-fuelled set pieces synonymous with action movies from the 80s and 90s.              </p>
-              <a class="game__item-link" href="#">see more</a>
+              <%= link_to 'See more', game_path(2), class: 'game__item-link' %>
             </div>
             <div class="game__item">
               <%= image_tag("games/re4.jpeg", width: '300px', alt:"", class:"game__item-img") %>
@@ -165,7 +165,7 @@
               <p class="game__item-text">
                 Resident Evil 4 is a survival horror game developed by Capcom Production Studio 4 and published by Capcom for the GameCube in 2005. Players control special agent Leon S. Kennedy who is on a mission to rescue the US president's daughter, Ashley Graham, who has been kidnapped by a religious cult in rural Spain.
               </p>
-              <a class="game__item-link" href="#">see more</a>
+              <%= link_to 'See more', game_path(3), class: 'game__item-link' %>
             </div>
           </div>
         </div>

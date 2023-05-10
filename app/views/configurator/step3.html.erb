@@ -1,24 +1,69 @@
-<h1>Шаг 3: Выберите производителя, корпус и тип накопителя</h1>
-<%= form_tag(step3_submit_path) do %>
-  <%= label_tag 'manufacturer', 'Производитель:' %>
-  <%= radio_button_tag 'manufacturer', 'AMD' %>
-  <%= label_tag 'manufacturer_amd', 'AMD' %>
-  <%= radio_button_tag 'manufacturer', 'Intel' %>
-  <%= label_tag 'manufacturer_intel', 'Intel' %>
-  <%= radio_button_tag 'manufacturer', 'NVIDIA' %>
-  <%= label_tag 'manufacturer_nvidia', 'NVIDIA' %>
-  <br>
-  <%= label_tag 'has_rig', 'Добавить корпус:' %>
-  <%= check_box_tag 'has_rig', '1', session[:selected_has_rig], id: 'has_rig' %>
-  <%= label_tag 'has_rig_label', 'Да', for: 'has_rig' %>
-  <br>
-  <%= label_tag 'storage_type', 'Тип накопителя:' %>
-  <%= radio_button_tag 'storage_type', 'HDD' %>
-  <%= label_tag 'storage_type_hdd', 'HDD' %>
-  <%= radio_button_tag 'storage_type', 'SSD' %>
-  <%= label_tag 'storage_type_ssd', 'SSD' %>
-  <%= radio_button_tag 'storage_type', 'Both' %>
-  <%= label_tag 'storage_type_both', 'HDD и SSD' %>
-  <br>
-  <%= submit_tag 'Далее' %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Step 3: Select preferences</title>
+    <%= render 'layouts/head' %>
+  </head>
+    <!-- header section starts -->
+      <%= render 'layouts/header' %>
+    <!-- header section ends -->
+  <body>
+    <div class="container">
+      <h1 class="step1-title">Step 3 (optional):<br> Select manufacturer, rig and storage type(s)</h1>
+      <%= form_tag(step3_submit_path) do %>
+        <div class="form-section">
+          <%= label_tag 'manufacturer', 'Manufacturer:' %>
+          <div class="radio-group">
+            <%= radio_button_tag 'manufacturer', 'AMD' %>
+            <%= label_tag 'manufacturer_amd', 'AMD' %>
+          </div>
+          <div class="radio-group">
+            <%= radio_button_tag 'manufacturer', 'Intel' %>
+            <%= label_tag 'manufacturer_intel', 'Intel' %>
+          </div>
+          <div class="radio-group">
+            <%= radio_button_tag 'manufacturer', 'NVIDIA' %>
+            <%= label_tag 'manufacturer_nvidia', 'NVIDIA' %>
+          </div>
+        </div>
+        <div class="form-section">
+          <%= label_tag 'has_rig', 'Add rig:' %>
+          <div class="checkbox-group">
+            <%= check_box_tag 'has_rig', '1', session[:selected_has_rig], id: 'has_rig' %>
+            <%= label_tag 'has_rig_label', 'Yes', for: 'has_rig' %>
+          </div>
+        </div>
+        <div class="form-section">
+          <%= label_tag 'storage_type', 'Storage type:' %>
+          <div class="radio-group">
+            <%= radio_button_tag 'storage_type', 'HDD' %>
+            <%= label_tag 'storage_type_hdd', 'HDD' %>
+          </div>
+          <div class="radio-group">
+            <%= radio_button_tag 'storage_type', 'SSD' %>
+            <%= label_tag 'storage_type_ssd', 'SSD' %>
+          </div>
+          <div class="radio-group">
+            <%= radio_button_tag 'storage_type', 'Both' %>
+            <%= label_tag 'storage_type_both', 'HDD and SSD' %>
+          </div>
+        </div>
+        <h3 class="note_cfg">important note:</h3>
+        <p class="step-descr">
+          Welcome to the third step of our configurator!
+          Here you can specify your preferences for component manufacturers. It is important to note that your choices here will have an impact on the final cost of your computer. Every choice you make can affect the bottom line.<br>
+          Choosing a component manufacturer can significantly narrow your search for available components, which can result in a higher price. It's also worth keeping in mind that choosing a particular manufacturer can affect the price/quality concept that our component selection algorithm works with.<br>
+          Also, if you choose to add an enclosure to your configuration, the cost of the enclosure will not be included in the main price. It will be displayed as an add-on cost, which may slightly increase the final price compared to your budget.<br>
+          We strive to give you the best computer option for your preferences. Keep choosing according to your needs, and we'll help you create the perfect system to meet your expectations and budget.
+        </p>
+        <div class="button-group">
+          <%= submit_tag "Back", type: "button", onclick: "history.go(-1);", class: "button-step1" %>
+          <%= submit_tag "Results", class: "button-step1" %>
+        </div>
+      <% end %>
+    </div>
+  </body>
+    <!-- footer section starts -->
+      <%= render 'layouts/footer' %>
+    <!-- footer section ends -->
+</html>

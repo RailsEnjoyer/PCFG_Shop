@@ -836,4 +836,36 @@ footer {
 	background-color: rgb(90, 0, 0);
 }
 
+.step1-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(150, 0, 0);
+}
+
+.all-games_step1 {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+}
+
+.button-step1 {
+    margin-right: 10px;
+    background-color: rgb(136, 10, 10);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.step1-descr {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 40px;
+    color: rgb(133, 133, 133);
+}
+
+  
 /* configurator styles ends */

@@ -1,6 +1,21 @@
-<h1>Шаг 2: Введите бюджет</h1>
-<%= form_tag(step2_submit_path) do %>
-  <%= label_tag :budget, 'budget' %>
-  <%= text_field_tag 'budget' %>
-  <%= submit_tag "Далее" %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Step 1: Choose game</title>
+    <%= render 'layouts/head' %>
+  </head>
+    <!-- header section starts -->
+      <%= render 'layouts/header' %>
+    <!-- header section ends -->
+  <body>
+    <h1>Шаг 2: Введите бюджет</h1>
+    <%= form_tag(step2_submit_path) do %>
+      <%= label_tag :budget, 'budget' %>
+      <%= text_field_tag 'budget' %>
+      <%= submit_tag "Далее" %>
+    <% end %>
+  </body>
+    <!-- footer section starts -->
+      <%= render 'layouts/footer' %>
+    <!-- footer section ends -->
+</html>

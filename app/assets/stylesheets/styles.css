@@ -867,5 +867,27 @@ footer {
     color: rgb(133, 133, 133);
 }
 
+.black-input {
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    font-size: 20px;
+    outline: none;
+}
+
+.currency-label {
+    font-size: 20px;
+}
+
+.button-group {
+    margin-top: 50px;
+}
+
+.budget-text {
+    font-size: 20px;
+    margin-right: 30px;
+}
   
 /* configurator styles ends */

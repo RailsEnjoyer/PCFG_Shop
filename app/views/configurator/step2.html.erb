@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Step 1: Choose game</title>
+    <title>Step 2: Select budget</title>
     <%= render 'layouts/head' %>
   </head>
     <!-- header section starts -->
       <%= render 'layouts/header' %>
     <!-- header section ends -->
   <body>
-    <h1>Шаг 2: Введите бюджет</h1>
-    <%= form_tag(step2_submit_path) do %>
-      <%= label_tag :budget, 'budget' %>
-      <%= text_field_tag 'budget' %>
-      <%= submit_tag "Далее" %>
-    <% end %>
+    <div class="container">
+      <h1 class="step1-title">Step 2: Select your budget</h1>
+      <%= form_tag(step2_submit_path) do %>
+        <%= label_tag :budget, 'Budget: ', class: 'budget-text' %>
+        <%= number_field_tag 'budget', nil, class: 'black-input' %>
+        <span class="currency-label">USD$</span>
+        <div class="button-group">
+          <%= submit_tag "Back", type: "button", onclick: "history.go(-1);", class: "button-step1" %>
+          <%= submit_tag "Next step", class: "button-step1" %>
+        </div>
+      <% end %>
+      <h3 class="step1-descr">
+        Welcome to step two of our configurator!
+        Here you can specify your budget to build your own computer. If you're not familiar with component prices or just don't want to limit yourself to a budget, don't worry! We have prepared a default budget of $10,000 for you. This way, you can familiarize yourself with the different components without any restrictions and understand their approximate cost.<br>
+        However, if you wish, you can always go back to this page and specify a different budget that fits your financial capabilities. That way, you can build a computer that's right for you.<br>
+        Our goal is to help you build the perfect system without stress or limitations. Let's go ahead and continue building your perfect computer!
+      </h3>
+    </div>
   </body>
     <!-- footer section starts -->
       <%= render 'layouts/footer' %>

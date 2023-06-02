@@ -1,93 +1,256 @@
-<h1>Results</h1>
-<p>Game: <%= @selected_game.title %></p>
-<p>Manufacturer: <%= @selected_manufacturer %></p>
-<p>Storage: <%= @selected_storage %></p>
-<p>Budget: <%= @selected_budget == 10000 ? @custom_budget : "#{@selected_budget} USD$" %></p>
-<% if @selected_rig %>
-  <p>Add Rig?: Yes</p>
-<% else %>
-  <p>Add Rig?: No</p>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Results</title>
+    <%= render 'layouts/head' %>
+  </head>
+    <!-- header section starts -->
+      <%= render 'layouts/header' %>
+    <!-- header section ends -->
+  <body>
+    <div class="container-results">
+      <h1 class="step1-title">Results</h1>
+      <div class="results_info">
+        <p class="results-game">Game: <%= @selected_game.title %></p>
+        <div class="game_results-img">
+          <%= image_tag(@selected_game.image, width: "800px") %>
+        </div>
+        <p class="results-other">Manufacturer: <%= @selected_manufacturer %></p>
+        <p class="results-other">Storage: <%= @selected_storage %></p>
+        <p class="results-other">Budget: <%= @selected_budget == 10000 ? @custom_budget : "#{@selected_budget} USD$" %></p>
+          <% if @selected_rig %>
+            <p class="results-other">Add Rig?: Yes</p>
+          <% else %>
+            <p class="results-other">Add Rig?: No</p>
+          <% end %>
+      </div>
 
-<h2>PC</h2>
+      <h2 class="offer">We offer:</h2>
+      <div class="column-wrapper">
+        <div class="column">
+          <% @top_1_processor.each do |cpu| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(cpu.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">CPU</p>
+                <p class="product-model"><%= cpu.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% @top_1_graphic_card.each do |gpu| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(gpu.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">GPU</p>
+                <p class="product-model"><%= gpu.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% @top_1_hdd.each do |hdd| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(hdd.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">HDD</p>
+                <p class="product-model"><%= hdd.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% @top_1_ssd.each do |ssd| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(ssd.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">SSD</p>
+                <p class="product-model"><%= ssd.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% @top_1_ram.each do |ram| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(ram.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">RAM</p>
+                <p class="product-model"><%= ram.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% @top_1_motherboard.each do |motherboard| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(motherboard.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Motherboard</p>
+                <p class="product-model"><%= motherboard.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% @top_1_power_supply.each do |power_supplies| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(power_supplies.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Power supply</p>
+                <p class="product-model"><%= power_supplies.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% @top_1_cooler.each do |coolers| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(coolers.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Cooler</p>
+                <p class="product-model"><%= coolers.model %></p>
+              </div>
+            </div>
+          <% end %>
+          <% if session[:selected_has_rig] %>
+            <% @top_1_rig.each do |rigs| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(rigs.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Rig</p>
+                <p class="product-model"><%= rigs.model %></p>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+          <p class="price-results">Total price: <%= @rounded_price_top %><span> USD$</span></p><br>
+          <p class="price-results">Added price: <%= @rounded_added_price_top %><span> USD$</span></p><br>
+        </div>
 
-<% @top_1_processor.each do |cpu| %>
-  cpu <%= cpu.model %><br>
-<% end %>
-<br>
-<% @top_3_processor.each do |cpu| %>
-  cpu <%= cpu.model %><br>
-<% end %>
-<br>
-<% @top_1_graphic_card.each do |gpu| %>
-  gpu <%= gpu.model %><br>
-<% end %>
-<br>
-<% @top_3_graphic_card.each do |gpu| %>
-  gpu <%= gpu.model %><br>
-<% end %>
-<br>
-<% @top_1_hdd.each do |hdd| %>
-  hdd <%= hdd.model %><br>
-<% end %>
-<br>
-<% @top_3_hdd.each do |hdd| %>
-  hdd <%= hdd.model %><br>
-<% end %>
-<br>
-<% @top_1_ssd.each do |ssd| %>
-  ssd <%= ssd.model %><br>
-<% end %>
-<br>
-<% @top_3_ssd.each do |ssd| %>
-  ssd <%= ssd.model %><br>
-<% end %>
-<br>
-<% @top_1_ram.each do |ram| %>
-  ram <%= ram.model %><br>
-<% end %>
-<br>
-<% @top_3_ram.each do |ram| %>
-  ram <%= ram.model %><br>
-<% end %>
-<br>
-<% @top_1_motherboard.each do |motherboard| %>
-  motherboard <%= motherboard.model %><br>
-<% end %>
-<br>
-<% @top_3_motherboard.each do |motherboard| %>
-  motherboard <%= motherboard.model %><br>
-<% end %>
-<br>
-<% @top_1_power_supply.each do |power_supplies| %>
-  power supply <%= power_supplies.model %><br>
-<% end %>
-<br>
-<% @top_3_power_supply.each do |power_supplies| %>
-  power supply <%= power_supplies.model %><br>
-<% end %>
-<br>
-<% @top_1_cooler.each do |coolers| %>
-  cooler <%= coolers.model %><br>
-<% end %>
-<br>
-<% @top_3_cooler.each do |coolers| %>
-  cooler <%= coolers.model %><br>
-<% end %>
-<br>
-<% if session[:selected_has_rig] %>
-<% @top_1_rig.each do |rigs| %>
-rig <%= rigs.model %><br>
-<% end %>
-<br>
-<% @top_3_rig.each do |rigs| %>
-rig <%= rigs.model %><br>
-<% end %>
-<% end %>
-<br>
-  total price top: <%= @rounded_price_top %><br>
-  added price top: <%= @rounded_added_price_top %><br>
-  total price low: <%= @rounded_price_low %><br>
-  added price low: <%= @rounded_added_price_low %><br>
-  missing components: <%= @missing %>
-<br>
+        <div class="column">
+          <% @top_3_processor.each do |cpu| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(cpu.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">CPU</p>
+                <p class="product-model"><%= cpu.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% @top_3_graphic_card.each do |gpu| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(gpu.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">GPU</p>
+                <p class="product-model"><%= gpu.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% @top_3_hdd.each do |hdd| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(hdd.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">HDD</p>
+                <p class="product-model"><%= hdd.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% @top_3_ssd.each do |ssd| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(ssd.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">SSD</p>
+                <p class="product-model"><%= ssd.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% @top_3_ram.each do |ram| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(ram.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">RAM</p>
+                <p class="product-model"><%= ram.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% @top_3_motherboard.each do |motherboard| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(motherboard.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Motherboard</p>
+                <p class="product-model"><%= motherboard.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% @top_3_power_supply.each do |power_supplies| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(power_supplies.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Power supply</p>
+                <p class="product-model"><%= power_supplies.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% @top_3_cooler.each do |coolers| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(coolers.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Cooler</p>
+                <p class="product-model"><%= coolers.model %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <% if session[:selected_has_rig] %>
+            <% @top_3_rig.each do |rigs| %>
+            <div class="product">
+              <div class="product-img">
+                <%= image_tag(rigs.image, width: "100px") %>
+              </div>
+              <div class="product-details">
+                <p class="product-name">Rig</p>
+                <p class="product-model"><%= rigs.model %></p>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+          <p class="price-results">Total price: <%= @rounded_price_low %><span> USD$</span></p><br>
+          <p class="price-results">Added price: <%= @rounded_added_price_low %><span> USD$</span></p><br>
+        </div>
+      </div>
+        <p class="missing_comp">Missing components: <%= @missing %></p>
+    </div>
+  </body>
+    <!-- footer section starts -->
+      <%= render 'layouts/footer' %>
+    <!-- footer section ends -->
+</html>

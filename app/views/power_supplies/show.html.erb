@@ -15,7 +15,7 @@
     <div class="container">
       <h1><%= @power_supply.model %></h1>
       <% if @power_supply.image.attached? %>
-        <div>
+        <div class="component-pic">
           <%= image_tag(@power_supply.image) %>
         </div>
       <% end %>

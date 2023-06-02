@@ -168,6 +168,7 @@ ul>li:hover {
 }
 
 .components__title-all {
+    margin-top: 60px;
     font-size: 60px;
     animation: appear 1s;
     text-align: center;

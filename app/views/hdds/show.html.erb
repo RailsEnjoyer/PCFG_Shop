@@ -15,7 +15,7 @@
     <div class="container">
       <h1><%= @hdd.model %></h1>
       <% if @hdd.image.attached? %>
-        <div>
+        <div class="component-pic">
           <%= image_tag(@hdd.image) %>
         </div>
       <% end %>

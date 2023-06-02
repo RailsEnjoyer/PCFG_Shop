@@ -246,7 +246,7 @@ class ConfiguratorController < ApplicationController
       @missing_components_string = missing_components.join(", ")
       @missing = @missing_components_string
     else
-      @missing = "none"
+      @missing = "None :)"
     end
 
 

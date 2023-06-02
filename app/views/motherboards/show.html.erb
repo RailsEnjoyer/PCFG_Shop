@@ -15,7 +15,7 @@
     <div class="container">
       <h1><%= @motherboard.model %></h1>
       <% if @motherboard.image.attached? %>
-        <div>
+        <div class="component-pic">
           <%= image_tag(@motherboard.image) %>
         </div>
       <% end %>

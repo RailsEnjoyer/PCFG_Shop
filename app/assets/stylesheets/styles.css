@@ -72,6 +72,10 @@ ul>li:hover {
 .header {
     border-bottom: 1px solid #c00000;
     background-color: #030303;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 .main {
@@ -779,6 +783,7 @@ footer {
 }
 
 .heading {
+    padding-top: 60px;
 	text-align: center;
 	color: rgb(130, 0, 0);
 	margin-top: 0;
@@ -837,6 +842,7 @@ footer {
 }
 
 .step1-title {
+    padding-top: 80px;
     font-size: 32px;
     text-align: center;
     margin-bottom: 40px;
@@ -911,5 +917,97 @@ footer {
 .button-group {
     margin-top: 20px;
 }
+
+.container-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
+  .column-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 100px; /* Измените значение, если требуется больший отступ между колонками */
+  }
+  
+  .column p {
+    margin: 0;
+  }
+  
+  .column:last-child {
+    margin-bottom: 0;
+  }
+  
+  .product {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    width: 400px;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  
+  .product img {
+    margin-right: 10px;
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .product-name {
+    font-weight: bold;
+    margin-top: 5px;
+    border-bottom: 2px solid rgb(136, 10, 10);
+    width: 250px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .product-model {
+    padding-top: 15px;
+  }
+  
+  .results_info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 200px;
+  }
+  
+  .game_results-img {
+    margin-bottom: 10px;
+  }
+  
+  .results-game {
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .results-other {
+    border-bottom: 1px solid white;
+    width: 800px;
+  }
+
+  .offer {
+    margin-bottom: 50px;
+  }
+
+  .price-results {
+    border-bottom: 1px solid rgb(136, 10, 10);
+    width: 300px;
+  }
 /* configurator styles ends */

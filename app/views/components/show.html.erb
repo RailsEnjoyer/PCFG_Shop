@@ -17,7 +17,7 @@
           <p><%= flash[:notice] %></p>
       <% end %>
       <h1><%= @component.title %></h1>
-      <%= image_tag(@component.image) %>
+      <div class="component-pic"><%= image_tag(@component.image) %></div>
       <div class="main__component-info">
         <p>short info: <%= @component.description %></p>
         <p>producer: <%= @component.brand %></p>

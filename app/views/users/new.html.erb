@@ -1,14 +1,8 @@
 <h2>create account</h2>
 
-<% if flash[:notice].present? %>
-    <%= flash[:notice] %>
-  <% elsif flash[:alert].present? %>
-    <%= flash[:alert] %>
-<% end %>
-<br>
 <% if @user.errors.any? %>
     <% @user.errors.full_messages.each do |message| %>
-    <%= message %>
+        <p><%= message %></p>
     <% end %>
 <% end %>
 

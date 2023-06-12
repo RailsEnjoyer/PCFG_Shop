@@ -8,15 +8,15 @@ class SessionsController < ApplicationController
     
     if user.present? 
       session[:user_id] = user.id
-      redirect_to main_path
+      redirect_to root_path
     else
-      flash.now[:alert] = 'Wrong email or password'
+      flash[:alert] = 'Wrong email or password'
       render :new
     end
-  end
+  end  
 
   def destroy
     session.delete(:user_id)
-    redirect_to main_path
+    redirect_to root_path
   end
 end

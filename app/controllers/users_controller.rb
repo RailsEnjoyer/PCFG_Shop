@@ -5,15 +5,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    if @user.save
-      redirect_to main_path
+    @user = User.new(user_params)
+
+    if @user.save 
+      redirect_to root_path, notice: 'Registrated'
     else
-      flash.now[:alert] = 'wrong input parameters'
+      flash.now[:alert] = 'wrong input'
       render :new
     end
   end
 
-  def edit 
+  def edit
     @user = User.find(params[:id])
   end
 
@@ -21,19 +23,20 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to main_path
+      redirect_to root_path, notice: 'Updated'
     else
-      flash.now[:alert] = 'error while updating'
+      flash.now[:alert] = 'wrong input'
       render :edit
     end
   end
 
-  def destroy
+  def destroy 
     @user = User.find(params[:id])
     @user.destroy
+
     session.delete(:user_id)
 
-    redirect_to main_path
+    redirect_to root_path, notice: 'User deleted'
   end
 
   private 

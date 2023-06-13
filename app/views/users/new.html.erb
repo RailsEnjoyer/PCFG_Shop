@@ -1,26 +1,60 @@
-<h2>create account</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Support</title>
+    <%= render 'layouts/head' %>
+    <%= stylesheet_link_tag('/support/styles') %>
+  </head>
+  <body>
+<!-- header section starts -->
+    <%= render 'layouts/header' %>
+<!-- header section ends -->
+<!-- main section starts -->
+  <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
+    <div class="container">
+      <div class='reg-main'>
+        <h2 class='step1-title'>Create account</h2>
+        <div>
+          <% @user.errors.full_messages.each do |message| %>
+            <p class="errors"><%= message %></p>
+          <% end %>
+        </div>
+        <%= form_with model: @user, data: { turbo: false } do |form| %>
+          <div class="form-field_login">
+              <%= form.label :name, 'Your real name (needed on delivery)' %><br>
+              <%= form.text_field :name, class:'black-input' %>
+          </div>
 
-<% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |message| %>
-        <p><%= message %></p>
-    <% end %>
-<% end %>
+          <div class="form-field_login">
+              <%= form.label :nickname, 'Nickname (displayed on the site)' %><br>
+              <%= form.text_field :nickname, class:'black-input' %>
+          </div>
 
-<%= form_with model: @user, data: {turbo: false} do |form| %>
-    <p><%= form.label :name, 'name' %></p>
-    <p><%= form.text_field :name %></p>
+          <div class="form-field_login">
+              <%= form.label :email, 'Email' %><br>
+              <%= form.text_field :email, class:'black-input' %>
+          </div>
 
-    <p><%= form.label :nickname, 'nickname' %></p>
-    <p><%= form.text_field :nickname %></p>
+          <div class="form-field_login">
+              <%= form.label :password, 'Password' %><br>
+              <%= form.password_field :password, class:'black-input' %>
+          </div>
 
-    <p><%= form.label :email %></p>
-    <p><%= form.text_field :email %></p>
+          <div class="form-field_login">
+              <%= form.label :password_confirmation, 'Confirm Password' %><br>
+              <%= form.password_field :password_confirmation, class:'black-input' %>
+          </div>
 
-    <p><%= form.label :password %></p>
-    <p><%= form.password_field :password %></p>
-
-    <p><%= form.label :password_confirmation %></p>
-    <p><%= form.password_field :password_confirmation %></p>
-
-    <p><%= form.submit 'create' %></p>
-<% end %>
+          <div class="login-btns">
+            <%= submit_tag "Create account", class: "login-btn_action" %>
+            <%= link_to "I have an account", session_path, class: "login-btn_action login-btn_action-right" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </main>
+<!-- main section ends -->
+<!-- footer section starts -->
+  <%= render 'layouts/footer' %>
+<!-- footer section ends -->

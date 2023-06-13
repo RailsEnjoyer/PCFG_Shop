@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/catalogue', to: 'main#catalogue'
   get '/configurator', to: 'configurator#index'
 
+  get '/auth/google/callback', to: 'sessions#google_auth_callback'
+  get '/auth/yandex/callback', to: 'sessions#yandex_auth_callback'
+
   resources :components
   resources :catalogue
   resources :configurator
@@ -23,6 +26,7 @@ Rails.application.routes.draw do
   resources :rigs
   resources :coolers
 
+  get 'session', to: 'sessions#new'
   get 'step1', to: 'configurator#step1'
   post 'step1_submit', to: 'configurator#step1_submit'
   get 'step2', to: 'configurator#step2'

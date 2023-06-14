@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   root to: 'main#index'
   
   get '/main', to: 'main#index'
   get '/catalogue', to: 'main#catalogue'
   get '/configurator', to: 'configurator#index'
 
-  get '/auth/google/callback', to: 'sessions#google_auth_callback'
-  get '/auth/yandex/callback', to: 'sessions#yandex_auth_callback'
-
   resources :components
   resources :catalogue
   resources :configurator
   resources :games
 
+
   resource :session, only: %i[new create destroy]
   resources :users, only: %i[new create edit update destroy]
+  resources :line_items, only: [:create, :update, :destroy]
 
   resources :rams
   resources :ssds
@@ -26,6 +27,9 @@ Rails.application.routes.draw do
   resources :rigs
   resources :coolers
 
+  delete 'line_items/destroy_all', to: 'line_items#destroy_all', as: 'destroy_all_line_items'
+
+  get '/carts', to: 'carts#index'
   get 'session', to: 'sessions#new'
   get 'step1', to: 'configurator#step1'
   post 'step1_submit', to: 'configurator#step1_submit'

@@ -1056,3 +1056,25 @@ footer {
     margin-top: 40px;
 }
 
+.buy_item-btn {
+    border: 1px solid;
+    border-color: rgb(100, 0, 0);
+    padding: 6px;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buy_item-btn:hover {
+    border-color: white;
+    transition: 0.5s;
+}
+
+.your-cart {
+    margin-top: 200px;
+}

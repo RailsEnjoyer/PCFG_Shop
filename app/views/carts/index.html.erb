@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Support</title>
+    <%= render 'layouts/head' %>
+    <%= stylesheet_link_tag('/support/styles') %>
+  </head>
+  <body>
+<!-- header section starts -->
+    <%= render 'layouts/header' %>
+<!-- header section ends -->
+<!-- main section starts -->
+   <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
+    <div class="container">
+        <% total = 0 %>
+        <% mprice = 0 %>
+        <h1 class="your-cart">Your cart</h1>
+        <% @cart.line_items.each do |line_item| %>
+        <div id="line_item_<%= line_item.id %>">
+            <p><%= line_item.component.title %></p>
+            <div class="image-container">
+                <%= image_tag(line_item.component.image, class: "product-image") %>
+            </div>
+            <p>Quantity: <%= line_item.quantity %></p>
+            <p>price: <%= line_item.component.price %></p>
+            <p><% total+= line_item.component.price %></p>
+            <p>summ: <%= mprice = line_item.component.price*line_item.quantity if line_item.component.price*line_item.quantity != line_item.component.price || line_item.component.price %></p>
+            <p><% mprice = mprice - line_item.component.price if line_item.component.price*line_item.quantity != line_item.component.price %></p>
+            <%= button_to 'Remove all', { controller: 'line_items', action: 'destroy', id: line_item.id }, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+            <%= form_for(line_item, url: { controller: 'line_items', action: 'update', id: line_item.id }, remote: true, authenticity_token: true) do |f| %>
+            <%= f.number_field :quantity, min: 1, max: 99, value: (line_item.quantity || 1) %>
+            <%= f.submit 'Add / Remove' %>
+            <% end %>
+        </div>
+        <% end %>
+        <p>total price: <%= mprice+total %></p>
+        <%= link_to 'Home', root_path, class:'menu__link' %>
+   </main>
+<!-- main section ends -->
+<!-- footer section starts -->
+    <%= render 'layouts/footer' %>
+<!-- footer section ends -->
+    </div>
+  </body>
+</html>

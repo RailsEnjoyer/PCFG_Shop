@@ -1,17 +1,14 @@
 class Cart < ApplicationRecord
-  has_many :line_items
+    belongs_to :user
+    has_many :line_items, dependent: :destroy
 
-  def add_ram(ram)
-    current_item = line_items.find_by(ram_id: ram.id)
-    if current_item
-      current_item.quantity += 1
-    else
-      current_item = line_items.build(ram_id: ram.id)
+    def add_component(component)
+        line_item = line_items.find_by(component_id: component.id)
+        if line_item
+          line_item.quantity += 1
+        else
+          line_item = line_items.build(component_id: component.id)
+        end
+        line_item.save
     end
-    current_item
-  end
-
-  def total_price
-    line_items.to_a.sum { |item| item.total_price }
-  end
 end

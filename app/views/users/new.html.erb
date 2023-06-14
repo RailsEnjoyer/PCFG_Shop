@@ -21,36 +21,35 @@
         </div>
         <%= form_with model: @user, data: { turbo: false } do |form| %>
           <div class="form-field_login">
-              <%= form.label :name, 'Your real name (needed on delivery)' %><br>
-              <%= form.text_field :name, class:'black-input' %>
+            <%= form.label :name, 'Your real name (needed on delivery)' %><br>
+            <%= form.text_field :name, class:'black-input' %>
           </div>
 
           <div class="form-field_login">
-              <%= form.label :nickname, 'Nickname (displayed on the site)' %><br>
-              <%= form.text_field :nickname, class:'black-input' %>
+            <%= form.label :nickname, 'Nickname (displayed on the site)' %><br>
+            <%= form.text_field :nickname, class:'black-input' %>
           </div>
 
           <div class="form-field_login">
-              <%= form.label :email, 'Email' %><br>
-              <%= form.text_field :email, class:'black-input' %>
+            <%= form.label :email, 'Email' %><br>
+            <%= form.text_field :email, class:'black-input' %>
           </div>
 
           <div class="form-field_login">
-              <%= form.label :password, 'Password' %><br>
-              <%= form.password_field :password, class:'black-input' %>
+            <%= form.label :password, 'Password' %><br>
+            <%= form.password_field :password, class:'black-input' %>
           </div>
 
           <div class="form-field_login">
-              <%= form.label :password_confirmation, 'Confirm Password' %><br>
-              <%= form.password_field :password_confirmation, class:'black-input' %>
+            <%= form.label :password_confirmation, 'Confirm Password' %><br>
+            <%= form.password_field :password_confirmation, class:'black-input' %>
           </div>
 
           <div class="login-btns">
             <%= submit_tag "Create account", class: "login-btn_action" %>
             <%= link_to "I have an account", session_path, class: "login-btn_action login-btn_action-right" %>
           </div>
-          <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
   </main>

@@ -14,9 +14,10 @@ gem "jbuilder"
 gem 'erb_lint'
 gem 'sass-rails'
 gem 'bcrypt'
+gem 'jquery-rails'
 
-gem 'omniauth-google-oauth2'
-gem 'omniauth-yandex'
+
+gem 'mini_magick'
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false

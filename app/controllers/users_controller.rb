@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     session[:current_time] = Time.now
     @user = User.new
@@ -7,7 +8,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save 
+    if @user.save
+      @user.create_cart
       redirect_to root_path, notice: 'Registrated'
     else
       flash.now[:alert] = 'wrong input'

@@ -39,6 +39,7 @@ class ConfiguratorController < ApplicationController
     @selected_storage = session[:selected_storage_type]
     @selected_manufacturer = session[:selected_manufacturer]
     @selected_rig = session[:selected_has_rig]
+    missing_components = []
 
     @cpus = Cpu.all
     @coolers = Cooler.all
@@ -58,7 +59,7 @@ class ConfiguratorController < ApplicationController
       @selected_game.req_cpu_core_count,
       @selected_game.req_cpu_thread_count,
       @selected_game.req_cpu_clock,
-      @selected_budget * 0.2
+      @selected_budget * 0.15
     )
 
     @ready_cpu_top = @ready_cpu.order(
@@ -68,8 +69,8 @@ class ConfiguratorController < ApplicationController
       "price ASC, core_count DESC, thread_count DESC, boost_clock DESC"
     )
 
-    @top_1_processor = @ready_cpu_top.take(1)
-    @top_3_processor = @ready_cpu_low.take(1)
+      @top_1_processor = @ready_cpu_top.take(1)
+      @top_3_processor = @ready_cpu_low.take(1)
 
 
     @ready_gpu = @gpus.where(
@@ -80,7 +81,7 @@ class ConfiguratorController < ApplicationController
       @selected_game.req_gpu_memory,
       @selected_game.req_gpu_core_clock,
       @selected_game.req_gpu_bus_width,
-      @selected_budget * 0.3
+      @selected_budget * 0.25
     )
 
     @ready_gpu_top = @ready_gpu.order(
@@ -91,8 +92,8 @@ class ConfiguratorController < ApplicationController
       "price ASC, memory DESC, boost_clock DESC, bus_width DESC"
     )
     
-    @top_1_graphic_card = @ready_gpu_top.take(1)
-    @top_3_graphic_card = @ready_gpu_low.take(1)
+      @top_1_graphic_card = @ready_gpu_top.take(1)
+      @top_3_graphic_card = @ready_gpu_low.take(1)
 
     @ready_hdd = @hdds.where(
       'capacity >= ? 
@@ -150,31 +151,32 @@ class ConfiguratorController < ApplicationController
     @top_3_ram = @ready_ram_low.take(1)
 
     compatible_sockets = @ready_cpu_top.first.compatible_socket.split(',')
-    @ready_motherboard = @motherboards.where(
-      'memory_type == ?
-       AND memory_clock >= ?
-       AND price <=?
-       AND socket == ?
-       AND (memory_type == ? OR memory_type IN (?))',
-      
-      @ready_ram.first.memory_type,
-      @ready_ram.first.memory_speed,
-      @selected_budget * 0.3,
-      @ready_cpu_top.first.socket,
-      @ready_cpu_top.first.compatible_socket, compatible_sockets
-      
-    )
+      @ready_ram.each do |ram|
+        @ready_motherboard = @motherboards.where(
+          'memory_type == ?
+          AND memory_clock >= ?
+          AND price <= ?
+          AND socket == ?
+          AND (memory_type == ? OR memory_type IN (?))',
+          ram.memory_type,
+          ram.memory_speed,
+          @selected_budget * 0.2,
+          @ready_cpu_top.first.socket,
+          @ready_cpu_top.first.compatible_socket, compatible_sockets
+        )
 
-    @ready_motherboard_top = @ready_motherboard.order(
-      "price DESC"
-    )
+        if @ready_motherboard.empty?
+          next
+        else
+          @ready_motherboard_top = @ready_motherboard.order("price DESC")
+          @ready_motherboard_low = @ready_motherboard.order("price ASC")
 
-    @ready_motherboard_low = @ready_motherboard.order(
-      "price ASC"
-    )
+          @top_1_motherboard = @ready_motherboard_top.take(1)
+          @top_3_motherboard = @ready_motherboard_low.take(1)
 
-    @top_1_motherboard = @ready_motherboard_top.take(1)
-    @top_3_motherboard = @ready_motherboard_low.take(1)
+          break
+        end
+      end
 
     @ready_power_supply = @power_supplies.where(
       'wattage >= ?
@@ -231,7 +233,7 @@ class ConfiguratorController < ApplicationController
     @top_3_rig = @ready_rig_low.take(1)
     
     
-    missing_components = []
+    
     missing_components << "Power Supply" if @top_1_power_supply.empty?
     missing_components << "Motherboard" if @top_1_motherboard.empty?
     missing_components << "RAM" if @top_1_ram.empty?

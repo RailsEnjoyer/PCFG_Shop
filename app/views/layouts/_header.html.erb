@@ -51,5 +51,15 @@
             </ul>
           </div>
         </nav>
+        <div id="scroll-up-arrow">
+          <img src="/assets/swiper/up.png" alt="Scroll Up" width="40" height="40">
+        </div>
+
+        <script>
+          var scrollUpArrow = document.getElementById('scroll-up-arrow');
+          scrollUpArrow.addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+          });
+        </script>
         </header>
         

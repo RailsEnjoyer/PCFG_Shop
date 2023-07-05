@@ -27,30 +27,32 @@
           <h2 class="components__title-all">Catalogue</h2>
           <p class="subtitle__main blink">Popular choices</p>
           <div class="component__logo all__components">
-            <% @components.each do |component| %>
-              <div class="component__item">
-                <div class="component__title-main"><%= link_to component.title, "/components/#{component.id}" %></div>
-                <%= image_tag(component.image) %>
-                <div class="component__description"><br>
-                  <%= component.brand %>
-                  <span class="description__label"></span>
-                  <% rating = component.rating.round(1) %>
-                  <span class="stars">
-                    <% for i in 1..5 do %>
-                      <% if rating >= i %>
-                        <%= image_tag('bg/star.png') %>
-                      <% elsif rating >= i - 0.5 && rating < i %>
-                        <%= image_tag('bg/half-star.png') %>
-                      <% else %>
-                        <%= image_tag('bg/empty-star.png') %>
-                      <% end %>
-                    <% end %>
-                  </span>
-                  <span class="availability">Available to buy now? <%= component.availability %></span>
-                  <span class="price__label">Price: <%= component.price %> $USD</span>
-                  <span class="more__info"><%= link_to 'See more', "/components/#{component.id}" %></span>
-                </div>
-              </div>
+            <% categories = [@ssds, @rigs, @rams, @power_supplies, @motherboards, @hdds, @gpus, @cpus, @coolers] %>
+              <% categories.shuffle.each do |category| %>
+                <% models = category.sample(3) %>
+                <% models.each do |model| %>
+                  <div class="component__item">
+                    <div class="component__title-main"><%= link_to model.brand %></div>
+                    <%= image_tag(model.image) %>
+                    <div class="component__description"><br>
+                      <%= model.model %>
+                      <span class="description__label"></span>
+                      <% rating = model.rating.round(1) %>
+                      <span class="stars">
+                        <% for i in 1..5 do %>
+                          <% if rating >= i %>
+                            <%= image_tag('bg/star.png') %>
+                          <% elsif rating >= i - 0.5 && rating < i %>
+                            <%= image_tag('bg/half-star.png') %>
+                          <% else %>
+                            <%= image_tag('bg/empty-star.png') %>
+                          <% end %>
+                        <% end %>
+                      </span>
+                      <span class="price__label">Price: <%= model.price %> $USD</span>
+                    </div>
+                  </div>
+              <% end %>
             <% end %>
           </div>
         </div>

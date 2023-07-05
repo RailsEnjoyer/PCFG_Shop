@@ -20,7 +20,7 @@
                 <div class="component__title-main"><%= link_to game.title, "/games/#{game.id}" %></div>
                 <%= image_tag(game.image) %>
                 <div class="component__description"><br>
-                  <%= game.title %>
+                  <p>Released: <%= game.release_date %></p>
                   <span class="more__info"><%= link_to 'See more', "/games/#{game.id}" %></span>
                 </div>
               </div>

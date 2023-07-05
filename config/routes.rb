@@ -27,9 +27,6 @@ Rails.application.routes.draw do
   resources :rigs
   resources :coolers
 
-  delete 'line_items/destroy_all', to: 'line_items#destroy_all', as: 'destroy_all_line_items'
-
-  get '/carts', to: 'carts#index'
   get 'session', to: 'sessions#new'
   get 'step1', to: 'configurator#step1'
   post 'step1_submit', to: 'configurator#step1_submit'

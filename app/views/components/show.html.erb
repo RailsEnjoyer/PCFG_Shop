@@ -13,7 +13,8 @@
 <!-- main section starts -->
    <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
     <div class="container">
-      <h1><%= @component.title %></h1>
+      
+      <h1>sadsad</h1>
       <div class="component-pic"><%= image_tag(@component.image) %></div>
       <p><%= @component.title %></p>
       <div class="main__component-info">
@@ -29,7 +30,6 @@
         <p>weight: <%= @component.weight %> g.</p>
         <p>available to buy now? <%= @component.availability %></p>
         <p>price: <%= @component.price %> USD$</p>
-        <%= button_to 'Buy now!', line_items_path(component_id: @component.id), method: :post, class: 'buy_item-btn' %>
       </div>
 
       <div class="action-buttons__all">

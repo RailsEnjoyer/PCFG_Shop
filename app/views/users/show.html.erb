@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Support</title>
+    <%= render 'layouts/head' %>
+    <%= stylesheet_link_tag('/support/styles') %>
+  </head>
+  <body>
+<!-- header section starts -->
+    <%= render 'layouts/header' %>
+<!-- header section ends -->
+<!-- main section starts -->
+      <main style="background: linear-gradient(to bottom, #000000, #1a0d0d, #1a0d0d, #000000)">
+        <div class="profile-container">
+          <h1 class="profile-heading"><%= "#{@user.name}'s profile" %></h1>
+
+          <div class="profile-info">
+            <p class="profile-info_lines"><strong>Nickname:</strong> <%= @user.nickname %></p>
+            <p class="profile-info_lines"><strong>Email:</strong> <%= @user.email %></p>
+            <p class="profile-info_lines"><strong>Address:</strong> <%= @user.address %></p>
+            <p class="profile-info_lines"><strong>Phone:</strong> <%= @user.phone %></p>
+            <p class="profile-info_lines"><strong>Age:</strong> <%= @user.age %></p>
+            <p class="profile-info_lines"><strong>Country:</strong> <%= @user.country %></p>
+            <p class="profile-info_lines"><strong>Payment method:</strong> <%= @user.payment_method %></p>
+            <% if @user.image.attached? %>
+              <div class="profile-image">
+                <%= image_tag(@user.image, width: 300) %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="action-buttons__all">
+            <%= link_to "Edit profile", edit_user_path(@user), class: "edit-profile-button" %>
+            <%= link_to "Main page", root_path, class: "main-page-button" %>
+          </div>
+        </div>
+      </main>
+<!-- main section ends -->
+<!-- footer section starts -->
+      <%= render 'layouts/footer' %>
+<!-- footer section ends -->
+    </div>
+  </body>
+</html>

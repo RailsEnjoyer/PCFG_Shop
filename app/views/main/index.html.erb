@@ -177,10 +177,16 @@
           <div class="scanlines"></div>
         </div>
         <%= image_tag("products/rtx-promo.png", width: '600px', alt:"", class:"game__item-img") %>
-        <p class="Ndescr">The NVIDIA® GeForce RTX™ 4090 is the ultimate GeForce graphics card. It delivers a huge leap in performance, efficiency, and artificial intelligence-based graphics. Experience ultra-high performance games, incredibly detailed virtual worlds, unprecedented performance, and new creative possibilities. Built on NVIDIA's Ada Lovelace architecture with 24GB of G6X memory, these graphics cards deliver an unparalleled experience for gamers and content creators.</p>
+        <p class="Ndescr">The NVIDIA® GeForce RTX™ 40 series is the ultimate GeForce graphics card. It delivers a huge leap in performance, efficiency, and artificial intelligence-based graphics. Experience ultra-high performance games, incredibly detailed virtual worlds, unprecedented performance, and new creative possibilities. Built on NVIDIA's Ada Lovelace architecture with 24GB of G6X memory, these graphics cards deliver an unparalleled experience for gamers and content creators.</p>
         <button class="buy-btn">
-          <span class="buy-btn__text">Buy Now!</span>
-          <span class="buy-btn__price">-10%</span>
+          <span class="buy-btn__text" onclick="redirectToGpuPage(9)">Buy Now!</span>
+
+          <script>
+            function redirectToGpuPage(gpuId) {
+              window.location.href = '/gpus/' + gpuId;
+            }
+          </script>
+          <span class="buy-btn__price">-5%</span>
         </button>
       </div>
       <section class="equipment">

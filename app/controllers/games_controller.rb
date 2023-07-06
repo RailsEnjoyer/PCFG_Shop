@@ -42,6 +42,6 @@ class GamesController < ApplicationController
 	private
 	
 	def game_params
-		params.require(:game).permit(:title, :description, :release_date, :req_cpu_core_count, :req_cpu_thread_count, :req_cpu_clock, :req_cpu_cache, :req_gpu_memory, :req_gpu_core_clock, :req_gpu_bus_width, :req_hdd_capacity, :req_ram_memory, :req_ssd_capacity, :image)
+		params.require(:game).permit(:title, :description, :release_date, :req_cpu_core_count, :req_cpu_thread_count, :req_cpu_clock, :req_cpu_cache, :req_gpu_memory, :req_gpu_core_clock, :req_gpu_bus_width, :req_hdd_capacity, :req_ram_memory, :req_ssd_capacity, :image, :min_budget)
 	end
 end

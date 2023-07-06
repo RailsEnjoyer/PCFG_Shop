@@ -10,6 +10,11 @@
   <body>
     <div class="container">
       <h1 class="step1-title">Step 2: Select your budget</h1>
+      <% if flash[:error] %>
+        <div class="error-message">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
       <%= form_tag(step2_submit_path) do %>
         <%= label_tag :budget, 'Budget: ', class: 'budget-text' %>
         <%= number_field_tag 'budget', nil, class: 'black-input' %>

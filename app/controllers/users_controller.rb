@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     session[:current_time] = Time.now
     @user = User.new
@@ -25,9 +29,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to root_path, notice: 'Updated'
+      redirect_to user_path(@user), notice: 'Profile updated successfully.'
     else
-      flash.now[:alert] = 'wrong input'
       render :edit
     end
   end
@@ -44,6 +47,6 @@ class UsersController < ApplicationController
   private 
 
   def user_params
-    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :address, :phone, :age, :country, :payment_method, :image)
   end
 end

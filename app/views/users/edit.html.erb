@@ -1,29 +1,75 @@
-<h2>edit user</h2>
-<br>
-<% if @user.errors.any? %>
-  <% @user.errors.full_messages.each do |message| %>
-      <%= message %>
-  <% end %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PCFG Main Page</title>
+    <%= render 'layouts/head' %>
+    <%= stylesheet_link_tag('styles') %>
+  </head>
+  <body>
+<!-- header section starts -->
+        <%= render 'layouts/header' %>
+<!-- header section ends -->
+<!-- main section starts -->
+    <main class="main">
+      <div class="profile-container">
+        <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+          <div class="form-group">
+            <%= f.label :nickname, class: "profile-label" %>
+            <%= f.text_field :nickname, class: "input-field" %>
+          </div>
 
-<%= form_with model: @user, data: {turbo: false} do |form| %>
-    <p><%= form.label :name, 'name' %></p>
-    <p><%= form.text_field :name %></p>
+          <div class="form-group">
+            <%= f.label :name, class: "profile-label" %>
+            <%= f.text_field :name, class: "input-field" %>
+          </div>
 
-    <p><%= form.label :nickname, 'nickname' %></p>
-    <p><%= form.text_field :nickname %></p>
+          <div class="form-group">
+            <%= f.label :address, class: "profile-label" %>
+            <%= f.text_field :address, class: "input-field" %>
+          </div>
 
-    <p><%= form.label :email %></p>
-    <p><%= form.text_field :email %></p>
+          <div class="form-group">
+            <%= f.label :phone, class: "profile-label" %>
+            <%= f.text_field :phone, class: "input-field" %>
+          </div>
 
-    <p>if you don't want to change password leave those fields blank</p>
-    <p><%= form.label :password %></p>
-    <p><%= form.password_field :password %></p>
+          <div class="form-group">
+            <%= f.label :age, class: "profile-label" %>
+            <%= f.number_field :age, class: "input-field" %>
+          </div>
 
-    <p><%= form.label :password_confirmation %></p>
-    <p><%= form.password_field :password_confirmation %></p>
-    <p><%= form.submit 'edit' %></p>
-<% end %>
+          <div class="form-group">
+            <%= f.label :country, class: "profile-label" %>
+            <%= f.text_field :country, class: "input-field" %>
+          </div>
 
-<%= button_to 'delete profile', user_path(@user), method: :delete %>
-<p><%= link_to 'back', :back %></p>
+          <div class="form-group">
+            <%= f.label :payment_method, class: "profile-label" %>
+            <%= f.text_field :payment_method, class: "input-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image %>
+            <%= f.file_field :image %>
+            <% if @user.image.attached? %>
+            <div>
+              <%= image_tag(@user.image, width: 300) %>
+            </div>
+            <% end %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Save", class: "save-button" %>
+          </div>
+        <% end %>
+
+        <p class="mandatory">* - fields that must be filled in when making a delivery.</p>
+      </div>
+    </main>
+    <!-- main section ends -->
+<!-- footer section starts -->
+      <%= render 'layouts/footer' %>
+<!-- footer section ends -->
+    </div>
+  </body>
+</html>

@@ -25,6 +25,9 @@
           </ul>
           <div class="basket">
             <% if current_user %>
+              <a class="basket" href="<%= session_path %>">
+                <%= image_tag("logos/cart.png", height: "40px", alt: "cart") %>
+              </a>
             <% else %>
               <a class="basket" href="<%= session_path %>">
                 <%= image_tag("logos/cart.png", height: "40px", alt: "cart") %>
@@ -35,7 +38,7 @@
             <ul class="menu__login">
               <% if current_user.present? %>
                 <li class="menu__list">
-                  <%= "@#{current_user.nickname}" %>
+                  <%= link_to "@#{current_user.nickname}", user_path(current_user) %>
                 </li>
                 <li class="menu__list">
                   <%= button_to 'Exit', session_path, method: :delete, class: 'btn-exit' %>

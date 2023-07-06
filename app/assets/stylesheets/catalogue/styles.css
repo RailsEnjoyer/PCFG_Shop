@@ -365,3 +365,88 @@ footer {
     justify-content: center;
     cursor: pointer;
 }
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 160px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-label {
+    color: rgb(136, 10, 10);
+    font-weight: bold;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"] {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .save-button {
+    background-color: rgb(130, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .mandatory {
+    font-size: 16px;
+    margin-top: 20px;
+    color: grey;
+  }
+
+  .profile-container {
+    background-color: black;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .profile-heading {
+    color: rgb(130, 0, 0);
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .profile-info {
+    margin-bottom: 20px;
+  }
+  
+  .profile-info p {
+    margin-bottom: 10px;
+  }
+  
+  .profile-image {
+    margin-top: 20px;
+  }
+  
+  .action-buttons__all {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .profile-info_lines {
+    border-bottom: 1px solid white;
+    padding: 5px;
+  }

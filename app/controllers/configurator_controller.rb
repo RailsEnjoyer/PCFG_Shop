@@ -9,15 +9,25 @@ class ConfiguratorController < ApplicationController
   end
   
   def step2
+    
   end
 
   def step2_submit
+    selected_game = Game.find(session[:selected_game_id])
+    @min_budget = selected_game.min_budget
+
     if params[:budget].present?
       session[:budget] = params[:budget]
     else
       session[:budget] = 10000
     end
-    redirect_to step3_path
+
+    if session[:budget].to_i < @min_budget
+      flash[:error] = "Budget for this game must be at least $#{@min_budget}."
+      redirect_to step2_path
+    else
+      redirect_to step3_path
+    end
   end
   
   def step3
@@ -59,7 +69,7 @@ class ConfiguratorController < ApplicationController
       @selected_game.req_cpu_core_count,
       @selected_game.req_cpu_thread_count,
       @selected_game.req_cpu_clock,
-      @selected_budget * 0.15
+      @selected_budget * 0.20
     )
 
     @ready_cpu_top = @ready_cpu.order(
@@ -181,21 +191,20 @@ class ConfiguratorController < ApplicationController
     @ready_power_supply = @power_supplies.where(
       'wattage >= ?
       AND price <= ?',
-      @ready_gpu_top.first.tdp,
+      @ready_gpu_top.first&.tdp || 0,
       @selected_budget * 0.05
     )
-
+  
     @ready_power_supply_top = @ready_power_supply.order(
       "efficiency DESC, wattage DESC"
     )
-
+  
     @ready_power_supply_low = @ready_power_supply.order(
       "price ASC, efficiency DESC, wattage DESC"
     )
-
+  
     @top_1_power_supply = @ready_power_supply_top.take(1)
     @top_3_power_supply = @ready_power_supply_low.take(1)
-
   
     @ready_cooler_by_socket = @coolers.where(
       'socket LIKE ?
@@ -218,7 +227,7 @@ class ConfiguratorController < ApplicationController
 
     @ready_rig = @rigs.where(
       'price <= ?',
-      @selected_budget * 0.05
+      @selected_budget * 0.1
     )
 
     @ready_rig_top = @ready_rig.order(
@@ -234,7 +243,7 @@ class ConfiguratorController < ApplicationController
     
     
     
-    missing_components << "Power Supply" if @top_1_power_supply.empty?
+    missing_components << "Power Supply" if @top_1_power_supply.empty? || @top_1_power_supply == 0
     missing_components << "Motherboard" if @top_1_motherboard.empty?
     missing_components << "RAM" if @top_1_ram.empty?
     missing_components << "SSD" if @top_1_ssd.empty?

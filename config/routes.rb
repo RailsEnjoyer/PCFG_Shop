@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :line_items
-  resources :carts
   root to: 'main#index'
   
   get '/main', to: 'main#index'
@@ -14,7 +12,7 @@ Rails.application.routes.draw do
 
 
   resource :session, only: %i[new create destroy]
-  resources :users, only: %i[new create edit update destroy]
+  resources :users
   resources :line_items, only: [:create, :update, :destroy]
 
   resources :rams
@@ -26,6 +24,7 @@ Rails.application.routes.draw do
   resources :power_supplies
   resources :rigs
   resources :coolers
+  
 
   get 'session', to: 'sessions#new'
   get 'step1', to: 'configurator#step1'
@@ -36,6 +35,7 @@ Rails.application.routes.draw do
   post 'step3_submit', to: 'configurator#step3_submit'
   get 'results', to: 'configurator#results'
   post 'results', to: 'configurator#results'
+  patch '/users/:id', to: 'users#update', as: :update_user
 
   get '/step2', to: 'configurator#step2'
   get '/step3', to: 'configurator#step3'

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'rubygems'
+require 'bundler/setup'
+
+config_path = File.expand_path('../.rubocop.yml', __dir__)
+ARGV.unshift('--config', config_path) if File.exist?(config_path)
+ARGV.unshift('--raise-cop-error') unless ARGV.include?('--raise-cop-error')
+
+load Gem.bin_path('rubocop', 'rubocop')

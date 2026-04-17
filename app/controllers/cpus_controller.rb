@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CpusController < ApplicationController
+
   def index
     @cpus = Cpu.all
   end
@@ -42,6 +45,8 @@ class CpusController < ApplicationController
   private
 
   def cpu_params
-    params.require(:cpu).permit(:brand, :model, :price, :socket, :core_count, :thread_count, :base_clock, :boost_clock, :tdp, :compatible_socket, :cache, :image, :rating, :memory_frequency)
+    params.require(:cpu).permit(:brand, :model, :price, :socket, :core_count, :thread_count, :base_clock, :boost_clock,
+                                :tdp, :compatible_socket, :cache, :image, :rating, :memory_frequency)
   end
+
 end

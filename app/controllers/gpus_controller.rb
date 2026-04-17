@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class GpusController < ApplicationController
+
   def index
     @gpus = Gpu.all
   end
@@ -43,7 +46,10 @@ class GpusController < ApplicationController
   end
 
   private
+
   def gpu_params
-    params.require(:gpu).permit(:brand, :model, :price, :memory, :core_clock, :boost_clock, :tdp, :memory_type, :interface, :compatible_interface, :image, :rating, :bus_width)
+    params.require(:gpu).permit(:brand, :model, :price, :memory, :core_clock, :boost_clock, :tdp, :memory_type,
+                                :interface, :compatible_interface, :image, :rating, :bus_width)
   end
+
 end

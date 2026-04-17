@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class MainController < ApplicationController
+
   def catalogue
     @ssds = Ssd.all
     @rigs = Rig.all
@@ -11,4 +14,5 @@ class MainController < ApplicationController
     @cpus = Cpu.all
     @coolers = Cooler.all
   end
+
 end

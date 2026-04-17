@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreateGpus < ActiveRecord::Migration[7.0]
+
   def change
     create_table :gpus do |t|
       t.string :brand
@@ -15,4 +18,5 @@ class CreateGpus < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+
 end

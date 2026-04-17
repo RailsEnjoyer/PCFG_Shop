@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ComponentsController < ApplicationController
 
   def index
@@ -12,4 +14,5 @@ class ComponentsController < ApplicationController
     @cpus = Cpu.all
     @coolers = Cooler.all
   end
+
 end

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CoolersController < ApplicationController
+
   def index
     @coolers = Cooler.all
   end
@@ -42,6 +45,8 @@ class CoolersController < ApplicationController
   private
 
   def cooler_params
-    params.require(:cooler).permit(:brand, :model, :socket, :noise_level, :max_tdp, :price, :form_factor, :rating, :image, :fan_speed)
+    params.require(:cooler).permit(:brand, :model, :socket, :noise_level, :max_tdp, :price, :form_factor, :rating,
+                                   :image, :fan_speed)
   end
+
 end

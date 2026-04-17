@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
+
   has_secure_password
   has_one_attached :image
   before_save :downcase_nickname
@@ -9,4 +12,5 @@ class User < ApplicationRecord
   def downcase_nickname
     nickname.downcase!
   end
+
 end

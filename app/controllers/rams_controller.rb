@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class RamsController < ApplicationController
+
   def index
     @rams = Ram.all
   end
@@ -42,6 +45,8 @@ class RamsController < ApplicationController
   private
 
   def ram_params
-    params.require(:ram).permit(:brand, :model, :memory, :memory_speed, :price, :memory_type, :timings, :voltage, :image, :rating)
+    params.require(:ram).permit(:brand, :model, :memory, :memory_speed, :price, :memory_type, :timings, :voltage,
+                                :image, :rating)
   end
+
 end

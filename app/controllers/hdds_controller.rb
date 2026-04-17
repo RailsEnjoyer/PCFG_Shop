@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class HddsController < ApplicationController
+
   def index
     @hdds = Hdd.all
   end
@@ -42,6 +45,8 @@ class HddsController < ApplicationController
   private
 
   def hdd_params
-    params.require(:hdd).permit(:capacity, :type, :brand, :price, :compatibility, :model, :interface, :form_factor, :rpm, :compatible_interface, :speed, :rating, :image)
+    params.require(:hdd).permit(:capacity, :type, :brand, :price, :compatibility, :model, :interface, :form_factor,
+                                :rpm, :compatible_interface, :speed, :rating, :image)
   end
+
 end

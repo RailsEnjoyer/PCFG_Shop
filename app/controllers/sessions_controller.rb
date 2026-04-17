@@ -1,22 +1,25 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  def new
-  end
+
+  def new; end
 
   def create
     user_params = params.require(:session)
     user = User.find_by(email: user_params[:email])&.authenticate(user_params[:password])
-    
-    if user.present? 
+
+    if user.present?
       session[:user_id] = user.id
       redirect_to root_path
     else
       flash[:alert] = 'Wrong email or password'
       render :new
     end
-  end  
+  end
 
   def destroy
     session.delete(:user_id)
     redirect_to root_path
   end
+
 end

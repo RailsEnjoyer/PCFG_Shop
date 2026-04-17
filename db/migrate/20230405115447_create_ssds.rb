@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreateSsds < ActiveRecord::Migration[7.0]
+
   def change
     create_table :ssds do |t|
       t.string :brand
@@ -14,4 +17,5 @@ class CreateSsds < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+
 end

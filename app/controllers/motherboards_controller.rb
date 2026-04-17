@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class MotherboardsController < ApplicationController
+
   def index
     @motherboards = Motherboard.all
   end
@@ -42,6 +45,8 @@ class MotherboardsController < ApplicationController
   private
 
   def motherboard_params
-    params.require(:motherboard).permit(:brand, :price, :form_factor, :model, :chipset, :memory_slots, :max_memory, :memory_type, :socket, :compatible_cpu, :rating, :image, :pci, :memory_clock)
+    params.require(:motherboard).permit(:brand, :price, :form_factor, :model, :chipset, :memory_slots, :max_memory,
+                                        :memory_type, :socket, :compatible_cpu, :rating, :image, :pci, :memory_clock)
   end
+
 end

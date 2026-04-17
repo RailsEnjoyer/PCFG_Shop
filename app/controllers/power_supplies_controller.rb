@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class PowerSuppliesController < ApplicationController
+
   def index
     @power_supplies = PowerSupply.all
   end
@@ -44,4 +47,5 @@ class PowerSuppliesController < ApplicationController
   def power_supply_params
     params.require(:power_supply).permit(:brand, :model, :wattage, :price, :efficiency, :form_factor, :rating, :image)
   end
+
 end

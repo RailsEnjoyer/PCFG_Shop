@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreateComponents < ActiveRecord::Migration[7.0]
+
   def change
     create_table :components do |t|
       t.text :title
@@ -19,4 +22,5 @@ class CreateComponents < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+
 end

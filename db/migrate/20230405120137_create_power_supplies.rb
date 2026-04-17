@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreatePowerSupplies < ActiveRecord::Migration[7.0]
+
   def change
     create_table :power_supplies do |t|
       t.string :brand
@@ -11,4 +14,5 @@ class CreatePowerSupplies < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+
 end

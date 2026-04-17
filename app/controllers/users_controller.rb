@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
 
   def show
@@ -35,7 +37,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy 
+  def destroy
     @user = User.find(params[:id])
     @user.destroy
 
@@ -44,9 +46,11 @@ class UsersController < ApplicationController
     redirect_to root_path, notice: 'User deleted'
   end
 
-  private 
+  private
 
   def user_params
-    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :address, :phone, :age, :country, :payment_method, :image)
+    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :address, :phone, :age,
+                                 :country, :payment_method, :image)
   end
+
 end

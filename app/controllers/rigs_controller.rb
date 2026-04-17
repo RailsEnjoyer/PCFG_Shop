@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class RigsController < ApplicationController
+
   def index
     @rigs = Rig.all
   end
@@ -44,4 +47,5 @@ class RigsController < ApplicationController
   def rig_params
     params.require(:rig).permit(:brand, :model, :form_factor, :drive_bays, :price, :image, :rating)
   end
+
 end

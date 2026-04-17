@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class CreateRigs < ActiveRecord::Migration[7.0]
+
   def change
     create_table :rigs do |t|
       t.string :brand
@@ -12,4 +15,5 @@ class CreateRigs < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+
 end

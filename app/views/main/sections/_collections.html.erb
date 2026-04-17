@@ -1,0 +1,28 @@
+<section class="home-section home-section--collections">
+  <div class="container">
+    <div class="home-section__heading">
+      <p class="home-section__eyebrow">Beyond the hero block</p>
+      <h2 class="home-section__title">The storefront now reads like a system, not a pile of sections.</h2>
+    </div>
+
+    <div class="home-collection-grid">
+      <% home_page.collections.each do |collection| %>
+        <article class="home-collection-card home-collection-card--<%= collection.tone %>">
+          <div class="home-collection-card__content">
+            <p class="home-collection-card__eyebrow"><%= collection.eyebrow %></p>
+            <h3 class="home-collection-card__title"><%= collection.title %></h3>
+            <p class="home-collection-card__text"><%= collection.description %></p>
+            <%= link_to collection.link_label, collection.link_path, class: 'home-inline-link' %>
+          </div>
+          <%= image_tag(
+            collection.image,
+            alt: collection.title,
+            class: 'home-collection-card__image',
+            loading: 'lazy',
+            decoding: 'async'
+          ) %>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>

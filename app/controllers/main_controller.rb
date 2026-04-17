@@ -2,6 +2,10 @@
 
 class MainController < ApplicationController
 
+  def index
+    @home_page = ::HomePageContent.new
+  end
+
   def catalogue
     @ssds = Ssd.all
     @rigs = Rig.all

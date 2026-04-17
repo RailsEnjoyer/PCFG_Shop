@@ -1,0 +1,67 @@
+<section class="home-hero">
+  <div class="container home-hero__grid">
+    <div class="home-hero__copy">
+      <p class="home-eyebrow">PC configuration, minus the guesswork</p>
+      <h1 class="home-hero__title">Build a setup that matches the games you actually play.</h1>
+      <p class="home-hero__lede">
+        PCFG brings the configurator, catalogue, support, and release updates into one calmer flow. Less tab chaos,
+        better hierarchy, and a cleaner way to test ideas before you buy anything.
+      </p>
+
+      <div class="home-hero__actions">
+        <%= link_to 'Launch configurator', configurator_path, class: 'home-button home-button--primary' %>
+        <%= link_to 'Browse catalogue', catalogue_path, class: 'home-button home-button--ghost' %>
+      </div>
+
+      <div class="home-hero__stats">
+        <% home_page.hero_stats.each do |stat| %>
+          <article class="home-stat">
+            <p class="home-stat__value"><%= stat.value %></p>
+            <p class="home-stat__label"><%= stat.label %></p>
+            <p class="home-stat__detail"><%= stat.detail %></p>
+          </article>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="home-hero__visual" aria-hidden="true">
+      <div class="home-hero__halo"></div>
+      <div class="home-hero__panel">
+        <div class="home-hero__panel-top">
+          <p class="home-hero__panel-kicker">Build signal</p>
+          <p class="home-hero__panel-meta">Game-aware guidance • store-ready flow</p>
+        </div>
+
+        <div class="home-hero__panel-grid">
+          <div class="home-hero__chip">
+            <span>Configurator</span>
+            <strong>Game-first fit</strong>
+          </div>
+          <div class="home-hero__chip">
+            <span>Catalogue</span>
+            <strong>Sharper browsing</strong>
+          </div>
+          <div class="home-hero__chip">
+            <span>Support</span>
+            <strong>Less friction</strong>
+          </div>
+          <div class="home-hero__chip">
+            <span>News</span>
+            <strong>Fresh context</strong>
+          </div>
+        </div>
+
+        <%= image_tag(
+          'products/rtx-promo.png',
+          alt: 'PCFG gaming hardware spotlight',
+          class: 'home-hero__image',
+          width: 1300,
+          height: 840,
+          loading: 'eager',
+          fetchpriority: 'high',
+          decoding: 'async'
+        ) %>
+      </div>
+    </div>
+  </div>
+</section>

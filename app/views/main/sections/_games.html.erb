@@ -1,0 +1,34 @@
+<section class="home-section home-section--games">
+  <div class="container">
+    <div class="home-section__heading home-section__heading--split">
+      <div>
+        <p class="home-section__eyebrow">Supported games</p>
+        <h2 class="home-section__title">Use real game moods as the starting point.</h2>
+      </div>
+      <%= link_to 'See the full game list', games_path, class: 'home-button home-button--ghost home-button--compact' %>
+    </div>
+
+    <div class="home-games-grid">
+      <% home_page.featured_games.each do |game| %>
+        <article class="home-game-card">
+          <div class="home-game-card__media">
+            <%= image_tag(
+              game.image,
+              alt: game.title,
+              class: 'home-game-card__image',
+              loading: 'lazy',
+              decoding: 'async'
+            ) %>
+            <span class="home-game-card__eyebrow"><%= game.eyebrow %></span>
+          </div>
+          <div class="home-game-card__body">
+            <p class="home-game-card__genre"><%= game.genre %></p>
+            <h3 class="home-game-card__title"><%= game.title %></h3>
+            <p class="home-game-card__text"><%= game.description %></p>
+            <%= link_to game.link_label, game.link_path, class: 'home-inline-link' %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>

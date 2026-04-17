@@ -1,0 +1,7 @@
+<ul class="menu primary-nav <%= local_assigns[:extra_class] %>">
+  <% primary_navigation_items.each do |label, path| %>
+    <li class="menu__list primary-nav__item">
+      <%= link_to label, path, class: primary_navigation_link_classes(path), aria: { current: ('page' if current_page?(path)) } %>
+    </li>
+  <% end %>
+</ul>

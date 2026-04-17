@@ -1,0 +1,32 @@
+<section class="home-section home-section--accessories">
+  <div class="container">
+    <div class="home-section__heading home-section__heading--split">
+      <div>
+        <p class="home-section__eyebrow">Desk-side gear</p>
+        <h2 class="home-section__title">Accessories still matter, but now they sit in a calmer grid.</h2>
+      </div>
+      <%= link_to 'Browse the store', catalogue_path, class: 'home-button home-button--ghost home-button--compact' %>
+    </div>
+
+    <div class="home-accessory-grid">
+      <% home_page.accessories.each do |accessory| %>
+        <article class="home-accessory-card">
+          <span class="home-accessory-card__badge"><%= accessory.badge %></span>
+          <%= image_tag(
+            accessory.image,
+            alt: accessory.title,
+            class: 'home-accessory-card__image',
+            loading: 'lazy',
+            decoding: 'async'
+          ) %>
+          <h3 class="home-accessory-card__title"><%= accessory.title %></h3>
+          <p class="home-accessory-card__text"><%= accessory.description %></p>
+          <div class="home-accessory-card__footer">
+            <strong class="home-accessory-card__price"><%= accessory.price %></strong>
+            <%= link_to accessory.link_label, accessory.link_path, class: 'home-inline-link' %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>

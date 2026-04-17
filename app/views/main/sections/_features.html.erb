@@ -1,0 +1,23 @@
+<section class="home-section home-section--features">
+  <div class="container">
+    <div class="home-section__heading">
+      <p class="home-section__eyebrow">Why the new home is tighter</p>
+      <h2 class="home-section__title">A sharper first impression without the old noise.</h2>
+      <p class="home-section__text">
+        The page now leads with clarity: fewer giant background images, fewer mixed responsibilities, and clearer entry
+        points into the parts of the project users actually need.
+      </p>
+    </div>
+
+    <div class="home-feature-grid">
+      <% home_page.feature_cards.each do |feature| %>
+        <article class="home-feature-card home-feature-card--<%= feature.accent %>">
+          <p class="home-feature-card__eyebrow"><%= feature.eyebrow %></p>
+          <h3 class="home-feature-card__title"><%= feature.title %></h3>
+          <p class="home-feature-card__text"><%= feature.description %></p>
+          <%= link_to feature.link_label, feature.link_path, class: 'home-inline-link' %>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</section>

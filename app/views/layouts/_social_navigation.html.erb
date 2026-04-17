@@ -1,0 +1,9 @@
+<ul class="social site-social <%= local_assigns[:extra_class] %>">
+  <% social_navigation_items.each do |label, icon, href| %>
+    <li class="social__item site-social__item">
+      <%= link_to href, class: 'site-icon-link', target: '_blank', rel: 'noreferrer', aria: { label: label } do %>
+        <%= image_tag(icon, height: '20px', width: '20px', alt: '') %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

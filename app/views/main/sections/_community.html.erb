@@ -1,0 +1,29 @@
+<section class="home-section home-section--community">
+  <div class="container">
+    <div class="home-community">
+      <div class="home-community__main">
+        <p class="home-section__eyebrow">Support and contact</p>
+        <h2 class="home-section__title">Need help? Check the Support and Contact section.</h2>
+        <p class="home-section__text">
+          If you have any questions or need help navigating the site,
+          please follow the instructions in the Support and Contact section.
+          You’ll find FAQs, contact details, and guidance to make your experience smooth and easy.
+        </p>
+
+        <div class="home-community__actions">
+          <%= link_to 'Open FAQ / Support', support_path, class: 'home-button home-button--primary home-button--compact' %>
+          <%= mail_to 'pcfgshop@gmail.com', 'pcfgshop@gmail.com', class: 'home-button home-button--ghost home-button--compact' %>
+        </div>
+      </div>
+
+      <div class="home-community__notes">
+        <% home_page.community_points.each do |point| %>
+          <article class="home-community__note">
+            <h3><%= point.title %></h3>
+            <p><%= point.description %></p>
+          </article>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

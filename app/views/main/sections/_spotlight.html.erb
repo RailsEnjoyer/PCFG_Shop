@@ -1,0 +1,34 @@
+<section class="home-section home-section--spotlight">
+  <div class="container">
+    <div class="home-spotlight">
+      <div class="home-spotlight__copy">
+        <p class="home-section__eyebrow">Performance spotlight</p>
+        <h2 class="home-section__title"><%= home_page.spotlight_title %></h2>
+        <p class="home-section__text"><%= home_page.spotlight_text %></p>
+
+        <ul class="home-spotlight__list">
+          <% home_page.spotlight_bullets.each do |bullet| %>
+            <li><%= bullet %></li>
+          <% end %>
+        </ul>
+
+        <div class="home-spotlight__actions">
+          <%= link_to 'Open configurator', configurator_path, class: 'home-button home-button--primary home-button--compact' %>
+          <%= link_to 'Need help?', support_path, class: 'home-button home-button--ghost home-button--compact' %>
+        </div>
+      </div>
+
+      <div class="home-spotlight__visual">
+        <%= image_tag(
+          'products/rtx-promo.png',
+          alt: 'Graphics card showcase',
+          class: 'home-spotlight__image',
+          width: 1300,
+          height: 840,
+          loading: 'lazy',
+          decoding: 'async'
+        ) %>
+      </div>
+    </div>
+  </div>
+</section>

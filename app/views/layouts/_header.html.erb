@@ -1,68 +1,49 @@
-<header class="header">
-<nav class="nav">
-          <div class="logo">
-            <%= link_to 'PCFG', root_path, class:'logo' %>
-          </div>
-          <ul class="menu">
-            <li class="menu__list">
-              <%= link_to 'Home', root_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-               <%= link_to 'Catalogue', catalogue_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'Configurator', configurator_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'News', news_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'About Us', about_path, class:'menu__link' %>
-            </li>
-            <li class="menu__list">
-              <%= link_to 'FAQ / Support', support_path, class:'menu__link' %>
-            </li>
-          </ul>
-          <div class="basket">
-            <% if current_user %>
-              <a class="basket" href="<%= session_path %>">
-                <%= image_tag("logos/cart.png", height: "40px", alt: "cart") %>
-              </a>
-            <% else %>
-              <a class="basket" href="<%= session_path %>">
-                <%= image_tag("logos/cart.png", height: "40px", alt: "cart") %>
-              </a>
-            <% end %>
-          </div>
-          <div class="menu__login">
-            <ul class="menu__login">
-              <% if current_user.present? %>
-                <li class="menu__list">
-                  <%= link_to "@#{current_user.nickname}", user_path(current_user) %>
-                </li>
-                <li class="menu__list">
-                  <%= button_to 'Exit', session_path, method: :delete, class: 'btn-exit' %>
-                </li>
-              <% else %>
-                <li class="menu__list">
-                  <%= link_to 'Sign up', new_user_path, class: 'menu__link' %>
-                </li>
-                <li class="menu__list">
-                  <%= link_to 'Log in', new_session_path, class: 'menu__link' %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </nav>
-        <div id="scroll-up-arrow">
-          <img src="/assets/swiper/up.png" alt="Scroll Up" width="40" height="40">
+<header class="header site-header">
+  <div class="site-shell">
+    <nav class="nav site-nav" aria-label="Primary navigation" data-site-nav>
+      <div class="site-nav__brand">
+        <%= link_to 'PCFG', root_path, class: 'logo site-logo' %>
+        <p class="site-nav__tagline">Game-first builds, cleaner storefront, faster testing.</p>
+      </div>
+
+      <div class="site-nav__panel" id="site-navigation-panel" data-site-nav-panel>
+        <div class="site-nav__center">
+          <%= render 'layouts/primary_navigation' %>
         </div>
 
-        <script>
-          var scrollUpArrow = document.getElementById('scroll-up-arrow');
-          scrollUpArrow.addEventListener('click', function() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-          });
-        </script>
-        </header>
-        
+        <div class="menu__login site-user-nav">
+          <% if current_user.present? %>
+            <%= link_to "@#{current_user.nickname}", user_path(current_user), class: 'menu__link site-user-nav__profile' %>
+            <%= button_to 'Exit', session_path, method: :delete, class: 'btn-exit site-user-nav__button' %>
+          <% else %>
+            <%= link_to 'Sign up', new_user_path, class: 'menu__link' %>
+            <%= link_to 'Log in', new_session_path, class: 'menu__link' %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="site-nav__controls">
+        <%= link_to cart_path, class: 'basket site-icon-link', aria: { label: 'Open cart' } do %>
+          <%= image_tag('logos/cart.png', height: '20px', width: '20px', alt: '') %>
+        <% end %>
+
+        <button
+          class="site-nav__toggle"
+          type="button"
+          data-site-nav-toggle
+          aria-controls="site-navigation-panel"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="site-nav__toggle-line"></span>
+          <span class="site-nav__toggle-line"></span>
+          <span class="site-nav__toggle-line"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <button id="scroll-up-arrow" class="scroll-up-arrow" type="button" aria-label="Scroll to top">
+    <%= image_tag('swiper/up.png', alt: '', width: 18, height: 18) %>
+  </button>
+</header>

@@ -1,0 +1,29 @@
+<section class="home-section home-section--workflow">
+  <div class="container">
+    <div class="home-workflow">
+      <div class="home-workflow__intro">
+        <p class="home-section__eyebrow">How it works</p>
+        <h2 class="home-section__title">
+          <span class="home-workflow__lead">
+            Whether you’re new to building PCs or a seasoned gamer, our configurator makes it easy to get the perfect
+            setup.
+          </span>
+          <span class="home-workflow__rest">
+            Choose your budget and preferred games, and we’ll suggest three fully compatible builds tailored just for
+            you. Everything is ready to compare, optimize, and buy—no guesswork required.
+          </span>
+        </h2>
+      </div>
+
+      <div class="home-workflow__steps">
+        <% home_page.workflow_steps.each do |step| %>
+          <article class="home-step">
+            <p class="home-step__number"><%= step.number %></p>
+            <h3 class="home-step__title"><%= step.title %></h3>
+            <p class="home-step__text"><%= step.description %></p>
+          </article>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

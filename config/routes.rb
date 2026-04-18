@@ -39,7 +39,7 @@ Rails.application.routes.draw do
 
   get '/step2', to: 'configurator#step2'
   get '/step3', to: 'configurator#step3'
-  get '/main', to: 'components#show'
+  get '/main', to: 'components#show', as: :shop
   get '/cart', to: 'cart#index'
   get '/news', to: 'main#news'
   get '/support', to: 'main#support'

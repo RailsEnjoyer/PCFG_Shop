@@ -3,7 +3,7 @@
     <nav class="nav site-nav" aria-label="Primary navigation" data-site-nav>
       <div class="site-nav__brand">
         <%= link_to 'PCFG', root_path, class: 'logo site-logo' %>
-        <p class="site-nav__tagline">Game-first builds, cleaner storefront, faster testing.</p>
+        <p class="site-nav__tagline">Custom PC builds in one click</p>
       </div>
 
       <div class="site-nav__panel" id="site-navigation-panel" data-site-nav-panel>
@@ -24,7 +24,7 @@
 
       <div class="site-nav__controls">
         <%= link_to cart_path, class: 'basket site-icon-link', aria: { label: 'Open cart' } do %>
-          <%= image_tag('logos/cart.png', height: '20px', width: '20px', alt: '') %>
+          <%= image_tag('logos/cart.png', height: '30px', width: '30px', alt: 'cart') %>
         <% end %>
 
         <button

@@ -4,19 +4,20 @@
     <title>PCFG | Smarter Gaming Builds</title>
     <%= render 'layouts/head' %>
     <%= stylesheet_link_tag('styles') %>
+    <%= stylesheet_link_tag('home') %>
   </head>
   <body class="home-page">
     <%= render 'layouts/header' %>
 
     <main class="main home-main">
-      <%= render 'main/sections/hero', home_page: @home_page %>
-      <%= render 'main/sections/features', home_page: @home_page %>
-      <%= render 'main/sections/workflow', home_page: @home_page %>
-      <%= render 'main/sections/games', home_page: @home_page %>
-      <%= render 'main/sections/spotlight', home_page: @home_page %>
-      <%= render 'main/sections/collections', home_page: @home_page %>
-      <%= render 'main/sections/accessories', home_page: @home_page %>
-      <%= render 'main/sections/community', home_page: @home_page %>
+      <%= render 'main/sections/landing/hero', home_page: @home_page %>
+      <%= render 'main/sections/landing/features', home_page: @home_page %>
+      <%= render 'main/sections/landing/workflow', home_page: @home_page %>
+      <%= render 'main/sections/landing/games', home_page: @home_page %>
+      <%= render 'main/sections/landing/spotlight', home_page: @home_page %>
+      <%= render 'main/sections/landing/collections', home_page: @home_page %>
+      <%= render 'main/sections/landing/accessories', home_page: @home_page %>
+      <%= render 'main/sections/landing/community', home_page: @home_page %>
     </main>
 
     <%= render 'layouts/footer' %>

@@ -17,6 +17,7 @@ gem 'stimulus-rails', '1.3.4'
 gem 'turbo-rails', '2.0.23'
 
 gem 'mini_magick', '4.12.0'
+gem 'nokogiri', '1.19.2'
 
 gem 'bootsnap', '1.16.0', require: false
 gem 'tzinfo-data', '~> 1.2024', platforms: %i[mingw mswin x64_mingw jruby]

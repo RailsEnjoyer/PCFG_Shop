@@ -14,34 +14,36 @@ class HomePageContent
 
   def hero_stats
     [
-      Stat.new('03', 'clear steps', 'Choose a game, tune a budget, review a ready build path.'),
-      Stat.new('24/7', 'support lane', 'Use support materials and live pages instead of guessing parts alone.'),
-      Stat.new('Free', 'entry point', 'asd.')
+      Stat.new('03 Steps', 'Guidance',
+               'Pick your game, set your budget, see three optimized builds ready to go.'),
+      Stat.new('24/7', 'Smart Support', 'Helpful tips, live support, and guidance so you never choose the wrong part.'),
+      Stat.new('Free', 'Start Anywhere',
+               'Whether you’re a first-time builder or a seasoned gamer, get matched with builds instantly.')
     ]
   end
 
   def feature_cards
     [
       Feature.new(
-        'Game-first flow',
-        'Build around what you play, not a blank spec sheet.',
-        'asd.',
-        'Open configurator',
-        configurator_path,
+        'Browse without confusion',
+        'Explore all compatible components and compare builds effortlessly.',
+        'Find the perfect parts quickly and confidently.',
+        'Browse catalogue',
+        catalogue_path,
         'rose'
       ),
       Feature.new(
-        'Storefront clarity',
-        'Jump from recommendation to catalogue without context switching.',
-        'asd.',
-        'Browse catalogue',
-        catalogue_path,
+        'All parts, one click',
+        'Once your build is ready, buy all components directly through the site without extra steps.',
+        'Get everything you need delivered fast and hassle-free.',
+        'Shop now',
+        configurator_path,
         'gold'
       ),
       Feature.new(
-        'No dead ends',
-        'asd.',
-        'When you need help, price context, or launch updates, the adjacent pages stay one click away.',
+        'Always one click away',
+        'Need help, price info, or updates? Everything you need is right where you expect it.',
+        'Stay in control and never get lost.',
         'See updates',
         news_path,
         'violet'
@@ -59,12 +61,12 @@ class HomePageContent
       Step.new(
         '02',
         'Shape the build',
-        'Use the configurator to narrow the build around the games and priorities that actually matter for you.'
+        'Use the configurator to narrow the build around your games and priorities that actually matter for you.'
       ),
       Step.new(
         '03',
         'Finish with confidence',
-        'asd.'
+        'Review your build, see all compatible parts, and purchase everything directly with one click.'
       )
     ]
   end
@@ -119,8 +121,8 @@ class HomePageContent
         'ember'
       ),
       Collection.new(
-        'asd',
-        'asd.',
+        'a1sd',
+        'a2sd.',
         'asd.',
         'products/mouse.png',
         'Read news',
@@ -216,9 +218,9 @@ class HomePageContent
 
   def spotlight_bullets
     %w[
-      asd
-      asd
-      asd
+      asd1
+      asd2
+      asd3
     ]
   end
 
